@@ -170,5 +170,3 @@ const empleado = new Empleado("Paola", 35, 1000000);
 console.log(empleado);
 empleado.saludar();
 empleado.despedir();
-coky.especie();
-empleado.planeta();
