@@ -108,7 +108,7 @@ function padre() {
 let clausula = padre();
 clausula();
 
-//¿Que es lo que ocurre en este ejemplo? La función padre padre termina su ejecución, pero la función anidada puede acceder a la variable deuda. 
+//¿Que es lo que ocurre en este ejemplo? La función padre termina su ejecución, pero la función anidada puede acceder a la variable deuda. 
 //Esto se usaba para simular la existencia de variables privadas, en ese momento no existian pero con la llegada de ES6 y las clases pasaron un poco al desuso. 
 
 //5)Clases: son moldes que nos permiten crear objetos con caracteristicas similares. 
@@ -127,7 +127,7 @@ class Persona {
     }
 
     despedir() {
-        console.log("Chau, me fui, soy  " + this.nombre);
+        console.log("Chau, me fui, soy " + this.nombre);
     }
 
     //Métodos estáticos: 
@@ -151,6 +151,7 @@ coky.despedir();
 
 Persona.especie();
 console.log(Persona.planeta);
+//No sirve hacer 'coky.especie()' o 'coky.planeta', solo sirve para la clase
 
 //Vamos a crear una clase que herede de la clase Persona. 
 
@@ -168,3 +169,6 @@ class Empleado extends Persona {
 const empleado = new Empleado("Paola", 35, 1000000);
 console.log(empleado);
 empleado.saludar();
+empleado.despedir();
+coky.especie();
+empleado.planeta();
