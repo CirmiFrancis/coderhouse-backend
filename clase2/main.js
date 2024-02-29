@@ -1,6 +1,4 @@
-/** CLASE 2 **/
-
-//Continuamos... 
+/* CLASE 2 */
 
 //DESESTRUCTURACIÓN: Esta herramienta nos permite extraer datos de un array u objeto de una manera mas sencilla y legible. 
 
@@ -11,7 +9,7 @@ const pelicula = {
     lanzamiento: 1972
 }
 
-//Antes de ES6
+//Antes de ES6 (ECMAScript6 especifica las reglas y normas sobre la cual JavaScript se basa)
 
 let titulo = pelicula.titulo; 
 
@@ -123,7 +121,6 @@ console.log(persona);
 
 persona.saludar();
 
-
 //Herencia: 
 
 //Si quiero que promedio sea una variable privada, tengo que agregarle el # antes del nombre de la variable.
@@ -141,25 +138,19 @@ class Estudiante extends Persona {
         console.log(`Hola, soy ${this.nombre} ${this.apellido} y estudio ${this.carrera}`);
     }
 
-    //Para trabajar con esas variables privadas, tengoq eu crear un metodo que me perte acceder a ellas. 
+    //Para trabajar con esas variables privadas, tengo que crear un metodo que me perte acceder a ellas. 
 
     get getPromedio() {
         return this.#promedio;
     }
 }
 
-
-
 const estudiante = new Estudiante ("Juancito", "Perez", 20, "Ingenieria en Sistemas", 10); 
 
 console.log(estudiante);
-
 estudiante.saludar();
-
 console.log(estudiante.promedio);
-
-console.log(estudiante.getPromedio); 
-//Me deberia decir 10. 
+console.log(estudiante.getPromedio); //Me deberia decir 10. 
 
 //Variables y metodos estaticos. 
 //Estan asociados a la clase en si. Para poder utilizarlos no require que se generauna isntancia de clase. 
@@ -176,9 +167,9 @@ class Contador {
     }
 }
 
-const contador1 =  new Contador(); 
-const contador2 =  new Contador(); 
-const contador3 =  new Contador(); 
+const contador1 = new Contador(); 
+const contador2 = new Contador(); 
+const contador3 = new Contador(); 
 const contador4 = new Contador();
 
 console.log(Contador.obtenerCantidad());
@@ -203,7 +194,6 @@ const gato = {
 gato.__proto__= animal; 
 
 //Aclaramos que __proto__ es una propiedad que tienen todos los objetos que nos permite acceder al prototipo del objeto pero no es recomendable utilizar en producción, ya que es una propiedad privada del lenguaje. 
-
 
 //De esta manera el objeto gato hereda las propiedades del objeto animal. 
 //Animal es el prototipo de gato. 
