@@ -70,23 +70,25 @@ class ProductManager {
         }
     }
 
-    async deleteProduct(id){ //método creado para eliminar un producto por id
-        try {
-            if (this.products.some(product => product.id === id)) {
-                this.products = this.products.filter(product => product.id !== id);
+    deleteProduct(id){ //método creado para eliminar un producto por id
+        if (this.products.some(product => product.id === id)) {
+            this.products = this.products.filter(product => product.id !== id);
+
+            const saveJson = async () => { //guardamos el nuevo array en el JSON
                 await fs.promises.writeFile(this.path, JSON.stringify(this.products, null, 2));
-            }
-            else {
-                console.error("Error, producto no encontrado para eliminar.");
-            }
+            } 
+            saveJson();
         }
-        catch (error) {
-            console.error(error.message);
-        }
+        else {
+            console.log("Error, producto no encontrado para eliminar.");
+        } 
     }
 }
 
 // ====== TESTEO ======
+
+// cd desafio2
+// node ProductManager.js
 
 // 1) Se crea una instancia de la clase 'ProductManager' con el parámetro del path
 const manager = new ProductManager("./products.json"); 
@@ -107,19 +109,17 @@ console.log(manager.getProductById(1));
 console.log(manager.getProductById(4)); // Tira error por no encontrar un producto con ese ID
 
 // 6) Se llama al método 'updateProduct', el cual nos permite cambiar/actualizar la información de un producto
-// manager.updateProduct(2, {
-//     title: "Producto 2 Actualizado",
-//     description: "Descripción",
-//     price: 100,
-//     thumbnail: "sin img",
-//     code: "abc133",
-//     stock: 20
-// });
-// console.log(manager.getProducts());
+manager.updateProduct(2, {
+    title: "Producto 2 Actualizado",
+    description: "Descripción",
+    price: 100,
+    thumbnail: "sin img",
+    code: "abc133",
+    stock: 20
+});
+console.log(manager.getProducts());
 
 // 7) Se llama al método 'deleteProduct', el cual debe eliminar un producto o arrojar error en caso de no existir
 console.log(manager.deleteProduct(1));
 console.log(manager.getProducts());
 console.log(manager.deleteProduct(4)); // Tira error por no encontrar un producto con ese ID
-
-// node ProductManager.js
