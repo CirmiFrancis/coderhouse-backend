@@ -1,0 +1,23 @@
+[
+  {
+    "id": 2,
+    "title": "fideos",
+    "description": "los mas ricos",
+    "price": 200,
+    "thumbnail": "sin imagen",
+    "code": "abc124",
+    "stock": 50
+  }
+]
+    "stock": 25
+  },
+  {
+    "id": 2,
+    "title": "fideos",
+    "description": "los mas ricos",
+    "price": 200,
+    "thumbnail": "sin imagen",
+    "code": "abc124",
+    "stock": 50
+  }
+]
