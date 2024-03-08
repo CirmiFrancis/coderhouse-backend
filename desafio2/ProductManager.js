@@ -62,7 +62,8 @@ class ProductManager {
         if (index !== -1) {
             this.products[index] = { ...this.products[index], ...updatedFields };
             this.saveProducts();
-        } else {
+        } 
+        else {
             console.log("Error, producto no encontrado para actualizar.");
         }
     }
@@ -114,6 +115,6 @@ manager.updateProduct(2, {
 console.log(manager.getProducts());
 
 // 7) Se llama al método 'deleteProduct', el cual debe eliminar un producto o arrojar error en caso de no existir
-console.log(manager.deleteProduct(1));
+manager.deleteProduct(1);
 console.log(manager.getProducts());
-console.log(manager.deleteProduct(4)); // Tira error por no encontrar un producto con ese ID
+manager.deleteProduct(4); // Tira error por no encontrar un producto con ese ID
