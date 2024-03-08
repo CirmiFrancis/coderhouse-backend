@@ -1,20 +1,29 @@
 [
   {
-    "id": 1,
-    "title": "producto prueba",
-    "description": "este es un producto prueba",
-    "price": 200,
-    "thumbnail": "sin imagen",
-    "code": "abc123",
+    "id": 2,
+    "title": "Producto 2 Actualizado",
+    "description": "Descripción del producto.",
+    "price": 100,
+    "thumbnail": "Con imagen",
+    "code": "code777",
+    "stock": 50
+  },
+  {
+    "id": 3,
+    "title": "Pancho",
+    "description": "Con papitas y aderezos.",
+    "price": 50,
+    "thumbnail": "Sin imagen",
+    "code": "code789",
     "stock": 25
   },
   {
-    "id": 2,
-    "title": "Producto 2 Actualizado",
-    "description": "Descripción",
-    "price": 100,
-    "thumbnail": "sin img",
-    "code": "abc133",
-    "stock": 20
+    "id": 3,
+    "title": "Pancho",
+    "description": "Con papitas y aderezos.",
+    "price": 50,
+    "thumbnail": "Sin imagen",
+    "code": "code789",
+    "stock": 25
   }
 ]
