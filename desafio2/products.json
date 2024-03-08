@@ -16,14 +16,5 @@
     "thumbnail": "Sin imagen",
     "code": "code789",
     "stock": 25
-  },
-  {
-    "id": 3,
-    "title": "Pancho",
-    "description": "Con papitas y aderezos.",
-    "price": 50,
-    "thumbnail": "Sin imagen",
-    "code": "code789",
-    "stock": 25
   }
 ]

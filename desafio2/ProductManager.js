@@ -116,5 +116,6 @@ console.log(manager.getProducts());
 
 // 7) Se llama al método 'deleteProduct', el cual debe eliminar un producto o arrojar error en caso de no existir
 manager.deleteProduct(1);
+manager.saveProducts();
 console.log(manager.getProducts());
 manager.deleteProduct(4); // Tira error por no encontrar un producto con ese ID
