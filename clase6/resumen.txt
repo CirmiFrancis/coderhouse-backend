@@ -1,0 +1,19 @@
+--Comandos:
+npm init --yes
+npm i express
+npm i nodemon -D
+
+Nodemon es el equivalente a Live Server. Reinicia y actualiza el código automáticamente. 
+Se instala con el siguiente comando: npm i nodemon -D. Ese '-D' hace referencia a que se agrega en las dependencias del desarrollador. 
+También es importante agrega como script en el package.json lo siguiente: "dev": "nodemon index.js".
+
+Modelo Cliente-Servidor (request-response)
+
+HTTP: es un protocolo de comunicación, es decir, un conjunto de reglas que indica cómo se realiza la conexión entre dos o más sistemas. Permite la conexión entre una computadora y un servidor.
+
+Servidor: es un software/hardware que almacena información en la web. Es un espacio donde se almacenan fotos/videos/archivos/datos/juegos/etc.
+Un servidor responde a muchos clientes.
+
+FRONTEND se basa en la experiencia de usuario. BACKEND se basa en la estructura interna.
+
+Express.js es un framework minimalista de Node js que nos permite crear servidores de una forma mucho más sencilla.

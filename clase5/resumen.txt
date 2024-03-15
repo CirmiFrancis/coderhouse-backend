@@ -1,0 +1,40 @@
+Node.js surgió de la necesidad de ejecutar JS fuera del navegador, y ha crecido hasta convertirse en uno de los elementos principales para el desarrollo web. Cuenta con el mismo motor V8 de Google Chrome, el cual permite convertir el código javascript a código máquina para poder ser procesado correctamente.
+
+Nodemon es el equivalente a Live Server. Reinicia y actualiza el código automáticamente. Se instala con el siguiente comando: npm i nodemon -D. Ese '-D' hace referencia a que se agrega en las dependencias del desarrollador. También es importante agrega como script en el package.json lo siguiente: "dev": "nodemon index.js".
+
+Un modulo es un archivo que contiene código de JS que encapsula una funcionalidad especifica. Pueden estar hechos por nosotros, por terceros o ser nativos.
+
+Moment nos permite manipular fechas y horarios.
+
+Express es un framework que nos facilita la creación de un servidor. En la clase6 se ve más sobre esto.
+
+--Comandos npm:
+npm init
+npm init --yes (crea el package.json con los valores por defecto, luego se pueden cambiar)
+
+--Repositorio:
+git init
+git add .
+git commit -m '...'
+COPIAR Y PEGAR LOS CÓDIGOS DEL Repositorio
+
+--Instalar node_modules de un repositorio:
+git clone ...
+cd ...
+dir
+npm install
+
+--Descargar version especifica de un modulo:
+npm install moment@1.0
+
+--Para ejecutar un script del package.json, en este caso creado por nosotros:
+npm run dev
+
+--Instalar un modulo de forma global VS de forma local:
+global: npm i -g modulo
+local: npm i modulo
+
+--Ver las instalaciones globales:
+npm list -g
+
+Ejercicio utilizando el modulo moment en 'ejercicio.js'
