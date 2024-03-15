@@ -8,7 +8,7 @@ class ProductManager {
         this.path = path;
     }
 
-    async addProduct(nuevoObjeto) {
+    async addProduct(nuevoObjeto) { //agregamos los productos
         let {title, description, price, img, code, stock} = nuevoObjeto;
 
         if (!title || !description || !price || !img || !code || !stock) {
