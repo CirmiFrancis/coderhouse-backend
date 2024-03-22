@@ -1,15 +1,24 @@
-import express from "express";
-const app = express();
-const PUERTO = 8080; 
+/** PRIMER ENTREGA DEL TP FINAL  **/
 
-import cartsRouter from "./routes/carts.router.js";
-import productsRouter from "./routes/products.router.js";
+const express = require("express");
+const app = express(); 
+const PUERTO = 8080;
+const productsRouter = require("./routes/products.router.js");
+const cartsRouter = require("./routes/carts.router.js");
 
+//Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.use("/api/carts", cartsRouter);
-app.use("/api/products", productsRouter);
+app.get("/", (req, res) => {
+    res.send("Siii funciona");
+})
+
+//Rutas 
+app.use("/api", productsRouter);
+app.use("/api", cartsRouter);
+
+
 
 app.listen(PUERTO, () => {
     console.log(`Escuchando en el puerto: ${PUERTO}`);
