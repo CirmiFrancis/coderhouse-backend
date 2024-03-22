@@ -39,19 +39,21 @@ class ProductManager {
       }
 
       newProduct.id = ++ProductManager.ultId; 
-
       arrayProductos.push(newProduct);
       await this.guardarArchivo(arrayProductos);
-    } catch (error) {
+    } 
+    catch (error) {
       console.log("Error al agregar producto", error);
       throw error; 
     }
   }
+
   async getProducts() {
     try {
       const arrayProductos = await this.leerArchivo();
       return arrayProductos;
-    } catch (error) {
+    } 
+    catch (error) {
       console.log("Error al leer el archivo", error);
       throw error;
     }
@@ -65,11 +67,13 @@ class ProductManager {
       if (!buscado) {
         console.log("Producto no encontrado");
         return null;
-      } else {
+      } 
+      else {
         console.log("Producto encontrado");
         return buscado;
       }
-    } catch (error) {
+    } 
+    catch (error) {
       console.log("Error al leer el archivo", error);
       throw error;
     }
@@ -80,7 +84,8 @@ class ProductManager {
       const respuesta = await fs.readFile(this.path, "utf-8");
       const arrayProductos = JSON.parse(respuesta);
       return arrayProductos;
-    } catch (error) {
+    } 
+    catch (error) {
       console.log("Error al leer un archivo", error);
       throw error;
     }
@@ -89,7 +94,8 @@ class ProductManager {
   async guardarArchivo(arrayProductos) {
     try {
       await fs.writeFile(this.path, JSON.stringify(arrayProductos, null, 2));
-    } catch (error) {
+    } 
+    catch (error) {
       console.log("Error al guardar el archivo", error);
       throw error;
     }
@@ -98,17 +104,18 @@ class ProductManager {
   async updateProduct(id, productoActualizado) {
     try {
       const arrayProductos = await this.leerArchivo();
-
       const index = arrayProductos.findIndex(item => item.id === id);
 
       if (index !== -1) {
         arrayProductos[index] = { ...arrayProductos[index], ...productoActualizado };
         await this.guardarArchivo(arrayProductos);
         console.log("Producto actualizado");
-      } else {
+      } 
+      else {
         console.log("No se encontró el producto");
       }
-    } catch (error) {
+    } 
+    catch (error) {
       console.log("Error al actualizar el producto", error);
       throw error;
     }
@@ -117,17 +124,18 @@ class ProductManager {
   async deleteProduct(id) {
     try {
       const arrayProductos = await this.leerArchivo();
-
       const index = arrayProductos.findIndex(item => item.id === id);
 
       if (index !== -1) {
         arrayProductos.splice(index, 1);
         await this.guardarArchivo(arrayProductos);
         console.log("Producto eliminado");
-      } else {
+      } 
+      else {
         console.log("No se encontró el producto");
       }
-    } catch (error) {
+    } 
+    catch (error) {
       console.log("Error al eliminar el producto", error);
       throw error;
     }

@@ -6,24 +6,21 @@ class CartManager {
         this.path = path;
         this.ultId = 0;
 
-        //Cargar los carritos almacenados en el archivo
-        this.cargarCarritos();
-
+        this.cargarCarritos(); // cargar los carritos almacenados en el archivo
     }
 
     async cargarCarritos() {
         try {
             const data = await fs.readFile(this.path, "utf-8");
             this.carts = JSON.parse(data);
-            if (this.carts.length > 0) {
-                //Verifico si hay por lo menos un carrito creado. 
-                this.ultId = Math.max(...this.carts.map(cart => cart.id));
-                //Utilizo el método map para crear un array qeu solo tengo los identificadores del carrito y con math.max obtengo el mayor. 
+
+            if (this.carts.length > 0) { // verifico si hay por lo menos un carrito creado
+                this.ultId = Math.max(...this.carts.map(cart => cart.id)); // utilizo el método map para crear un array qeu solo tengo los identificadores del carrito y con math.max obtengo el mayor 
             }
-        } catch (error) {
+        } 
+        catch (error) {
             console.log("Error al crear los carritos: ", error);
-            //Si no existe el archivo, lo voy a crear: 
-            await this.guardarCarritos();
+            await this.guardarCarritos(); // si no existe el archivo, lo voy a crear
         }
     }
 
@@ -38,9 +35,7 @@ class CartManager {
         }
 
         this.carts.push(nuevoCarrito);
-
-        //Guardamos el array en el archivo: 
-        await this.guardarCarritos();
+        await this.guardarCarritos(); // guardamos el array en el archivo
         return nuevoCarrito;
     }
 
@@ -54,7 +49,8 @@ class CartManager {
             }
 
             return carrito;
-        } catch (error) {
+        } 
+        catch (error) {
             console.log("Error al obtener un carrito por id: ", error);
         }
     }
@@ -65,7 +61,8 @@ class CartManager {
 
         if (existeProducto) {
             existeProducto.quantity += quantity;
-        } else {
+        } 
+        else {
             carrito.products.push({ product: productoId, quantity });
         }
 
@@ -73,6 +70,5 @@ class CartManager {
         return carrito;
     }
 }
-
 
 module.exports = CartManager;

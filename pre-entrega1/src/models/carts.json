@@ -3,11 +3,11 @@
     "id": 1,
     "products": [
       {
-        "product": "4",
+        "product": "1",
         "quantity": 10
       },
       {
-        "product": "1",
+        "product": "3",
         "quantity": 5
       }
     ]
