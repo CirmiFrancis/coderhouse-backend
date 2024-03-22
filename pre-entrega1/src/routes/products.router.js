@@ -1,7 +1,7 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
 
-const ProductManager = require("../controllers/ProductManager.js");
+import ProductManager from "../controllers/ProductManager.js";
 const productManager = new ProductManager("./src/models/products.json");
 
 // Obtengo todos los productos del JSON
@@ -92,4 +92,4 @@ router.delete("/products/:pid", async (req, res) => {
     }
 })
 
-module.exports = router;
+export default router;
