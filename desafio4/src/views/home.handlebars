@@ -1,11 +1,11 @@
-<h1>Home</h1>
+<h1 class="text-center text-white bg-black border-bottom border-white py-5 m-0"> Lista de Productos </h1>
 
-<div>
+<div class="m-0 p-0 px-5">
     {{#each products}}
-        <div class="card">
-            <p> {{this.title}} </p>
-            <p> {{this.description}}  </p>
-            <p> {{this.price}} </p>
+        <div class="card text-dark bg-light my-3">
+            <p class="fs-1 ms-5"> {{this.title}} </p>
+            <p class="fs-5 ms-5"> {{this.description}}  </p>
+            <p class="fs-3 ms-5"> $ {{this.price}} </p>
         </div>
     {{/each}}
 </div>

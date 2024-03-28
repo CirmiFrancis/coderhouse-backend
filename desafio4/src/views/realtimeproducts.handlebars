@@ -1,23 +1,27 @@
-<h1>Real Time Products</h1>
-<h2>Productos actualizados en tiempo real</h2>
+<h1 class="text-center text-white bg-black border-bottom border-white py-5 m-0">Manipular Productos</h1>
 
-<div id="containerProducts"></div>
+<div id="containerProducts" class="text-black bg-body rounded pt-4 m-5"></div>
 
-<h2>Formulario para agregar productos</h2>
+<h2 class="text-center text-white bg-black m-0 pb-3">Formulario para AGREGAR PRODUCTOS</h2>
 
-<form>
-    <input type="text" id="title" placeholder="Titulo">
-    <input type="text" id="description" placeholder="Descripcion">
-    <input type="number" id="price" placeholder="Precio">
-    <input type="text" id="img" value="Sin Imagen">
-    <input type="text" id="code" placeholder="Código">
-    <input type="number" id="stock" placeholder="Stock">
-    <input type="text" id="category" placeholder="Categoria">
-    <select id="status">
-        <option value="true"> Activo </option>
-        <option value="false"> Inactivo </option>
-    </select>
-    <button type="button" id="sendBtn"> Enviar </button>
+<form class="text-center text-white bg-black mx-5 p-0">
+    <div class="mb-2"> <input class="w-75" type="text" id="title" placeholder="Titulo"> </div>
+    <div class="mb-2"> <input class="w-75" type="text" id="description" placeholder="Descripcion"> </div>
+    <div class="mb-2"> <input class="w-75" type="number" id="price" placeholder="Precio"> </div>
+    <div class="mb-2"> <input class="w-75" type="text" id="img" value="Sin Imagen"> </div>
+    <div class="mb-2"> <input class="w-75" type="text" id="code" placeholder="Código"> </div>
+    <div class="mb-2"> <input class="w-75" type="number" id="stock" placeholder="Stock"> </div>
+    <div class="mb-2"> <input class="w-75" type="text" id="category" placeholder="Categoria"> </div>
+    <div class="mb-2"> 
+        <select class="w-75 py-1" id="status">
+            <option value="true"> Activo </option>
+            <option value="false"> Inactivo </option>
+        </select> 
+    </div>
+
+    <div class="text-center mt-4 mb-5">
+        <div> <button class="btn btn-light" type="button" id="sendBtn"> Enviar </button> </div>
+    </div>
 </form>
 
 <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
