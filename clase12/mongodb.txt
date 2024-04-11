@@ -37,34 +37,30 @@ https://www.mongodb.com/docs/manual/tutorial/remove-documents/
 
 —————————————————————————————————
 
-Comandos:
+- COMANDOS -
 
-cls							                    (limpiar terminal)
+cls (limpiar terminal)
 
-show dbs 						                (mostrar base de datos)
-use coderdb 						            (crear base de datos)
-use test 						                (cambiar base de datos)
-db.dropDatabase();					            (eliminar base de datos)
 
-show collections					            (mostrar colecciones)
-db.createCollection(“alumnos”);			        (crear colección)
-db.x.drop();						            (eliminar colección)
+Base de Datos:
 
-db.x.find()						                (mostrar documentos)
-db.x.find({'edad':25})                          (mostrar documentos con edad = 25)
-db.x.findOne({'edad':25})                       (mostrar primer documento con edad = 25)
-db.x.insertOne({‘nombre’: ‘Marco’, ‘edad’: 2})	(agregar un documento)
-db.x.insertMany([                               
-    {
-        "nombre": "Francis",
-        "edad": 25
-    },
-    {
-        "nombre": "Marco",
-        "edad": 1
-    },
-    {
-        "nombre": "Nahuel",
-        "edad": 13
-    }
-])                                              (agregar varios documentos)
+show dbs (mostrar)
+use coderdb (crear)
+use test (cambiar)
+db.dropDatabase(); (eliminar)
+
+
+Colecciones:
+
+show collections (mostrar)
+db.createCollection(“x”); (crear)
+db.x.drop(); (eliminar)
+
+
+Documentos:
+
+db.x.find() (mostrar)
+db.x.find({'edad':25}) (mostrar con requisitos)
+db.x.findOne({'edad':25}) (mostrar uno con requisitos)
+db.x.insertOne({‘nombre’: ‘Marco’, ‘edad’: 2}) (crear)
+db.x.insertMany([{"nombre": "Francis", "edad": 25}, {"nombre": "Marco","edad": 1}, {"nombre": "Nahuel","edad": 13}]) (crear varios)
