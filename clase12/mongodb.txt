@@ -1,0 +1,70 @@
+—————————————————————————————————
+
+https://www.mongodb.com/es
+
+https://cloud.mongodb.com/v2/660ead59ae0e62004200f5f2#/overview
+
+—————————————————————————————————
+
+https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/
+
+brew update
+
+brew tap mongodb/brew
+brew update
+brew install mongodb-community@7.0
+
+brew services start mongodb/brew/mongodb-community
+brew services stop mongodb/brew/mongodb-community
+
+brew services list
+
+mongosh (new terminal)
+
+mongotop
+
+—————————————————————————————————
+
+CRUD:
+
+https://www.mongodb.com/docs/manual/tutorial/insert-documents/
+
+https://www.mongodb.com/docs/manual/tutorial/query-documents/
+
+https://www.mongodb.com/docs/manual/tutorial/update-documents/
+
+https://www.mongodb.com/docs/manual/tutorial/remove-documents/
+
+—————————————————————————————————
+
+Comandos:
+
+cls							                    (limpiar terminal)
+
+show dbs 						                (mostrar base de datos)
+use coderdb 						            (crear base de datos)
+use test 						                (cambiar base de datos)
+db.dropDatabase();					            (eliminar base de datos)
+
+show collections					            (mostrar colecciones)
+db.createCollection(“alumnos”);			        (crear colección)
+db.x.drop();						            (eliminar colección)
+
+db.x.find()						                (mostrar documentos)
+db.x.find({'edad':25})                          (mostrar documentos con edad = 25)
+db.x.findOne({'edad':25})                       (mostrar primer documento con edad = 25)
+db.x.insertOne({‘nombre’: ‘Marco’, ‘edad’: 2})	(agregar un documento)
+db.x.insertMany([                               
+    {
+        "nombre": "Francis",
+        "edad": 25
+    },
+    {
+        "nombre": "Marco",
+        "edad": 1
+    },
+    {
+        "nombre": "Nahuel",
+        "edad": 13
+    }
+])                                              (agregar varios documentos)
