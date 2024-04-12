@@ -1,0 +1,15 @@
+Instalé 'MongoDB Compass (GUI)'
+
+https://www.mongodb.com/try/download/compass
+
+Es una interfaz que facilita las operaciones e interacciones con la base de datos, para evitar codear en terminal.
+
+=======================================================================================================================
+
+Comandos:
+
+npm init -y
+npm i nodemon -D
+npm i express
+"dev": "nodemon src/app.js"
+"type": "module"

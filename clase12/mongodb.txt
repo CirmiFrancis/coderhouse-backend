@@ -1,5 +1,22 @@
 —————————————————————————————————
 
+MongoDB es un sistema de base de datos no relacional (NoSQL) orientado a colecciones y documentos. 
+Es una de las tecnologías utilizadas en el famoso stack MERN (MongoDB - Express - React - Node).
+
+Como cualquier base de datos, es más fácil de acceder a estos y manipularlos que en el FileSystem, que es el sistema con el que veníamos trabajando hasta ahora (módulo fs), al tener la información en un archivo '.json'. Luego, Express.js cambió la sintaxis y el nivel de abstracción.
+
+Modelo Relacional:
+-Cuando el volumen de los datos no crece, o bien lo hace poco a poco
+-Cuando las necesidades del proceso pueden atenderse en un solo servidor
+-Cuando no existen picos de uso por parte de los usuarios que utilizan el sistema
+
+Modelo No Relacional:
+-Cuando el volumen de los datos crece rápidamente
+-Cuando las necesidades del proceso son tan altas y tan constantes, que se requieren multi-servidores
+-Cuando los usuarios saturan el sistema y generan “picos de uso”
+
+—————————————————————————————————
+
 https://www.mongodb.com/es
 
 https://cloud.mongodb.com/v2/660ead59ae0e62004200f5f2#/overview
@@ -25,18 +42,6 @@ mongotop
 
 —————————————————————————————————
 
-CRUD:
-
-https://www.mongodb.com/docs/manual/tutorial/insert-documents/
-
-https://www.mongodb.com/docs/manual/tutorial/query-documents/
-
-https://www.mongodb.com/docs/manual/tutorial/update-documents/
-
-https://www.mongodb.com/docs/manual/tutorial/remove-documents/
-
-—————————————————————————————————
-
 - COMANDOS -
 
 cls (limpiar terminal)
@@ -44,23 +49,24 @@ cls (limpiar terminal)
 
 Base de Datos:
 
-show dbs (mostrar)
-use coderdb (crear)
-use test (cambiar)
-db.dropDatabase(); (eliminar)
+db (mostrar actual)
+show dbs (mostrar todas)
+use x (crear/cambiar)
+db.dropDatabase(); (eliminar actual)
 
 
 Colecciones:
 
-show collections (mostrar)
+show collections (mostrar todas)
 db.createCollection(“x”); (crear)
 db.x.drop(); (eliminar)
 
 
-Documentos:
+Documentos (CRUD - CR):
 
-db.x.find() (mostrar)
-db.x.find({'edad':25}) (mostrar con requisitos)
-db.x.findOne({'edad':25}) (mostrar uno con requisitos)
-db.x.insertOne({‘nombre’: ‘Marco’, ‘edad’: 2}) (crear)
-db.x.insertMany([{"nombre": "Francis", "edad": 25}, {"nombre": "Marco","edad": 1}, {"nombre": "Nahuel","edad": 13}]) (crear varios)
+db.x.find(); (mostrar todos)
+db.x.find({'edad':25}); (mostrar con requisitos)
+db.x.findOne({'edad':25}); (mostrar uno con requisitos)
+
+db.x.insertOne({‘nombre’: ‘Marco’, ‘edad’: 2}); (crear)
+db.x.insertMany([{"nombre": "Francis", "edad": 25}, {"nombre": "Marco","edad": 1}, {"nombre": "Nahuel","edad": 13}]); (crear varios)

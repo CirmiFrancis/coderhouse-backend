@@ -1,0 +1,72 @@
+—————————————————————————————————
+
+CRUD:
+
+https://www.mongodb.com/docs/manual/tutorial/insert-documents/
+https://www.mongodb.com/docs/manual/tutorial/query-documents/
+https://www.mongodb.com/docs/manual/tutorial/update-documents/
+https://www.mongodb.com/docs/manual/tutorial/remove-documents/
+
+—————————————————————————————————
+
+Repaso de comandos.
+
+—————————————————————————————————
+
+Filtros para el método FIND:
+
+db.coll.find({key: {$operator: val} })
+
+$and:  Realiza operación AND -> sintaxis: {$and: [ {},{} ] }
+$or:   Realiza operación OR -> sintaxis: {$or: [ {},{} ] }
+$lt:   Coincide con valores que son menores que un valor especificado
+$lte:  Coincide con valores menores o iguales a un valor especificado
+$gt:   Coincide con valores mayores a un valor especificado
+$gte:  Coincide con valores mayores o iguales a un valor especificado
+$ne:   Coincide con valores que no son iguales a un valor especificado
+$eq:   Selecciona los documentos que son iguales a un valor especificado
+
+$exists:    Selecciona los documentos según la existencia de un campo
+$in:        Selecciona los documentos especificados en un array. Sintaxis: {key: {$in: [array of values] }}
+$nin:       Coincide con ninguno de los valores especificados en un array
+$size:      Coincide con el número de elementos especificados
+$all:       Coincide con todos los valores definidos dentro de un array
+$elemMatch: Coincide con algún valor definido dentro del query
+
+—————————————————————————————————
+
+Comandos (CRUD - RUD):
+
+======== CANTIDAD
+
+db.x.estimatedDocumentCount()
+db.x.countDocuments(criterio)
+
+======== READ: $and, $or, $lt, $lte, $gt, $gte, $ne, $eq, $exists, $in, $nin, $size, $all, $elemMatch
+
+db.alumnos.find({ $and: [{'genero':'F'},{'grupo':'1B'}] })
+db.alumnos.find({ $or: [{'nombre':'Juan'},{'grupo':'1B'}] })
+db.alumnos.find({ email: {$exists: true} })
+
+======== PROYECCIONES
+
+db.alumnos.find({}, {"nombre": 1, "promedio": 1} )
+
+======== SORT, SKIP, LIMIT
+
+db.alumnos.find().sort({ "promedio": 1})
+db.alumnos.find().sort({ "promedio": -1})
+
+db.alumnos.find().skip(2)
+
+db.alumnos.find().limit(5)
+
+======== UPDATE: $set, $unset, $inc, $rename, $mul, $min, $max
+
+db.alumnos.updateOne({'nombre':'Juan'}, {$set:{'nombre':'JUAN'}} )
+db.alumnos.updateMany({'grupo':'1B'}, {$set:{'grupo':'1A'}} )
+
+======== DELETE
+
+db.alumnos.deleteOne({'grupo':'1A'})
+db.alumnos.deleteMany({'grupo':'1A'})
