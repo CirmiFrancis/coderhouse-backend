@@ -13,3 +13,14 @@ npm i nodemon -D
 npm i express
 "dev": "nodemon src/app.js"
 "type": "module"
+
+=======================================================================================================================
+
+Usé MongoDB Compass.
+Me creé una cuenta en MongoAtlas y cree un proyecto.
+Linkeé MongoAtlas con Compass, para que cualquier cambio que haga en el Compass se guarde en la nube.
+Instalé la dependencia Mongoose.
+
+=======================================================================================================================
+
+Mongoose es un ODM (Object Document Mapping) el cual nos permitirá definir esquemas para poder gestionar colecciones y documentos entre una aplicación de nodejs y una base de datos en MongoDB.

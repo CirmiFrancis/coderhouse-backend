@@ -21,7 +21,7 @@ router.post("/", async (req, res) => {
     try {
         const usuario = new UsuariosModel(usuarioNuevo);
         await usuario.save();
-        res.send({message: "Usuario creado exitsoamente", usuario: usuario});
+        res.send({message: "Usuario creado exitosamente", usuario: usuario});
     } catch (error) {
         res.status(500).json("Error interno del servidor");
     }

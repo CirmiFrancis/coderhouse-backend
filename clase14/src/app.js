@@ -33,6 +33,6 @@ app.listen(PUERTO, () => {
 import mongoose from "mongoose";
 //const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://coderhouse53130:coderhouse@cluster0.ilnzaje.mongodb.net/Tienda?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect("mongodb+srv://franciscirmi:coderhouse@codercluster.u7pr2vc.mongodb.net/Tienda?retryWrites=true&w=majority&appName=CoderCluster")
     .then(() => console.log("Conectados a la BD!"))
     .catch((error) => console.log("Tenemos un error, vamos a morir: ", error))
