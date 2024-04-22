@@ -1,0 +1,97 @@
+-Teoria de la indexacion. 
+    La indexación viene de indexar, divir en índices. Es dividir una BD grande en pequeños módulos/capítulos según un criterio, para hacer que la búsqueda de una información sea más rápida. 
+    
+    EJEMPLO: 
+    Si nosotros tenemos una BD gigante con muchos alumnos y queremos buscar y mostrar a los estudiantes que APROBARON o DESAPROBRARON un examen, es más simple indexar para que el sistema detecte que en un futuro podemos realizar una búsqueda según con ese criterio.
+    Es como dejar fijado con antelación esa división para que, en vez de buscar en toda la BD y preguntar a todos los alumnos si aprobaron o desaprobaron, el sistema busque solamente en los alumnos que aprobaron y se ahorre los milisegundos que tarda en verificar si los alumnos desaprobados no aprobaron el examen, ya que es innecesario y tiempo perdido.
+    Esto se debe de usar exclusivamente en los datos más relevantes y sobre los cuales nos vamos a interesar para realizar una búsqueda. Abusar de la indexación vuelve lento el sistema.
+
+    // SIN INDEX
+    const alumnoSchema = new mongoose.Schema({
+        nombre: {
+            type: String, 
+        }
+    })
+
+    // CON INDEX
+    const alumnoSchema = new mongoose.Schema({
+        nombre: {
+            type: String, 
+            index:true
+        }
+    })
+
+====================================================================================================
+
+-Manejo de Populations en MongoDB
+    Las populations vendrían a ser como las FK (foreign key) en SQL. Es decir, es tener un documento dentro de otro documento o, dicho de otra forma, relacionar un documento con otro.
+
+    EJEMPLO:
+    Si tenemos una colección de 'alumnos' y otra de 'cursos', cada una con sus documentos e información (atributo-valor), podemos relacionar el documento de un alumno con el documento de un curso. Es decir, dentro del documento del alumno puede haber un atributo llamado 'cursos' para indicar los cursos que realiza, y podemos agregar las IDs de cada curso para que ambos documentos estén relacionados. 
+    Al final, termina habiendo una relación de este estilo:
+
+    // ALUMNO
+    {
+        "_id": {
+            "$oid": "662689bc6b3478e4e3fcfdef"
+        },
+        "nombre": "Pedro",
+        "apellido": "Rodríguez",
+        "email": "pedro@example.com",
+        "edad": 30,
+        "cursos": [
+            {
+                "$oid": "662689c16b3478e4e3fcfdf4"
+            }
+        ]
+    }
+
+    // CURSO
+    {
+        "_id": {
+            "$oid": "662689c16b3478e4e3fcfdf4"
+        },
+        "dias": [
+            "martes"
+        ],
+        "nombre": "Backend",
+        "horario": "10 a 12 hs",
+        "numeroComision": "10006"
+    }
+
+    // RELACIÓN ALUMNO-CURSOS
+    {
+        _id: new ObjectId('662689bc6b3478e4e3fcfdef'),
+        nombre: 'Pedro',
+        apellido: 'Rodríguez',
+        email: 'pedro@example.com',
+        edad: 30,
+        cursos: [
+            {
+                _id: new ObjectId('662689c16b3478e4e3fcfdf4'),
+                dias: [Array],
+                nombre: 'Backend',
+                horario: '10 a 12 hs',
+                numeroComision: '10006'
+            }
+        ]
+    }
+
+====================================================================================================
+
+-PRE
+    PRE es un Middleware de Mongoose. Para evitar el colocar 'populate('nombreDelAtributo')' al final de la búsqueda de, por ejemplo, un alumno, se utiliza este Middleware que lo que hace es habilitar el populate para todos.
+
+    // ANTES:
+    const estudiantesCompletos = await AlumnoModel.findById("662689bc6b3478e4e3fcfdef").populate("cursos");
+    console.log(estudiantesCompletos);
+
+    // USO DE PRE
+    alumnoSchema.pre("findOne", function(next) {
+        this.populate("cursos");
+        next();
+    })
+
+    // DESPUÉS:
+    const estudiantesCompletos = await AlumnoModel.findById("662689bc6b3478e4e3fcfdef")
+    console.log(estudiantesCompletos);

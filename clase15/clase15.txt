@@ -1,0 +1,23 @@
+Clase de Repaso - Pinterest básico
+
+- Interfaz main (navbar + imagenes)
+- Interfaz upload (archivo + titulo + descripcion)
+
+====================================================================================================
+
+Explicación:
+
+app.js
+Lo primero que hace el sistema es configurar los Middleware, Multer, Express-Handlebars y llevarnos al archivo image.router.js, donde van a estar todas las rutas con los distintos métodos (GET & POST) y sus respectivos renders.
+
+Tenemos 4 plantillas hechas en handlebars: main, header, index, upload. 
+La plantilla 'main' es la plantilla principal y muestra la plantilla '>header' (se muestra siempre) y luego el 'body' (varía).
+La plantilla 'index' se va a renderizar cuando estemos en la ruta "/" (la principal) y la plantilla 'upload' cuando estemos en la ruta "/upload".
+Al ingresar vamos a ver las plantillas 'main', 'header' (navbar) e 'index' (ver/borrar imágenes subidas). Al clickear en la opción 'Upload' del navbar, la plantilla 'index' se deja de renderizar y se renderiza la plantilla 'upload', la cual utiliza la dependencia MULTER para poder subir archivos, tiene dos campos para ingresar un título y una descripción, y un botón para publicar la imagen.
+
+image.model.js
+Con Mongoose creamos un Schema para las imágenes con toda la información requerida y se lo asignamos a cada documento de la colección 'imagenes' de mi base de datos.
+
+Las imagenes se guardan de forma local en la ruta 'src/public/img/...', pero la información se guarda en la BD.
+
+====================================================================================================
