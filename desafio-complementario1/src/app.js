@@ -34,7 +34,7 @@ import MessageModel from "./models/messages.model.js";
 const io = new SocketIOServer(httpServer);
 
 io.on("connection",  (socket) => {
-    console.log("Nuevo usuario conectado");
+    console.log("Nuevo usuario conectado.");
     
     socket.on("message", async data => {
         await MessageModel.create(data);
