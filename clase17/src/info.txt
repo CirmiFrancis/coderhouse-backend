@@ -1,0 +1,28 @@
+Clase 17. Agregaciones (Aggregations) y Paginaciones (Paginate).
+
+==========================================================================================
+
+-Agregaciones (Aggregations)
+Me permite hacer múltiples operaciones en una base de datos. 
+
+Operaciones:
+    $count
+    $group
+    $limit
+    $lookup
+    $set / $addFields
+    $skip
+    $sort
+    $match
+    $merge
+
+https://www.mongodb.com/docs/manual/reference/aggregation/
+
+==========================================================================================
+
+-Paginaciones (Paginate)
+Es un proceso que consiste en dividir los resultados de una consulta en bloques de datos.
+Me permite cargar cierta cantidad de ítems y dividir la carga total en varias páginas. Es decir, si tenemos 500 ítems a la venta, en vez de que al usuario le carguen los 500, le cargará 20 y varias páginas hasta llegar al límite. Es básico en un e-commerce.
+
+Instalación:
+npm i mongoose-paginate-v2
