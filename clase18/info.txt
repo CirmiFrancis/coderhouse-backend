@@ -1,0 +1,39 @@
+Clase 18. COOKIES & SESION.
+
+==========================================================================================
+
+-Cookies
+
+Instalación de dependencia:
+sudo npm i cookie-parser
+
+//Las cookies son pequeños archivos de texto que viven en el navegador del usuario. 
+//Esta información puede viajar entre las peticiones del cliente al servidor. 
+
+//¿Que datos podemos guardar?
+//a- Id de las sesiones. 
+//b- Preferencias del usuario. 
+//c- Nombres de usuario. 
+
+//Caracteristicas: 
+
+//. Se le puede configurar un tiempo de vida. 
+//. Este archivito se almacena del lado del cliente, en el navegador, por lo tanto el espacio es limitado. 
+//. Podemos darle un poco de seguridad con claves. 
+//. Cuidado! Igual no tenemos que almacenar datos sensibles. 
+
+==========================================================================================
+
+-Session
+
+Instalación de dependencia:
+sudo npm i express-session
+
+//Esto nos permite conseguir un almacenamiento de información del cliente pero ahora en el servidor. Lo podemos trabajar desde el objeto request (req.session). 
+
+//Caracteristicas: 
+
+//. La información que se quiere guardar se almacena del lado del servidor. 
+//. Del lado del cliente se crea un identificador único para poder acceder a esa información. 
+//. Los datos almacenados en session se borran al cerrar el navegador. 
+//. Se utiliza principalmente para guardar los datos de usuario al iniciar sesión. 
