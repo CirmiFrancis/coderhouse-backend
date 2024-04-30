@@ -1,0 +1,31 @@
+==========================================
+
+REPASO
+
+Cookie: 
+pequeña parte de información que se almacena en el navegador al momento de visitar un sitio web, utilizado para conservar detalles de información útiles para el sitio web.
+
+cookie-parser: 
+módulo de Node que permite gestionar cookies desde el servidor, con el fin de poder obtenerlas, leerlas, escribirlas o eliminarlas.
+
+Cookie.maxAge: 
+indica en milisegundos el tiempo de vida de la cookie. Si no se especifica, la cookie persistirá hasta que se elimine
+
+Signed Cookie: 
+cookie firmada que permite agregar seguridad, la cual escucha si la cookie fue alterada, invalidándose en dado caso.
+
+Session: 
+ciclo de interacción entre un sitio y un cliente, donde el cliente cuenta con un identificador de sesión para reconocimiento desde el servidor.
+
+express-session: 
+módulo de Node que permite gestionar sesiones y almacenarlas en el servidor.
+
+==========================================
+
+STORAGE
+
+- Memory Storage -
+El almacenamiento de una sesión por memory storage es peligroso ya que si el servidor muere o se reinicia, la sesión morirá con él y no habrá forma de recuperarla.
+
+- File Storage -
+El File storage permitirá dar una persistencia de archivos a las sesiones que trabajamos, esto hará que el servidor pueda tomarlas de algún lado en caso de que algo inesperado llegase a pasar (un reinicio, o una caída).
