@@ -1,0 +1,22 @@
+<h1> Carrito de Compras (Producto, Cantidad) </h1>
+
+<ul>
+    {{#each products}}
+        <li> <span>Producto:</span> {{this.product.title}} </li>
+        <li> <span>Cantidad:</span> {{this.quantity}} </li>
+        <br>
+    {{/each}}
+</ul>
+
+{{!-- Agregué estilos acá porque no me detectaba el CSS global. Por algún problema de MIME que no entendí. --}}
+<style>
+    h1 {
+        color:red; 
+        text-align: center;
+    }
+    
+    span {
+        color: rgb(200, 0, 0);
+        font-weight: bold;
+    }
+</style>

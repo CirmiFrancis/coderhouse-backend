@@ -2,22 +2,31 @@
 
 <ul>
     {{#each products}}
-        <li> {{this.title}} </li>
-        <li> {{this.description}} </li>
-        <li> {{this.price}} </li>
-        <li> {{this.stock}} </li>
-        <li> {{this.category}} </li>
-        <br>
+        <li> <span>Título:</span> {{this.title}} </li>
+        <li> <span>Descripción:</span> {{this.description}} </li>
+        <li> <span>Precio:</span> ${{this.price}} </li>
+        <li> <span>Stock:</span> {{this.stock}} </li>
+        <li> <span>Categoría:</span> {{this.category}} </li>
+        <button>Agregar al Carrito</button>
+        <br><br>
     {{/each}}
 </ul>
 
 {{#if hasPrevPage}}
-    <a href="/api/products?page={{prevPage}}&limit={{limit}}&category={{category}}&order={{order}}"> Anterior </a>
+    <a href="/products?page={{prevPage}}"> Anterior </a>
     <br>
 {{/if}}
 
 {{#if hasNextPage}}
-    <a href="/api/products?page={{nextPage}}&limit={{limit}}&category={{category}}&order={{order}}"> Siguiente </a>
+    <a href="/products?page={{nextPage}}"> Siguiente </a>
 {{/if}}
 
-<p>Pagina {{currentPage}} de {{totalPages}} </p>
+<p>Página <span>{{currentPage}}</span> de <span>{{totalPages}}</span> </p>
+
+{{!-- Agregué estilos acá porque no me detectaba el CSS global. Por algún problema de MIME que no entendí. --}}
+<style>
+    span {
+        color: rgb(200, 0, 0);
+        font-weight: bold;
+    }
+</style>

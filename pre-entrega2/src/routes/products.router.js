@@ -1,59 +1,38 @@
 import express from "express";
 const router = express.Router();
 
-import ProductModel from "../models/products.model.js";
 import ProductManager from "../controllers/ProductManager.js";
 const productManager = new ProductManager();
 
 // Obtengo todos los productos
 router.get("/", async (req, res) => {
     try {
-        //let products = await productManager.getProducts();
-        const limit = req.query.limit || 10;
-        const page = req.query.page || 1;
-        const order = req.query.order;
-        const category = req.query.category; // en la diapositiva tenía el nombre 'query', no sé por qué
+        const { limit = 10, page = 1, sort, query } = req.query;
 
-        const products = await ProductModel.paginate({}, {limit, page});
-        
-        let productsPaginate = products.docs.map(product => {
-            const {_id, ...rest} = product.toObject();
-            return rest;
-        })
+        const products = await productManager.getProducts({
+            limit: parseInt(limit),
+            page: parseInt(page),
+            sort,
+            query,
+        });
 
-        // Filtro por Categoría
-        if (category){
-            productsPaginate = productsPaginate.filter(product => product.category === category);
-        }
-
-        // Orden Ascendente/Descendente
-        if (order) {
-            productsPaginate.sort((a, b) => {
-                if (order === 'asc') {
-                    return a.title.localeCompare(b.title);
-                } 
-                else if (order === 'desc') {
-                    return b.title.localeCompare(a.title);
-                }
-            });
-        }
-
-        res.render("products", {
-            products: productsPaginate,
-            hasPrevPage: products.hasPrevPage,
-            hasNextPage: products.hasNextPage,
+        res.json({
+            status: 'success',
+            payload: products,
+            totalPages: products.totalPages,
             prevPage: products.prevPage,
             nextPage: products.nextPage,
-            currentPage: products.page,
-            totalPages: products.totalPages,
-            limit: limit,
-            category: category,
-            order: order
+            page: products.page,
+            hasPrevPage: products.hasPrevPage,
+            hasNextPage: products.hasNextPage,
+            prevLink: products.hasPrevPage ? `/api/products?limit=${limit}&page=${products.prevPage}&sort=${sort}&query=${query}` : null,
+            nextLink: products.hasNextPage ? `/api/products?limit=${limit}&page=${products.nextPage}&sort=${sort}&query=${query}` : null,
         });
     } 
     catch (error) {
         console.error("Error al obtener productos.", error);
         res.status(500).json({
+            status: 'error',
             error: "Error interno del servidor."
         });
     }

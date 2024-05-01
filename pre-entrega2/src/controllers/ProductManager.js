@@ -36,10 +36,45 @@ class ProductManager {
     }
   }
 
-  async getProducts() {
+  async getProducts({ limit = 10, page = 1, sort, query } = {}) {
     try {
-      const products = await ProductModel.find();
-      return products;
+      const skip = (page - 1) * limit;
+      let queryOptions = {};
+
+      if (query) {
+        queryOptions = { category: query };
+      }
+
+      const sortOptions = {};
+
+      if (sort) {
+          if (sort === 'asc' || sort === 'desc') {
+              sortOptions.price = sort === 'asc' ? 1 : -1;
+          }
+      }
+
+      const products = await ProductModel
+          .find(queryOptions)
+          .sort(sortOptions)
+          .skip(skip)
+          .limit(limit);
+
+      const totalProducts = await ProductModel.countDocuments(queryOptions);
+      const totalPages = Math.ceil(totalProducts / limit);
+      const hasPrevPage = page > 1;
+      const hasNextPage = page < totalPages;
+
+      return {
+          docs: products,
+          totalPages,
+          prevPage: hasPrevPage ? page - 1 : null,
+          nextPage: hasNextPage ? page + 1 : null,
+          page,
+          hasPrevPage,
+          hasNextPage,
+          prevLink: hasPrevPage ? `/api/products?limit=${limit}&page=${page - 1}&sort=${sort}&query=${query}` : null,
+          nextLink: hasNextPage ? `/api/products?limit=${limit}&page=${page + 1}&sort=${sort}&query=${query}` : null,
+      }
     } 
     catch (error) {
       console.log("Error al leer los productos.", error);
@@ -61,24 +96,6 @@ class ProductManager {
     } 
     catch (error) {
       console.log("Error al recuperar producto por ID.", error);
-      throw error;
-    }
-  }
-
-  async getProductByCategory(category) {
-    try {
-      const product = await ProductModel.find({ category: category });
-
-      if (!product) {
-        console.log("Productos NO encontrados.");
-        return null;
-      } 
-
-      console.log("Productos encontrados.");
-      return product;
-    } 
-    catch (error) {
-      console.log("Error al recuperar productos por Category.", error);
       throw error;
     }
   }
