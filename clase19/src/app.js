@@ -1,8 +1,9 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import session from "express-session";
-import fileStore from "session-file-store";
-const fileStorage = fileStore(session);
+//import fileStore from "session-file-store";
+import mongoStore from "connect-mongo";
+//const fileStorage = fileStore(session);
 const app = express(); 
 const PUERTO = 8080;
 
@@ -20,13 +21,20 @@ app.use(session({
     //npm i session-file-store
 
     //2) Utilizando File Storage:
-    store: new fileStorage({path:"./src/sessions", ttl: 15, retries: 1}),
+    ////store: new fileStorage({path:"./src/sessions", ttl: 15, retries: 1}),
     //path: la ruta de donde se van a guardar los archivitos de sesión. 
     //ttl: Time To Live (en segundos va!)
     //retries: cantidad de vecesque el servidor tratara de leer el archivo. 
+
+    //Utilizamos Mongo Storage: 
+    //instalamos: npm i connect-mongo
+    store: mongoStore.create({
+        mongoUrl: "mongodb+srv://franciscirmi:coderhouse@codercluster.u7pr2vc.mongodb.net/Clase19?retryWrites=true&w=majority", ttl:15
+    })
 }))
 //Rutas
-//Repasito de cuki. 
+
+//Repaso de cookies:
 app.get("/crearcuki", (req, res) => {
     res.cookie("cuki", "Esto es una cookie!").send("Cuki seteada!");
 })
