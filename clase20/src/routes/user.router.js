@@ -28,14 +28,17 @@ router.post("/", async (req, res) => {
 
         req.session.user = {
             email: newUser.email,
-            first_name: newUser.first_name
+            first_name: newUser.first_name,
+            // estos 2 datos los agregué para después mostrarlos en el perfil
+            last_name: newUser.last_name,
+            age: newUser.age
         };
         req.session.login = true; 
 
-        res.status(200).send("Usuario creado con EXITO!!");
-
-    } catch (error) {
-        res.status(500).send("Error al crear el usuario");
+        res.status(200).send("Usuario creado con éxito.");
+    } 
+    catch (error) {
+        res.status(500).send("Error al crear el usuario.");
     }
 })
 

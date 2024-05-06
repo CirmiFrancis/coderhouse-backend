@@ -29,7 +29,11 @@ router.get("/profile", (req, res) => {
         return res.redirect("/login");
     }
 
-    res.render("profile");    
+    res.render("profile", { // pasamos el apellido, el nombre y la edad para mostrarlos en el perfil
+        last_name: req.session.user.last_name, 
+        first_name: req.session.user.first_name, 
+        age: req.session.user.age
+    });
 })
 
 export default router; 

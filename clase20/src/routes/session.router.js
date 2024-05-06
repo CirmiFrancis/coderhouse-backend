@@ -18,17 +18,22 @@ router.post("/login", async (req, res) => {
                 req.session.login = true; 
                 req.session.user = {
                     email: user.email, 
-                    first_name: user.first_name
+                    first_name: user.first_name,
+                    // estos 2 datos los agregué para después mostrarlos en el perfil
+                    last_name: user.last_name,
+                    age: user.age
                 }
                 res.redirect("/profile");
-            } else {
+            } 
+            else {
                 res.status(401).send("Contraseña no valida");
             }
-        } else {
+        } 
+        else {
             res.status(404).send("Usuario no encontrado");
-        }
-        
-    } catch (error) {
+        }  
+    } 
+    catch (error) {
         res.status(400).send("Error en el Login");
     }
 })
@@ -40,7 +45,7 @@ router.get("/logout", (req, res) => {
         req.session.destroy();
     }
     
-    res.redirect("/");
+    res.redirect("/login");
 })
 
 export default router; 
