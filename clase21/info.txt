@@ -1,0 +1,21 @@
+Clase 21.
+
+Passport & Passport GITHUB.
+
+Optimizamos el código, utilizando creando un archivo llamado 'passport.config.js' para hacer los procesos correspondientes para el sistema de logeo/registro, y así también, no repetir código en algunas rutas. Esto hizo que se junte las validaciones en un solo archivo y que cada ruta, en vez de tener las validaciones dentro, tenga que pedirlas al archivo creado, haciendo el código más legible. 
+
+Por un lado, tenemos passport-local que sirve para nuestro propio sistema de login. Simplemente es una variante de lo que ya teníamos, pero con el beneficio de passport que es lo ya mencionado en el párrafo anterior (código más legible, etc).
+
+Por otro lado, usamos passport-github para poder loguearse al sistema con la cuenta de github. Algo muy común hoy en día y útil para ahorrar tiempo para acceder al contenido de las páginas sin pasar por el proceso de registrarse.
+Para hacer esto, tuve que crear un *GITHUB APP*, y modificar algunos parámetros.
+
+
+
+Archivo creado:
+    passport.config.js  (initializePassport, estrategias para "register", "login" y "github", serialize y deserialize & imports)
+
+Archivos modificados:
+    app.js              (middlewares & imports)
+    session.router.js   (authenticate "login", authenticate "github" & import)
+    user.router.js      (authenticate "register" & import)
+    login.handlebars    (botón para iniciar con github)
