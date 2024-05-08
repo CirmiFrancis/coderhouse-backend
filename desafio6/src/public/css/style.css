@@ -21,6 +21,22 @@ span {
     justify-content: center;
 }
 
+.github {
+    width: auto;
+    font-size: 18px;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s;
+}
+
+.github:hover {
+    background-color: rgb(150, 0, 0);
+    transform: scale(1.05);
+}
+
 #chatBox {
     grid-row: 1;
     width: 40rem;
