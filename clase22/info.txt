@@ -1,0 +1,20 @@
+Clase 22.
+
+JSON Web Token. 
+JWT proporciona una forma segura y eficiente de transmitir información entre diferentes partes de una aplicación web o entre servicios en una arquitectura de microservicios. 
+
+Usamos LocalStorage() y Cookies para guardar el token generado. Guardarlo en una cookie es más seguro que guardarlo en el localstorage().
+
+
+En la página se puede pegar el token para que te devuelva la información que está cifrada: 
+https://jwt.io/
+
+'iat': indica el momento en que se emitió el token.
+'exp': indica el momento en que el token expira y ya no es válido.
+
+
+Algunas características y datos:
+*Es una alternativa a la librería 'session' con la que veníamos trabajando. 
+*Elimina la necesidad de almacenar información de sesión en el servidor.
+*JWT puede ser más seguro si se utiliza correctamente con firmas y cifrado adecuados.
+*Coderhouse utiliza JWT para el ingreso a la plataforma.
