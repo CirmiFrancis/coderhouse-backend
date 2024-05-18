@@ -1,3 +1,4 @@
+/* ================ ELEMENTS ================ */
 h1 {
     color: rgb(200, 0, 0);
     text-align: center;
@@ -8,49 +9,78 @@ span {
     font-weight: bold;
 }
 
+/* ================ LOGIN WITH GITHUB & GOOGLE ================ */
 .center {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
+/* BUTTONS */
+.login-with {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    padding: 12px 12px;
+    margin-bottom: 20px;
+    gap: 12px;
+}
+.login-with-github, .login-with-google {
+    max-width: 280px;
+    /* display: block; */
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    padding: 10px;
+    gap: 8px;
+    /* cursor: pointer; */
+    transition: all 0.25s;
+}
+.login-with-github {
+    background-color: black;
+}
+.login-with-google {
+    border: 1px solid black;
+    padding: 9px;
+    background-color: rgb(255, 255, 255);
+}
+
+/* IMG */
+.login-with-github img, .login-with-google img{
+    width: 20px;
+}
+
+/* TEXT */
+.login-with-github a, .login-with-google a{
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+}
+.login-with-github a {
+    color: white;
+}
+.login-with-google a {
+    color: black;
+}
+
+/* HOVER */
+.login-with-github:hover, .login-with-google:hover {
+    transform: scale(1.05);
+}
+/* .login-with-github:hover {
+    background-color: rgb(40, 40, 40);
+}
+.login-with-google:hover {
+    background-color: rgb(215, 215, 215);
+} */
+
+/* ================ CHAT ================ */
 .container-chat {
     display: grid;
     grid-template-rows: auto auto;
     justify-content: center;
-}
-
-.github {
-    width: auto;
-    font-size: 18px;
-    color: white;
-    background-color: black;
-    padding: 10px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.25s;
-}
-
-.github:hover {
-    background-color: rgb(150, 0, 0);
-    transform: scale(1.05);
-}
-
-.google {
-    width: auto;
-    font-size: 18px;
-    color: white;
-    background-color: gray;
-    padding: 10px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.25s;
-}
-
-.google:hover {
-    background-color: rgb(75, 75, 75);
-    transform: scale(1.05);
 }
 
 #chatBox {
