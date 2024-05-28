@@ -1,0 +1,36 @@
+CLASE 25 - PROCESO PRINCIPAL DEL SERVIDOR + GLOBAL & CHILD PROCESS
+
+=======================================================================================================================
+
+Temas de hoy: 
+
+1) Objeto process
+2) Manejo de argumentos
+3) Commander JS
+4) Manejo de variables de entorno (dotenv)
+5) Listeners
+6) Child Process
+
+=======================================================================================================================
+
+* Se hace distinción entre "desarrollo" y "produccion" para hacer referencia a aquello datos que necesitamos para testear el código durante el desarrollo y aquellos datos reales durante la producción.
+
+1) y 2) El objeto "process" permite acceder a mucha información y funcionalidades relacionadas al proceso que se está ejecutando.
+"process.argv" (manejar argumentos), "process.env", "process.pid", "process.ppid"
+
+3) Con "commander.js" podemos crear comandos que nos facilitan el testeo durante el desarrollo.
+
+4) Con "dotenv" podemos crear variables de entorno en un archivo .env que contengan información sensible y no queden registrados en el código.
+
+5) Los "listeners" me permiten escuchar eventos dentro de un proceso.
+"process.on("", () => {})"
+
+6) Los "child process" sirven para delegar una ruta pesada a un proceso hijo, a través de un fork. Este método se utiliza para crear procesos secundarios (child processes) que pueden ejecutarse de manera concurrente con el proceso principal. Esto es particularmente útil para realizar tareas intensivas en CPU o para ejecutar operaciones de manera aislada.
+"fork()"
+
+** process.pid, process.ppid & fork(), lo estoy viendo en C, en la facultad **
+
+=======================================================================================================================
+
+npm run start / npm start   (8080)
+npm run dev                 (3000)
