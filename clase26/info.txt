@@ -1,2 +1,12 @@
-CLASE 26
+CLASE 26 - ARQUITECTURA POR CAPAS
 
+Capa Base:              conexión server-database (app.js & database.js)
+Capa de Persistencia:   models (juguete.model.js)
+Capa de Negocio:        controllers (juguete.controller.js)
+Capa de Renderizado:    views/public (index.html)
+Capa de Routing:        routes (juguete.router.js)
+Capa de Servicios:      services (index.js) & repositories (juguete.repository.js)
+
+Capa de Vista -> Capa de Ruteo -> Capa de Controlador -> Capa de Servicio -> Capa de Persistencia -> Vuelta de datos y envío al cliente
+
+* Los repositorios encapsulan toda la lógica necesaria para acceder a los datos.
