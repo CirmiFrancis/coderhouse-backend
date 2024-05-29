@@ -1,2 +1,26 @@
-CLASE 27
+CLASE 27 - ARQUITECTURA DEL SERVIDOR: DISEÑO
 
+==========================================================================================
+
+Temas:
+
+1) Consejos para desarrollar un servidor
+2) Patrones de diseño
+3) Singleton para MongoDB
+4) Comunicación entre el front y el back. 
+
+==========================================================================================
+
+2) Cadena de responsabilidades (middleware), Decorador (multer), Proxy (router es sustituto de la app), MVC, Singleton
+https://refactoring.guru/es/design-patterns
+
+3) Singleton: evita que se generen múltiples instancias de una clase. Lo usamos para tener una instancia global de toda la aplicación. El caso más usado es la conecxion con la BD. Este patron verifica si ya existe una instancia, caso contraria la crea. 
+
+CORS: permite aceptar peticiones de distintos orígenes.
+"npm install cors"
+Al parecer, permite vincular el frontend con el backend, al permitir las peticiones del frontend.
+
+==========================================================================================
+
+* Código Reutilizable
+* Código Escalable

@@ -1,5 +1,7 @@
 CLASE 26 - ARQUITECTURA POR CAPAS
 
+MVC - Modelo, Vista, Controlador
+
 Capa Base:              conexión server-database (app.js & database.js)
 Capa de Persistencia:   models (juguete.model.js)
 Capa de Negocio:        controllers (juguete.controller.js)
