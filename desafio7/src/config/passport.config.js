@@ -1,7 +1,7 @@
 import passport from "passport";
 import local from "passport-local";
 
-import CartManager from "../controllers/CartManager.js";
+import CartManager from "../controllers/carts.controller.js";
 const cartManager = new CartManager();
 
 import GitHubStrategy from "passport-github2"; // iniciar con github

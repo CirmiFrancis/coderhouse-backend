@@ -1,7 +1,7 @@
 import { config } from "dotenv";
 config();
 
-const configObject = {
+const configObject = { // asignamos a variables los datos sensibles del archivo .env
     github_clientId: process.env.GITHUB_CLIENT_ID,
     github_clientSecret: process.env.GITHUB_CLIENT_SECRET,
 

@@ -2,7 +2,7 @@ import express from "express";
 import passport from "passport";
 const router = express.Router();
 
-import CartManager from "../controllers/CartManager.js";
+import CartManager from "../controllers/carts.controller.js";
 const cartManager = new CartManager();
 
 router.get("/logout", (req, res) => {
