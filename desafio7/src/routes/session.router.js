@@ -2,8 +2,11 @@ import express from "express";
 import passport from "passport";
 const router = express.Router();
 
-import CartManager from "../controllers/carts.controller.js";
-const cartManager = new CartManager();
+// import CartManager from "../controllers/carts.controller.js";
+// const cartManager = new CartManager();
+
+import CartService from "../services/carts.service.js";
+const cartService = new CartService();
 
 router.get("/logout", (req, res) => {
     if(req.session.login) {
@@ -25,7 +28,7 @@ router.post("/login", async (req, res, next) => {
                 first_name: "-",
                 last_name: "-",
                 age: "-",
-                cart: await cartManager.getCartById('6632a37555a7955a2fb27129'), // cart asignado al admin (hardcodeado)
+                cart: await cartService.getCartById('6632a37555a7955a2fb27129'), // cart asignado al admin (hardcodeado). ¿Cambiar por cartManager?
                 role: "admin"
             };
             req.session.login = true;

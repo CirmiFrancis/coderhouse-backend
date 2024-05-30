@@ -1,8 +1,11 @@
 import passport from "passport";
 import local from "passport-local";
 
-import CartManager from "../controllers/carts.controller.js";
-const cartManager = new CartManager();
+// import CartManager from "../controllers/carts.controller.js";
+// const cartManager = new CartManager();
+
+import CartService from "../services/carts.service.js";
+const cartService = new CartService();
 
 import GitHubStrategy from "passport-github2"; // iniciar con github
 import { Strategy as GoogleStrategy } from "passport-google-oauth2"; // iniciar con google
@@ -31,16 +34,13 @@ const initializePassport = () => {
                 return done(null, false);
             }
 
-            // Genero y asigno un carrito al nuevo usuario
-            const newCart = await cartManager.createCart();
-
-            let newUser = {
+            let newUser = { // Genero y asigno un carrito al nuevo usuario
                 first_name,
                 last_name,
                 email,
                 age,
                 password: createHash(password),
-                cart: newCart,
+                cart: await cartService.createCart(), // ¿Cambiar por cartManager?
                 role: "user"
             }
     
@@ -99,7 +99,7 @@ const initializePassport = () => {
 
             if (!user) {
                 // Genero y asigno un carrito al nuevo usuario con github
-                const newCart = await cartManager.createCart();
+                const newCart = await cartService.createCart(); // ¿Cambiar por cartManager?
 
                 let newUser = {
                     first_name: profile._json.name,
@@ -137,7 +137,7 @@ const initializePassport = () => {
 
             if (!user) {
                 // Genero y asigno un carrito al nuevo usuario con github
-                const newCart = await cartManager.createCart();
+                const newCart = await cartService.createCart(); // ¿Cambiar por cartManager?
                 
                 let newUser = {
                     first_name: profile._json.name,
