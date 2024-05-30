@@ -9,11 +9,11 @@ const { admin_email, admin_pass } = configObject;
 import CartService from "../services/carts.service.js";
 const cartService = new CartService();
 
-// import respon from "../utils/reusables.js";
+import respon from "../utils/reusables.js";
 
 class SessionController { // consultado por el router
 
-    static async logout(req, res) {
+    async logout(req, res) {
         if (req.session.login) {
             req.session.destroy();
         }
@@ -21,7 +21,7 @@ class SessionController { // consultado por el router
     }
 
     // LOCAL: 
-    static async login(req, res, next) {
+    async login(req, res, next) {
         const { email, password } = req.body;
 
         // Loguearse como admin
@@ -39,18 +39,25 @@ class SessionController { // consultado por el router
                 return res.redirect("/products");
             } 
             catch (error) {
-                console.error("Error al intentar loguear como admin.", error);
-                return res.status(500).json({ error: "Error interno del servidor." });
+                respon(res, 500, "Error al intentar loguear como admin.");
             }
         }
 
         // Si no es un admin, usar Passport.js para autenticación
-        passport.authenticate("login", (err, user, info) => {
-            if (err) { return next(err); }
-            if (!user) { return res.status(400).send("Credenciales inválidas."); }
+        passport.authenticate("login", (error, user) => {
+            if (error) { 
+                return next(error); 
+            }
 
-            req.logIn(user, (err) => {
-                if (err) { return next(err); }
+            if (!user) { 
+                respon(res, 400, "Credenciales inválidas.");
+            }
+
+            req.logIn(user, (error) => {
+                if (error) { 
+                    return next(error); 
+                }
+                
                 req.session.user = {
                     first_name: user.first_name,
                     last_name: user.last_name,
@@ -65,23 +72,24 @@ class SessionController { // consultado por el router
         })(req, res, next);
     }
 
-    static async failLogin(req, res) {
+    async failLogin(req, res) {
         res.send("Falló el login.");
     }
 
     // GITHUB: 
-    static async githubCallback(req, res) {
+    async githubCallback(req, res) {
         req.session.user = req.user; 
         req.session.login = true; 
         res.redirect("/products");
     }
 
     // GOOGLE: 
-    static async googleCallback(req, res) {
+    async googleCallback(req, res) {
         req.session.user = req.user; 
         req.session.login = true; 
         res.redirect("/products");
     }
+    
 }
 
 export default SessionController;

@@ -1,5 +1,3 @@
-// Paso de express-session a jsonwebtoken
-
 import express from "express";
 import exphbs from "express-handlebars";
 import session from "express-session";
@@ -11,8 +9,8 @@ import initializePassport from "./config/passport.config.js";
 import productsRouter from "./routes/products.router.js";
 import cartsRouter from "./routes/carts.router.js";
 import viewsRouter from "./routes/views.router.js";
-import usersRouter from "./routes/user.router.js";
-import sessionsRouter from "./routes/session.router.js";
+import usersRouter from "./routes/users.router.js";
+import sessionsRouter from "./routes/sessions.router.js";
 
 import configObject from "./config/config.js";
 const { puerto, mongo_url } = configObject;
