@@ -1,41 +1,47 @@
-<h1> Listado de Productos </h1>
+<div class="border">
 
-<div class="center">
-    <h3>¡Bienvenido usuario!</h3>
-    <p> 
-        Nombre: {{first_name}} <br>
-        {{#if last_name}}
-            Apellido: {{last_name}} <br>
-        {{/if}}
-        {{#if age}}
-            Edad: {{age}} <br>
-        {{/if}}
-        Cart: {{cart._id}} <br>
-        <span>Rol: {{role}}</span> 
-    </p>
+    <h1> Listado de Productos </h1>
 
-    <a href="/api/sessions/logout">Logout</a> <br>
+    <div class="center">
+        <h3>¡Bienvenido usuario!</h3>
+        <p> 
+            Nombre: {{first_name}} <br>
+            {{#if last_name}}
+                Apellido: {{last_name}} <br>
+            {{/if}}
+            {{#if age}}
+                Edad: {{age}} <br>
+            {{/if}}
+            Cart: {{cart._id}} <br>
+            <span>Rol: {{role}}</span> 
+        </p>
 
-    <ul>
-        {{#each products}}
-            <li> <span>Título:</span> {{this.title}} </li>
-            <li> <span>Descripción:</span> {{this.description}} </li>
-            <li> <span>Precio:</span> ${{this.price}} </li>
-            <li> <span>Stock:</span> {{this.stock}} </li>
-            <li> <span>Categoría:</span> {{this.category}} </li>
-            <button>Agregar al Carrito</button>
-            <br><br>
-        {{/each}}
-    </ul>
+        <a href="/api/sessions/logout">Logout</a> <br>
 
-    {{#if hasPrevPage}}
-        <a href="/products?page={{prevPage}}"> Anterior </a>
-        <br>
-    {{/if}}
+        <ul>
+            {{#each products}}
+                <li> <span>Título:</span> {{this.title}} </li>
+                <li> <span>Descripción:</span> {{this.description}} </li>
+                <li> <span>Precio:</span> ${{this.price}} </li>
+                <li> <span>Stock:</span> {{this.stock}} </li>
+                <li> <span>Categoría:</span> {{this.category}} </li>
+                <br>
+                <button>Agregar al Carrito</button>
+                <br>
+            {{/each}}
+        </ul>
 
-    {{#if hasNextPage}}
-        <a href="/products?page={{nextPage}}"> Siguiente </a>
-    {{/if}}
+        <div class="page">
+            {{#if hasPrevPage}}
+                <a href="/products?page={{prevPage}}"> Anterior </a>
+            {{/if}}
 
-    <p>Página <span>{{currentPage}}</span> de <span>{{totalPages}}</span> </p>
+            {{#if hasNextPage}}
+                <a href="/products?page={{nextPage}}"> Siguiente </a>
+            {{/if}}
+        </div>
+
+        <p>Página <span>{{currentPage}}</span> de <span>{{totalPages}}</span> </p>
+    </div>
+
 </div>

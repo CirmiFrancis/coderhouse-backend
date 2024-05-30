@@ -1,9 +1,13 @@
 import express from "express";
 const router = express.Router();
 
-import ProductManager from "../controllers/products.controller.js";
+// import ProductController from "../controllers/products.controller.js";
+// const productController = new ProductController();
+
+import ProductService from "../services/products.service.js";
+const productService = new ProductService();
+
 import CartController from "../controllers/carts.controller.js";
-const productManager = new ProductManager();
 const cartController = new CartController();
 
 // Renderiza el login
@@ -36,7 +40,7 @@ router.get("/products", async (req, res) => {
 
    try {
       const { page = 1, limit = 2 } = req.query;
-      const products = await productManager.getProducts({
+      const products = await productService.getProducts({ // ¿Cambiar por productController?
          page: parseInt(page),
          limit: parseInt(limit)
       });

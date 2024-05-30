@@ -3,13 +3,7 @@ import passport from "passport";
 const router = express.Router(); 
 
 // Genero un usuario y lo almaceno en MongoDB: 
-router.post("/", passport.authenticate("register", {
-    failureRedirect: "/failedregister"
-}), async (req, res) => {
-    // if(!req.user) {
-    //     return res.status(400).send("Credenciales inválidas."); 
-    // }
-
+router.post("/", passport.authenticate("register", { failureRedirect: "/failedregister" }), async (req, res) => {
     req.session.user = {
         first_name: req.user.first_name,
         last_name: req.user.last_name,

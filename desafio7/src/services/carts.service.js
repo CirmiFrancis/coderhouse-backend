@@ -6,6 +6,7 @@ class CartService { // consultado por el controller
         try {
             const newCart = new CartModel({products: []});
             await newCart.save();
+            console.log("Carrito creado.");
             return newCart;
         }
         catch (error) {
@@ -17,6 +18,7 @@ class CartService { // consultado por el controller
     async getCartById(cartId) {
         try {
             const cart = await CartModel.findById(cartId);
+            console.log("Carrito encontrado.");
             return cart;
         } 
         catch (error) {
@@ -32,6 +34,7 @@ class CartService { // consultado por el controller
             findProduct ? findProduct.quantity += quantity : cart.products.push({ product: productId, quantity }); // si el producto existe, se le suma la cantidad, sino, se crea un nuevo producto con la cantidad especificada
             cart.markModified("products"); // avisa a mongoose que hubo una modificación
             await cart.save();
+            console.log("Producto agregado al carrito.");
             return cart;
         }
         catch (error) {
@@ -47,6 +50,7 @@ class CartService { // consultado por el controller
             if ( cart.products.find(item => item.product._id.toString() === productId) ) {
                 cart.products = cart.products.filter(item => item.product._id.toString() !== productId);
                 await cart.save();
+                console.log("Producto eliminado del carrito.");
                 return cart;
             }
             else {
@@ -65,6 +69,7 @@ class CartService { // consultado por el controller
             cart.products = updatedProducts;
             cart.markModified("products");
             await cart.save();
+            console.log("Carrito actualizado.");
             return cart;
         } 
         catch (error) {
@@ -82,6 +87,7 @@ class CartService { // consultado por el controller
                 cart.products[productIndex].quantity = newQuantity;
                 cart.markModified("products");
                 await cart.save();
+                console.log("Cantidad de un producto actualizado.");
                 return cart;
             } 
             else {
@@ -102,6 +108,7 @@ class CartService { // consultado por el controller
                 { new: true }
             );
 
+            console.log("Carrito vaciado.");
             return cart;
 
             // ALTERNATIVA
@@ -109,6 +116,7 @@ class CartService { // consultado por el controller
             // cart.products = [];
             // cart.markModified("products");
             // await cart.save();
+            // console.log("Carrito vaciado.");
             // return cart;
         } 
         catch (error) {
@@ -116,6 +124,7 @@ class CartService { // consultado por el controller
             throw error;
         }
     }
+
 }
 
 export default CartService;

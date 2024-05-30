@@ -32,7 +32,7 @@ class CartController { // consultado por el router
         const { quantity } = req.body;
 
         try {
-            await cartService.addProductToCart(cid, pid, quantity)
+            await cartService.addProductToCart(cid, pid, quantity);
             respon(res, 200, "Producto agregado exitosamente!");
         }
         catch (error) {
@@ -44,7 +44,7 @@ class CartController { // consultado por el router
         const { cid, pid } = req.params;
 
         try {
-            await cartService.deleteProductFromCart(cid, pid)
+            await cartService.deleteProductFromCart(cid, pid);
             respon(res, 200, "Producto eliminado exitosamente!");
         } 
         catch (error) {
@@ -57,7 +57,7 @@ class CartController { // consultado por el router
         const updatedProducts = req.body;
 
         try {
-            await cartService.updateCart(cid, updatedProducts)
+            await cartService.updateCart(cid, updatedProducts);
             respon(res, 200, "Carrito actualizado exitosamente!");
         } 
         catch (error) {
@@ -70,7 +70,7 @@ class CartController { // consultado por el router
         const { quantity } = req.body;
 
         try {
-            await cartService.updateProductQuantity(cid, pid, quantity)
+            await cartService.updateProductQuantity(cid, pid, quantity);
             respon(res, 200, "Cantidad de un producto actualizado exitosamente!");
         } 
         catch (error) {
@@ -82,13 +82,14 @@ class CartController { // consultado por el router
         const { cid } = req.params;
 
         try {
-            await cartService.emptyCart(cid)
+            await cartService.emptyCart(cid);
             respon(res, 200, "Carrito vaciado exitosamente!");
         } 
         catch (error) {
             respon(res, 500, "Error al vaciar un carrito.");
         }
     }
+
 }
 
 export default CartController;
