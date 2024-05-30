@@ -2,8 +2,8 @@ import express from "express";
 import passport from "passport";
 const router = express.Router();
 
-// import CartManager from "../controllers/carts.controller.js";
-// const cartManager = new CartManager();
+// import CartController from "../controllers/carts.controller.js";
+// const cartController = new CartController();
 
 import CartService from "../services/carts.service.js";
 const cartService = new CartService();
@@ -28,7 +28,7 @@ router.post("/login", async (req, res, next) => {
                 first_name: "-",
                 last_name: "-",
                 age: "-",
-                cart: await cartService.getCartById('6632a37555a7955a2fb27129'), // cart asignado al admin (hardcodeado). ¿Cambiar por cartManager?
+                cart: await cartService.getCartById('6632a37555a7955a2fb27129'), // cart asignado al admin (hardcodeado). ¿Cambiar por cartController?
                 role: "admin"
             };
             req.session.login = true;

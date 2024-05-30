@@ -2,9 +2,9 @@ import express from "express";
 const router = express.Router();
 
 import ProductManager from "../controllers/products.controller.js";
-import CartManager from "../controllers/carts.controller.js";
+import CartController from "../controllers/carts.controller.js";
 const productManager = new ProductManager();
-const cartManager = new CartManager();
+const cartController = new CartController();
 
 // Renderiza el login
 router.get("/", async (req, res) => {
@@ -76,7 +76,7 @@ router.get("/carts/:cid", async (req, res) => {
    const cartId = req.params.cid;
 
    try {
-      const cart = await cartManager.getCartById(cartId);
+      const cart = await cartController.getCartById(cartId);
 
       if (!cart) {
          console.log("No existe un carrito con ese ID.");

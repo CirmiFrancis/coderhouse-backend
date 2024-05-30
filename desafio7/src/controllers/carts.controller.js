@@ -3,7 +3,7 @@ const cartService = new CartService();
 
 import respon from "../utils/reusables.js";
 
-class CartManager { // consultado por el router
+class CartController { // consultado por el router
 
     async createCart(req, res) {
         try {
@@ -91,4 +91,4 @@ class CartManager { // consultado por el router
     }
 }
 
-export default CartManager;
+export default CartController;

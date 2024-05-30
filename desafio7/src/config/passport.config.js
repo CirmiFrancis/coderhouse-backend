@@ -1,8 +1,8 @@
 import passport from "passport";
 import local from "passport-local";
 
-// import CartManager from "../controllers/carts.controller.js";
-// const cartManager = new CartManager();
+// import CartController from "../controllers/carts.controller.js";
+// const cartController = new CartController();
 
 import CartService from "../services/carts.service.js";
 const cartService = new CartService();
@@ -40,7 +40,7 @@ const initializePassport = () => {
                 email,
                 age,
                 password: createHash(password),
-                cart: await cartService.createCart(), // ¿Cambiar por cartManager?
+                cart: await cartService.createCart(), // ¿Cambiar por cartController?
                 role: "user"
             }
     
@@ -99,7 +99,7 @@ const initializePassport = () => {
 
             if (!user) {
                 // Genero y asigno un carrito al nuevo usuario con github
-                const newCart = await cartService.createCart(); // ¿Cambiar por cartManager?
+                const newCart = await cartService.createCart(); // ¿Cambiar por cartController?
 
                 let newUser = {
                     first_name: profile._json.name,
@@ -137,7 +137,7 @@ const initializePassport = () => {
 
             if (!user) {
                 // Genero y asigno un carrito al nuevo usuario con github
-                const newCart = await cartService.createCart(); // ¿Cambiar por cartManager?
+                const newCart = await cartService.createCart(); // ¿Cambiar por cartController?
                 
                 let newUser = {
                     first_name: profile._json.name,

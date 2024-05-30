@@ -1,15 +1,15 @@
 import express from "express";
 const router = express.Router();
 
-import CartManager from "../controllers/carts.controller.js";
-const cartManager = new CartManager();
+import CartController from "../controllers/carts.controller.js";
+const cartController = new CartController();
 
-router.post("/", cartManager.createCart);
-router.get("/:cid", cartManager.getCartById);
-router.post("/:cid/product/:pid", cartManager.addProductToCart);
-router.delete("/:cid/product/:pid", cartManager.deleteProductFromCart);
-router.put("/:cid", cartManager.updateCart);
-router.put("/:cid/product/:pid", cartManager.updateProductQuantity);
-router.delete("/:cid", cartManager.emptyCart);
+router.post("/", cartController.createCart);
+router.get("/:cid", cartController.getCartById);
+router.post("/:cid/product/:pid", cartController.addProductToCart);
+router.delete("/:cid/product/:pid", cartController.deleteProductFromCart);
+router.put("/:cid", cartController.updateCart);
+router.put("/:cid/product/:pid", cartController.updateProductQuantity);
+router.delete("/:cid", cartController.emptyCart);
 
 export default router;
