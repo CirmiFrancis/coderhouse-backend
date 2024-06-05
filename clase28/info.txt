@@ -1,0 +1,23 @@
+CLASE 28 - ARQUITECTURA DEL SERVIDOR: PERSISTENCIA
+* Clase dada por el tutor David. *
+
+==========================================================================================
+
+Temas:
+
+1) DAO (Data Access Object)
+2) Patrón de Diseño: Factory
+3) DTO (Data Transfer Object)
+4) Patrón de Diseño: Repository
+
+==========================================================================================
+
+1) El patrón DAO consiste en separar la lógica de acceso a la fuente de datos en un archivo. DAO se encargará de conectar con nuestra fuente de datos según la hayamos programado, habrá DAOs programados para hacer CRUD en memoria, DAOs para hacer CRUD en archivos, etc.
+
+2) La idea del patrón Factory, es basarse en una variable de entorno o configuración por argumentos, la cual tomará para decidir qué tipo de persistencia manejar. Esta “Fábrica” se encargará de devolver sólo el DAO que necesitemos acorde con lo solicitado en el entorno o los argumentos.
+
+3) DTO es un patrón de diseño que sirve para resolver casos en los que existe este factor de “incertidumbre” en el que no sabemos si los datos serán siempre consistentes, ya sea en existencia o en tipo de dato. Además, nos permite transformar la información y crear un dato antes de transferirlo.
+
+4) El patrón Repository es sumamente útil para poder desacoplar aún más la lógica del DAO y del negocio, contando con una capa de “servicios” el cual se encargará de ejecutar la instrucción para obtener la información del DAO. La idea de la capa de servicios es añadir un nivel extra de abstracción para dejar cada vez más limpio y entendible el negocio.
+
+==========================================================================================
