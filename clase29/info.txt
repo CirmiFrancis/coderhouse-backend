@@ -1,0 +1,25 @@
+CLASE 29 - Desarrollo de un servidor web completo, basado en capas
+* Clase dada por el tutor David. *
+
+==========================================================================================
+
+* Práctica de desarrollo de aplicación backend completa
+* Conexión front-back
+
+==========================================================================================
+
+Coder-eats : food delivery para devs.
+
+Se desarrollará un sistema completo con routing, controladores, dao y servicios. Se recomienda realizar el proyecto en 4 etapas.
+
+SERVER:
+✓ Etapa de Routing y Controladores
+✓ Etapa de DAO de MongoDB y conexión (models)
+✓ Etapa de Negocio (controladores con DAO)
+
+CLIENT:
+✓ Etapa de Frontend (fetch)
+
+==========================================================================================
+
+Para probar que funciona el código, tengo que levantar el servidor (backend/server) para que la información esté disponible y luego consumirla (frontend/client). Este último lo tengo que correr con "sudo npm run dev" para darle permisos.
