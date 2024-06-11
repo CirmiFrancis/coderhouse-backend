@@ -1,0 +1,21 @@
+CLASE 30 - MAILING Y MENSAJERIA
+
+==========================================================================================
+
+Temas de hoy: 
+
+1) Protocolo SMTP. 
+2) Nodemailer. 
+3) Twilio. 
+
+==========================================================================================
+
+SMTP: 
+Simple Mail Tranfer Protocol o Protocolo de Transferencia de Mail Simple, es el protocolo que nuestras aplicaciones utilizan siempre que se tiene que enviar un correo electronico. 
+
+Nodemailer: 
+Es una libreria que nos permite realizar el envio de mensajeria desde nuestras aplicaciones. Recuerden que Nodemailer trabaja como un puente entre nuestra aplicacion y los servicios de web mail tradicional. 
+
+TWILIO: 
+Servicio que nos permite enviar SMS, WhatsApp, chatbots, mensajes pregrabados. Es de pago, con prueba gratuita.
+==========================================================================================
