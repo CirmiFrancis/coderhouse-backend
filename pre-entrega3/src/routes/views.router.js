@@ -5,6 +5,7 @@ import ViewController from "../controllers/views.controller.js";
 const viewController = new ViewController();
 
 router.get("/", viewController.renderLogin)
+// router.get("/chat", viewController.renderChat)
 router.get("/register", viewController.renderRegister)
 router.get("/failedregister", viewController.renderFailedRegister)
 router.get("/products", viewController.renderProducts)

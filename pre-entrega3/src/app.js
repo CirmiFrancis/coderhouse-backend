@@ -4,7 +4,7 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 import passport from "passport";
 import initializePassport from "./config/passport.config.js";
-//import { Server as SocketIOServer } from 'socket.io';
+// import { Server as SocketIOServer } from 'socket.io';
 
 import productsRouter from "./routes/products.router.js";
 import cartsRouter from "./routes/carts.router.js";
@@ -43,6 +43,7 @@ app.set("views", "./src/views");
 
 // Rutas 
 app.use("/", viewsRouter);
+// app.use("/products", viewsRouter);
 app.use("/api/carts", cartsRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/users", usersRouter);

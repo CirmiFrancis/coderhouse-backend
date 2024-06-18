@@ -88,6 +88,15 @@ class ViewController { // consultado por el router
             respon(res, 500, "Error al obtener el carrito.");
         }
     }
+
+    // renderChat(req, res) {
+    //     if (req.session.login) {
+    //        return res.redirect("/chat");
+    //     } 
+    //     else {
+    //        res.render("register");
+    //     }
+    // }
  
 // Renderiza login
 // router.get("/login", (req, res) => { // si estoy logueado, voy a productos
