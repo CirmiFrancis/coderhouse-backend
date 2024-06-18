@@ -1,0 +1,33 @@
+Clase 32 - Optimización
+
+========================================================================================================================
+
+1) Utilizar funciones asíncronas (async await)
+2) Realizar un correcto loggeo (usar un logger, en vez de usar muchos console.log() a la hora de desarrollar, para evitar pérdida de performance)
+3) Usar una variable de entorno NODE_ENV = production
+4) Clusterizar nuestra aplicación (proceso principal y varios procesos secundarios, lo vemos en la clase 35)
+5) Configurar el servidor para que éste se reinicie automáticamente (similar a nodemon)
+6) Manejar correctamente errores (usar bien los try-catch)
+7) Realizar balanceos de carga
+8) Realizar compresión (pequeño algoritmo que comprime la transferencia entre un servidor y un cliente)
+9) Utilizar un proxy inverso
+
+========================================================================================================================
+
+WINSTON es un logger que guarda la información de lo que ocurre en nuestro programa
+
+========================================================================================================================
+
+Algoritmos de compresión:
+    Deflate
+    Gzip (Deflate + algunas cosas adicionales)
+    Brotli
+
+    GZIP: es un algoritmo de compresion de datos ampliamente utilizado que fue creado en la decada del 90. Comprime los datos utilizado el algoritmo DEFLATE, es compatible con todos los navegadores web.
+
+========================================================================================================================
+
+Middleware para Manejo de Errores:
+Se generan varios archivos .js que permiten controlar y saber con mayor detalle el error producido, y se los llama a través de un middleware.
+
+========================================================================================================================
