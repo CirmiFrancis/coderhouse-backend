@@ -1,7 +1,7 @@
 CLASE 31 - TEST Y MOCKS
 
 TDD: significa "Test Driven Development" o "Desarrollo Orientado a Pruebas". 
-Es una metodología  de desarrollo de Software que consiste en pensar y escribir las pruebas que debe pasar determinada función, incluso antes de escribir el código.
+Es una metodología de desarrollo de Software que consiste en pensar y escribir las pruebas que debe pasar determinada función, incluso antes de escribir el código.
 
-MOCK: Es una imitacion de un dato real. Es una simulación que generamos en el entorno de desarrollo para no manipular datos reales y para tener herramientas de trabajo de forma rapida. 
+MOCK: es una imitación de un dato real. Es una simulación que generamos en el entorno de desarrollo para no manipular datos reales y para tener herramientas de trabajo de forma rapida. 
 Entonces yo a traves de un mock puedo simular de forma simple y rapida una base de datos de usuarios, productos, clientes, etc etc. 
