@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ================ HEADER ================ */
+/* .logo {
+    width: 150px;
+    text-align: center;
+} */
+
+.fuentesNav {
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.encabezado {
+    /* background-color: bisque; */
+    border-top: solid 20px #c1101a;
+    /* border-bottom: solid 1px #c1101a; */
+    margin-bottom: 30px;
+}
+
+/* ================ LOGO ================ */
+header h2 {
+    color: white;
+}
+
+header h2:hover {
+    background-color: #999999;
+}
+
+/* ================ NAVBAR ================ */
+nav li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 15px;
+    color: white;
+    /* border-left: 1px solid black;
+    border-right: 1px solid black; */
+    padding: 0 15px;
+}
+
+a:hover {
+    background-color: #999999;
+    color: #fafafa;
+}
+
+/* ================ PRODUCTOS ================ */
+.tituloProductos {
+    background-color: #000000;
+    color: #fafafa;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.tituloProductos h2 {
+    font-size: 35px;
+}
+
+/* ================ BUTTONS ================ */
+.colorBtn {
+    background-color: #000000;
+    color: #fafafa;
+    font-size: 18px;
+}
+
+.colorBtn:hover {
+    background-color: #474747;
+    color: #fafafa;
+}
+
+/* ================ CARDS ================ */
+.card-img-top {
+    height: 200px;
+    /* Ajusta la altura deseada */
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* ================ Estilos del formulario de inicio de sesión ================ */
+h1 {
+    color: white;
+    text-align: center;
+}
+
+.formulario {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 2px solid black;
+    border-radius: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.inputMessi {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btnMios {
+    width: 100%;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btnMios:hover {
+    background-color: #474747;
+}
+
+i {
+    font-size: 35px;
+}
+
+/* ================ CHAT ================ */
+#chatBox {
+    width: 320px;
+    margin-inline: 32px;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding-inline: 8px;
+    padding-block: 4px;
+}
+
+/* ================ FORM ADD PRODUCT ================ */
+form input {
+    width: 320px;
+    margin-bottom: 8px;
+}
