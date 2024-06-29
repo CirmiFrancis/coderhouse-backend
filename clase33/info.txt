@@ -1,0 +1,110 @@
+Clase 33 - Versiones & Paquetes
+
+========================================================================================================================
+
+- SHELLS -
+
+Bash (Bourne Again Shell): shell predeterminado hasta macOS Catalina. Amplia disponibilidad, mayor compatibilidad y menor consumo de recursos que Zsh.
+
+Zsh (Z Shell): shell predeterminado desde macOS Catalina. Mayor cantidad de funcionalidades, personalización y experiencia de usuario que Bash.
+
+PowerShell: shell de línea de comandos desarrollado por Microsoft.
+
+========================================================================================================================
+
+NVM: Node Version Manager
+
+Usar NVM ofrece la ventaja clave de poder gestionar múltiples versiones de Node.js fácilmente, permitiendo instalar, cambiar y desinstalar versiones sin conflictos. Esto es especialmente útil para trabajar en múltiples proyectos con diferentes requisitos de versiones de Node.js, asegurando un entorno de desarrollo consistente y simplificando la actualización y prueba de nuevas versiones sin afectar el sistema global.
+
+========================================================================================================================
+
+/////////////////////////////////
+
+- VERSIONES -
+
+npm -v 
+node -v
+nvm -v
+
+/////////////////////////////////
+
+- DESINSTALAR NODE -
+
+which node (para saber donde esta instalado node)
+brew uninstall node (desinstalo node por homebrew)
+brew uninstall --ignore-dependencies node (fuerzo la desinstalación, a pesar de que otras tecnologías, como mongodb, necesiten node)
+
+/////////////////////////////////
+
+- INSTALAR NVM Y NODE (la próxima probar con "brew install nvm") -
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash (descargo nvm)
+echo $SHELL (para saber qué shell estoy usando)
+nano ~/.zshrc (cargo nvm en el shell)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm (copio ambas líneas en el archivo de configuración y luego ctrl+X, Y, Enter)
+
+source ~/.zshrc (recargo el shell)
+nvm install node (instala la última versión de node)
+
+/////////////////////////////////
+
+- INSTALAR Y CAMBIAR A OTRA VERSIÓN DE NODE -
+
+nvm ls-remote (versiones de node disponibles)
+nvm install version (en "version" escribir alguna versión específica)
+nvm ls (versiones de node instaladas)
+nvm use version (cambias la versión de node que querés usar)
+
+/////////////////////////////////
+
+- DESINSTALAR NODE -
+
+nvm uninstall version (en "version" escribir alguna versión específica)
+
+/////////////////////////////////
+
+- COMANDOS QUE NO ME FUNCIONARON (probablemten porque funcionan en Windows) -
+
+nvm list available (versiones de node disponibles)
+nvm list (versiones de node instaladas)
+
+/////////////////////////////////
+
+- OTROS COMANDOS -
+
+npm -g list (lista los paquetes globales instalados en esa versión de node)
+npm audit (para controlar los problemas de vulnerabilidad)
+npm audit fix --force (fuerza el arreglar las vulnerabilidades)
+npm ci (es una alternativa a "npm install" o "npm i", instala las dependencias leyendo directamente el package-lock.json)
+
+========================================================================================================================
+
+YARN
+
+Yarn es un gestor de paquetes para JavaScript, similar a npm (Node Package Manager). Fue creado por Facebook en colaboración con otros desarrolladores y está diseñado para abordar algunas de las limitaciones de npm, ofreciendo mejoras en velocidad, seguridad y determinismo en la gestión de dependencias.
+En su momento fue innovador, pero hoy en día no hay mucha diferencia con npm.
+
+npm install -g yarn
+yarn --version
+yarn -v
+
+yarn init -y
+yarn add ... (ejemplo: yarn add express)
+yarn remove ...
+
+========================================================================================================================
+
+- CREACIÓN E INSTALACIÓN DE UN MÓDULO DE NPM -
+
+Creamos el código
+Cambiamos el name y el main del paquete en package.json
+Generamos un README.md
+Nos registramos y logueamos en NPM
+npm publish
+
+npm i ... (ejemplo: npm i sumamagica)
+import suma from "sumamagica";
+
+========================================================================================================================
