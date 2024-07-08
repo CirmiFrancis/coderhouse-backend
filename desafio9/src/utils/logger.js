@@ -3,7 +3,7 @@ import dotenv from 'dotenv'; // .env
 
 dotenv.config(); // .env
 
-const node_env = process.env.LOGGER_ENV;; // produccion o desarrollo
+const LOGGER_ENV = process.env.LOGGER_ENV;; // produccion o desarrollo
 
 // Personalización de niveles: 
 const niveles = {
@@ -83,7 +83,7 @@ console.debug = function(){
 }
 
 // Determinar que logger usar de acuerdo a la variable de entorno (.env)
-const logger = node_env === "produccion" ? loggerProduccion : loggerDesarrollo; 
+const logger = LOGGER_ENV === "produccion" ? loggerProduccion : loggerDesarrollo; 
 
 // Middleware: 
 const addLogger = (req, res, next) => {
