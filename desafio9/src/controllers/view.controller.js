@@ -28,7 +28,7 @@ class ViewsController {
             });
 
             const cartId = req.user.cart.toString();
-            //console.log(cartId);
+            //console.info(cartId);
 
             res.render("products", {
                 productos: nuevoArray,
@@ -42,7 +42,7 @@ class ViewsController {
             });
 
         } catch (error) {
-            console.log(error); // console.error("Error al obtener productos", error);
+            console.error(error); // console.error("Error al obtener productos", error);
             res.status(500).json({
                 status: 'error',
                 error: "Error interno del servidor al renderizar los productos."
@@ -56,7 +56,7 @@ class ViewsController {
             const carrito = await cartRepository.obtenerProductosDeCarrito(cartId);
 
             if (!carrito) {
-                console.log("No existe ese carrito con el ID especificado.");
+                console.warning("No existe ese carrito con el ID especificado.");
                 return res.status(404).json({ error: "Carrito no encontrado." });
             }
 
@@ -78,7 +78,7 @@ class ViewsController {
 
             res.render("carts", { productos: productosEnCarrito, totalCompra, cartId });
         } catch (error) {
-            console.log(error); // console.error("Error al obtener el carrito", error);
+            console.error(error); // console.error("Error al obtener el carrito", error);
             res.status(500).json({ error: "Error interno del servidor al renderizar el carrito." });
         }
     }
@@ -95,7 +95,7 @@ class ViewsController {
         try {
             res.render("realtimeproducts");
         } catch (error) {
-            console.log(error); // console.log("error en la vista real time", error);
+            console.error(error); // console.error("error en la vista real time", error);
             res.status(500).json({ error: "Error interno del servidor al renderizar los productos en tiempo real." });
         }
     }
@@ -106,6 +106,17 @@ class ViewsController {
 
     async renderHome(req, res) {
         res.render("home");
+    }
+
+    async showLoggerTest(req, res) {
+        req.logger.fatal("Mensaje FATAL"); 
+        req.logger.error("Mensaje ERROR");
+        req.logger.warning("Mensaje WARNING"); 
+        req.logger.info("Mensaje INFO"); 
+        req.logger.http("Mensaje HTTP"); 
+        req.logger.debug("Mensaje DEBUG"); 
+
+        res.send("Logs Generados");
     }
 }
 

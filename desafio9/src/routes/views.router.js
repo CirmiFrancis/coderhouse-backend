@@ -14,5 +14,6 @@ router.get("/register", viewsController.renderRegister);
 router.get("/realtimeproducts", checkUserRole(['admin']), viewsController.renderRealTimeProducts);
 router.get("/chat", checkUserRole(['usuario']) ,viewsController.renderChat);
 router.get("/", viewsController.renderHome);
+router.get("/loggertest", viewsController.showLoggerTest) // Logger - Winston
 
 export default router;

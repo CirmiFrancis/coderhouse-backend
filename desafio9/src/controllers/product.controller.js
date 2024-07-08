@@ -19,7 +19,7 @@ class ProductController {
             const productos = await productRepository.obtenerProductos(limit, page, sort, query);
             res.json(productos);
         } catch (error) { 
-            console.log(error);
+            console.error(error);
             res.status(500).send("Error al obtener los productos.");
         }
     }
@@ -35,7 +35,7 @@ class ProductController {
             }
             res.json(buscado);
         } catch (error) {
-            console.log(error);
+            console.error(error);
             res.status(500).send("Error al obtener el producto por ID.");
         }
     }
@@ -47,7 +47,7 @@ class ProductController {
             const resultado = await productRepository.actualizarProducto(id, productoActualizado);
             res.json(resultado);
         } catch (error) {
-            console.log(error);
+            console.error(error);
             res.status(500).send("Error al actualizar el producto.");
         }
     }
@@ -58,7 +58,7 @@ class ProductController {
             let respuesta = await productRepository.eliminarProducto(id);
             res.json(respuesta);
         } catch (error) {
-            console.log(error);
+            console.error(error);
             res.status(500).send("Error al eliminar el producto.");
         }
     }

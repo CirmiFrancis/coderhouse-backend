@@ -1,7 +1,7 @@
 const socket = io(); 
 
 socket.on("productos", (data) => {
-    //console.log(data);
+    //console.info(data);
     renderProductos(data);
 })
 

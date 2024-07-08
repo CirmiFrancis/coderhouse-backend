@@ -13,7 +13,7 @@ class CartController {
             const nuevoCarrito = await cartRepository.crearCarrito();
             res.json(nuevoCarrito);
         } catch (error) {
-            console.log(error);
+            console.error(error);
             res.status(500).send("Error al crear un carrito.");
         }
     }
@@ -27,7 +27,7 @@ class CartController {
             }
             res.json(productos);
         } catch (error) {
-            console.log(error);
+            console.error(error);
             res.status(500).send("Error al obtener productos de un carrito.");
         }
     }
@@ -43,7 +43,7 @@ class CartController {
             
             res.redirect(`/carts/${carritoID}`)
         } catch (error) {
-            console.log(error);
+            console.error(error);
             res.status(500).send("Error al agregar un producto al carrito.");
         }
     }
@@ -59,7 +59,7 @@ class CartController {
                 updatedCart,
             });
         } catch (error) {
-            console.log(error);
+            console.error(error);
             res.status(500).send("Error al eliminar un producto del carrito.");
         }
     }
@@ -72,7 +72,7 @@ class CartController {
             const updatedCart = await cartRepository.actualizarProductosEnCarrito(cartId, updatedProducts);
             res.json(updatedCart);
         } catch (error) {
-            console.log(error);
+            console.error(error);
             res.status(500).send("Error al actualizar los productos del carrito.");
         }
     }
@@ -91,7 +91,7 @@ class CartController {
             });
 
         } catch (error) {
-            console.log(error);
+            console.error(error);
             res.status(500).send("Error al actualizar la cantidad de productos del carrito.");
         }
     }
@@ -108,7 +108,7 @@ class CartController {
             });
 
         } catch (error) {
-            console.log(error);
+            console.error(error);
             res.status(500).send("Error al vaciar el carrito.");
         }
     }
@@ -157,7 +157,7 @@ class CartController {
 
             res.status(200).json({ productosNoDisponibles });
         } catch (error) {
-            console.log(error); // console.error('Error al finalizar la compra:', error);
+            console.error(error); // console.error('Error al finalizar la compra:', error);
             res.status(500).json({ error: 'Error al finalizar la compra.' });
         }
     }

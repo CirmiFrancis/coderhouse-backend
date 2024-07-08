@@ -12,7 +12,7 @@ class SocketManager {
 
     async initSocketEvents() {
         this.io.on("connection", async (socket) => {
-            console.log("Un cliente se conectó al chat comunitario.");
+            console.http("Un cliente se conectó al chat comunitario.");
             
             socket.emit("productos", await productRepository.obtenerProductos() );
 

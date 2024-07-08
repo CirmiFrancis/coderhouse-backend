@@ -86,7 +86,7 @@ class ProductRepository {
                 nextLink: hasNextPage ? `/api/products?limit=${limit}&page=${page + 1}&sort=${sort}&query=${query}` : null,
             };
         } catch (error) {
-            console.log(error);
+            console.error(error);
             throw new Error("Error al obtener los productos.");
         }
     }
@@ -95,14 +95,14 @@ class ProductRepository {
         try {
             const producto = await ProductModel.findById(id);
             if (!producto) {
-                console.log("Producto no encontrado.");
+                console.warning("Producto no encontrado.");
                 return null;
             }
 
-            console.log("Producto encontrado.");
+            console.info("Producto encontrado.");
             return producto;
         } catch (error) {
-            console.log(error);
+            console.error(error);
             throw new Error("Error al obtener el producto por ID.");
         }
     }
@@ -111,14 +111,14 @@ class ProductRepository {
         try {
             const actualizado = await ProductModel.findByIdAndUpdate(id, productoActualizado);
             if (!actualizado) {
-                console.log("Producto no encontrado.");
+                console.warning("Producto no encontrado.");
                 return null;
             }
 
-            console.log("Producto actualizado.");
+            console.info("Producto actualizado.");
             return actualizado;
         } catch (error) {
-            console.log(error);
+            console.error(error);
             throw new Error("Error al actualizar el producto.");
         }
     }
@@ -127,14 +127,14 @@ class ProductRepository {
         try {
             const deleteado = await ProductModel.findByIdAndDelete(id);
             if (!deleteado) {
-                console.log("Producto no encontrado.");
+                console.warning("Producto no encontrado.");
                 return null;
             }
 
-            console.log("Producto eliminado correctamente.");
+            console.info("Producto eliminado correctamente.");
             return deleteado;
         } catch (error) {
-            console.log(error);
+            console.error(error);
             throw new Error("Error al eliminar el producto.");
         }
     }

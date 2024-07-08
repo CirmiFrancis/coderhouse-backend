@@ -9,6 +9,7 @@ import initializePassport from "./config/passport.config.js";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url"; // ES6
+import addLogger from "./utils/logger.js";
 
 const app = express();
 const PUERTO = 8080;
@@ -30,6 +31,7 @@ app.use(express.json());
 //app.use(express.static("./src/public"));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
+app.use(addLogger); // logger
 
 // Passport 
 app.use(passport.initialize());
@@ -73,7 +75,7 @@ import manejadorError from "./middleware/error.js";
 app.use(manejadorError);
 
 const httpServer = app.listen(PUERTO, () => {
-    console.log(`Servidor escuchando en el puerto ${PUERTO}.`);
+    console.info(`Servidor escuchando en el puerto ${PUERTO}.`);
 });
 
 // Websockets
