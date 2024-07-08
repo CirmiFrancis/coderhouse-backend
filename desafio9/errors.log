@@ -2,3 +2,7 @@ fatal: Mensaje FATAL
 error: Mensaje ERROR
 error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"66733d42cfb12efbc93a3fa\"","value":"66733d42cfb12efbc93a3fa","valueType":"string"}
 error: undefined
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+fatal: Mensaje FATAL
+error: Mensaje ERROR

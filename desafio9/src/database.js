@@ -1,5 +1,10 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv'; // .env
 
-mongoose.connect("mongodb+srv://franciscirmi:coderhouse@codercluster.u7pr2vc.mongodb.net/ProyectoFinal?retryWrites=true&w=majority&appName=CoderCluster")
+dotenv.config(); // .env
+
+const MONGODB_URL = process.env.MONGODB_URL;
+
+mongoose.connect(MONGODB_URL)
     .then(() => console.info("Conectado a la base de datos de MongoDB."))
     .catch(() => console.error("Hay un error en la conexión.", error))

@@ -1,10 +1,11 @@
 import winston from "winston";
+import dotenv from 'dotenv'; // .env
 
-// Pueden traer del configObject: node_env
-// const { node_env } = configObject; 
-const node_env = "desarrollo"; // produccion o desarrollo
+dotenv.config(); // .env
 
-// Personalizar nuestros niveles: 
+const node_env = process.env.LOGGER_ENV;; // produccion o desarrollo
+
+// Personalización de niveles: 
 const niveles = {
     nivel: {
         fatal: 0,

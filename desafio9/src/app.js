@@ -10,9 +10,12 @@ import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url"; // ES6
 import addLogger from "./utils/logger.js";
+import dotenv from 'dotenv'; // .env
+
+dotenv.config(); // .env
 
 const app = express();
-const PUERTO = 8080;
+const PUERTO = process.env.PORT;
 
 import "./database.js";
 
