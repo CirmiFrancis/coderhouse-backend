@@ -1,0 +1,38 @@
+Clase 34 - Loggers y Testing de Performance
+
+========================================================================================================================
+
+Temas: 
+1) Qué son los loggers
+2) Winston
+3) Desafio 9
+4) Test de carga con Artillery
+
+========================================================================================================================
+
+LOGGERS: 
+Es una herramienta que registra información importante sobre el funcionamiento de la aplicación mientras se ejecuta. Estos registros son útiles para diagnosticar problemas, rastrear eventos y ver el rendimiento del sistema. 
+
+Características Principales: 
+
+- Podemos separar los mensajes en diferentes "niveles" y estos pueden ser configurados por nosotros mismos. Los niveles son: "Silly", "Debug", "Verbose", "Http", "Info", "Warn", "Error".  
+
+- Podemos enviar esa información a otros recursos, a partir de los elementos llamados "transportes". Entonces puedo enviar mis logs a base de datos, archivos, mails, incluso a la consola misma. 
+
+========================================================================================================================
+
+WINSTON (npm i winston): 
+Es una biblioteca popular de Logging para Node JS. 
+
+========================================================================================================================
+
+ARTILLERY: 
+Es una herramienta que me permite simular multiples peticiones de informacion a mi servidor, con la idea de testear su funcionamiento. 
+
+Se recomienda instalar de forma global: npm i artillery -g 
+
+En la terminal (se genera el archivo simple.json y compleja.json):
+    artillery quick --count 40 --num 50 "http://localhost:8080/operacionsimple" -o simple.json
+    artillery quick --count 40 --num 50 "http://localhost:8080/operacioncompleja" -o compleja.json
+
+En la carpeta "artillery" se encuentra un ejercicio más completo, hecho por el profesor, utilizando esta tecnología.
