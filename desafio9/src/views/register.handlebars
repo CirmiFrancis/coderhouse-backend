@@ -1,0 +1,20 @@
+<h1>Registrarse</h1>
+
+<form class="formulario" action="/api/users/register" method="post">
+    <label for="first_name">Nombre:</label>
+    <input type="text" class="inputMessi" id="first_name" name="first_name" placeholder="Ej: Juan" required>
+    
+    <label for="last_name">Apellido:</label>
+    <input type="text" class="inputMessi" id="last_name" name="last_name" placeholder="Ej: Perez" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" class="inputMessi" id="email" name="email" placeholder="Ej: juanperez@gmail.com" required>
+    
+    <label for="password">Contraseña:</label>
+    <input type="password" class="inputMessi" id="password" name="password" placeholder="Ej: Holasoyjuanperez.123" required>
+    
+    <label for="age">Edad:</label>
+    <input type="number" class="inputMessi" id="age" name="age" placeholder="Ej: 25" required>
+    
+    <button class="btnMios" type="submit">Register</button>
+</form>
