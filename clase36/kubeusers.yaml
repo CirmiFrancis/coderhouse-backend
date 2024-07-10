@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: clase36
+  template:
+    metadata:
+      labels:
+        app: clase36
+    spec:
+      containers:
+      - name: clase36
+        image: cirmifrancis/clase36:latest  
+        ports:
+        - containerPort: 8080
+        env:   
+        - name: MONGO_URL
+          value: "mongodb+srv://franciscirmi:coderhouse@codercluster.u7pr2vc.mongodb.net/Clase26-Jugueteria?retryWrites=true&w=majority&appName=CoderCluster"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: login-service
+spec:
+  selector:
+    app: clase36
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer

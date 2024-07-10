@@ -2,7 +2,7 @@ Clase 35 - Clusterización & Docker
 
 ========================================================================================================================
 
-Escalabilidad: se refiere a la capacidad de un sistema, proceso o recurso para manejar un aumento en la carga de trabajo. 
+ESCALABILIDAD: se refiere a la capacidad de un sistema, proceso o recurso para manejar un aumento en la carga de trabajo. 
 
 Cuando hablamos de escalar un servidor, lo hacemos a partir de dos conceptos: 
 
@@ -23,16 +23,16 @@ Para visualizar los procesos que están escuchando y trabajando sobre el servido
 
 ========================================================================================================================
 
-Comando para Artillery:
+Comando para ARTILLERY:
 
 artillery quick --count 40 --num 50 "http://localhost:8080/operacionsimple" -o simple.json
 artillery quick --count 40 --num 50 "http://localhost:8080/operacioncompleja" -o compleja.json
 
 ========================================================================================================================
 
-Docker: es una plataforma que permite a los desarrolladores empaquetar, distribuir y ejecutar aplicaciones en contenedores. Los contenedores son entornos ligeros y portátiles que incluyen todo lo necesario para ejecutar una aplicación: el código, las dependencias, las bibliotecas y la configuración.
+DOCKER: es una plataforma que permite a los desarrolladores empaquetar, distribuir y ejecutar aplicaciones en contenedores. Los contenedores son entornos ligeros y portátiles que incluyen todo lo necesario para ejecutar una aplicación: el código, las dependencias, las bibliotecas y la configuración.
 
-Características de Docker:
+Características de DOCKER:
 
     - Portabilidad: Docker permite empaquetar una aplicación con todas sus dependencias en un contenedor que se puede ejecutar en cualquier lugar donde Docker esté instalado, ya sea en una máquina local, un servidor en la nube o un entorno de producción.
 

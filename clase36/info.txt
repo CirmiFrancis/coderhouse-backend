@@ -1,0 +1,47 @@
+Clase 36 - Docker Hub & Kubernetes
+
+========================================================================================================================
+
+DOCKER HUB: es un servicio en la nube que te permite almacenar, compartir y distribuir imágenes de Docker. En otras palabras, similar a GitHub, pero en vez de subir código como tal, subís las imágenes.
+
+docker build -t clase36 .
+docker login
+docker tag clase36 cirmifrancis/clase36     ///     docker tag clase36 cirmifrancis/clase36:1.0.0
+docker push cirmifrancis/clase36            ///     docker push cirmifrancis/clase36:1.0.0
+
+========================================================================================================================
+
+KUBERNETES: es una plataforma de código abierto para la gestión de contenedores que automatiza el despliegue, la escalabilidad y la operación de aplicaciones en contenedores. Originalmente desarrollado por Google, ahora es mantenido por la Cloud Native Computing Foundation (CNCF).
+
+Componentes principales de KUBERNETES:
+
+    - Nodo: es una máquina (física o virtual) en el clúster de Kubernetes en la que se ejecutan los contenedores.
+
+    - Pod: es la unidad más pequeña de Kubernetes que puede crear y gestionar. Un pod puede contener uno o más contenedores que comparten recursos y red.
+
+    - Cluster: es un conjunto de nodos gestionados por Kubernetes.
+
+    - Control Plane: es el conjunto de componentes que toman decisiones globales sobre el clúster (por ejemplo, la programación) y detectan y responden a eventos del clúster.
+    
+    - etcd: es una tienda de valores clave distribuida que Kubernetes usa para almacenar todos los datos del clúster.
+
+    - Kubelet: es el agente que se ejecuta en cada nodo y asegura que los contenedores se estén ejecutando en un pod.
+
+    - Kubectl: es la interfaz de línea de comandos para interactuar con el clúster de Kubernetes.
+
+Replicas = Cantidad de Nodos
+
+kubeusers.yaml (similar a Dockerfile, en el sentido de que sirve para dar instrucciones y hacer un deploy)
+
+kubectl version
+kubectl apply -f kubeusers.yaml
+kubectl delete -f kubeusers.yaml
+kubectl get all
+kubectl get deployments
+kubectl get pods
+kubectl get services
+
+========================================================================================================================
+
+Subimos la Imagen creada con Docker a Docker Hub.
+Activamos Kubernetes en Docker Desktop, para correr en el localhost un contenedor en distintos nodos.
