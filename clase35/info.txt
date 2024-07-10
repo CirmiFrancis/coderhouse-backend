@@ -1,0 +1,51 @@
+Clase 35 - Clusterización & Docker
+
+========================================================================================================================
+
+Escalabilidad: se refiere a la capacidad de un sistema, proceso o recurso para manejar un aumento en la carga de trabajo. 
+
+Cuando hablamos de escalar un servidor, lo hacemos a partir de dos conceptos: 
+
+    - ESCALABILIDAD VERTICAL: Mejoramos el hardware para que el servidor pueda tener mejores recursos. Como siempre decimos, esto require de mayor inversion, espacio fisico y gente capacitada para mantener esos equipos. 
+
+    - ESCALABILIDAD HORIZONTAL: significa utilizar múltiples servidores, estos reciben el nombre de "nodos", los cuales trabajaran en equipo para resolver un problema en particular.
+
+========================================================================================================================
+
+console.log(process.pid);
+
+NOTA: el proceso principal recibe el nombre de "Primary Process" (antiguamente Master), mientras que las multiples instancias se llamaran "Workers"
+
+Para visualizar los procesos que están escuchando y trabajando sobre el servidor:
+    tasklist /fi "imagename eq node.exe" (windows)
+    ps aux | grep node (mac)
+    ps aux | grep src/app.js (mac)
+
+========================================================================================================================
+
+Comando para Artillery:
+
+artillery quick --count 40 --num 50 "http://localhost:8080/operacionsimple" -o simple.json
+artillery quick --count 40 --num 50 "http://localhost:8080/operacioncompleja" -o compleja.json
+
+========================================================================================================================
+
+Docker: es una plataforma que permite a los desarrolladores empaquetar, distribuir y ejecutar aplicaciones en contenedores. Los contenedores son entornos ligeros y portátiles que incluyen todo lo necesario para ejecutar una aplicación: el código, las dependencias, las bibliotecas y la configuración.
+
+Características de Docker:
+
+    - Portabilidad: Docker permite empaquetar una aplicación con todas sus dependencias en un contenedor que se puede ejecutar en cualquier lugar donde Docker esté instalado, ya sea en una máquina local, un servidor en la nube o un entorno de producción.
+
+    - Consistencia: Al usar contenedores, se garantiza que la aplicación se ejecutará de la misma manera en diferentes entornos, evitando problemas de configuración y dependencias.
+
+    - Aislamiento: Los contenedores aíslan las aplicaciones y sus dependencias, lo que significa que los problemas en un contenedor no afectarán a otros contenedores en la misma máquina.
+
+    - Escalabilidad: Docker facilita la creación y gestión de aplicaciones escalables, permitiendo ejecutar múltiples instancias de contenedores y gestionar la carga de manera eficiente.
+
+========================================================================================================================
+
+Creamos una Imagen:
+    docker build -t nombreDelTag .
+
+Creamos un Contenedor:
+    docker run -p 8081:8080 nombreDelTag
