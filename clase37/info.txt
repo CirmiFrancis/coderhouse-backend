@@ -1,0 +1,17 @@
+Clase 37 - Tercera Práctica Integradora
+
+========================================================================================================================
+
+Archivos sacados del repositorio del profesor. 
+
+-Se agregó la posibilidad de recuperar contraseña a través de un token que te llega al mail
+-Se modificaron un poco los models para que los usuarios sean "premium"
+-Se agregaron funciones relacionadas al "Reset Token"
+-Se agregaron funciones en Views Controller
+-Se agregaron funciones en Views Router
+-Se agregó la función y ruta para intercambiar entre los roles: "usuario" y "premium"
+
+Dependencias agregadas:
+-nodemailer
+
+========================================================================================================================

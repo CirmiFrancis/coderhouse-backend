@@ -3,6 +3,11 @@ import CartModel from "../models/cart.model.js";
 import jwt from "jsonwebtoken";
 import { createHash, isValidPassword } from "../utils/hashbcryp.js";
 import UserDTO from "../dto/user.dto.js";
+import { generarResetToken } from "../utils/tokenreset.js";
+
+// Desafio Complementario 3
+import EmailManager from "../services/email.js"
+const emailManager = new EmailManager();
 
 class UserController {
     async register(req, res) {
@@ -78,7 +83,8 @@ class UserController {
         //Con DTO: 
         const userDto = new UserDTO(req.user.first_name, req.user.last_name, req.user.role);
         const isAdmin = req.user.role === 'admin';
-        res.render("profile", { user: userDto, isAdmin });
+        const isPremium = req.user.role === 'premium';
+        res.render("profile", { user: userDto, isAdmin, isPremium });
     }
 
     async logout(req, res) {
@@ -87,10 +93,90 @@ class UserController {
     }
 
     async admin(req, res) {
-        if (req.user.user.role !== "admin") {
+        if (req.user.role !== "admin") {
             return res.status(403).send("Acceso denegado. Solo los administradores pueden acceder a esta ruta.");
         }
         res.render("admin");
+    }
+
+    // Desafio Complementario 3
+    async requestPasswordReset(req, res) {
+        const { email } = req.body;
+        try {
+            const user = await UserModel.findOne({ email }); // Busco el usuario por email
+            if (!user) {
+                return res.status(404).send("Usuario no encontrado."); // Si no hay usuario, tiro error y el método termina acá
+            }
+
+            const token = generarResetToken(); // Pero si hay usuario, le genero un token
+
+            user.resetToken = { // Una vez que tenemos el token se lo podemos agregar al usuario
+                token: token,
+                expire: new Date(Date.now() + 3600000) // 1 Hora de duración
+            }
+
+            await user.save(); // Guardamos los cambios
+            await emailManager.enviarCorreoRestablecimiento(email, user.first_name, token); // Mandamos el mail
+
+            res.redirect("/confirmacion-envio");
+        } catch (error) {
+            console.error(error);
+            res.status(500).send("Error interno del servidor.");
+        }
+    }
+
+    async resetPassword(req, res) {
+        const { email, password, token } = req.body;
+
+        try {
+            const user = await UserModel.findOne({ email }); // Busco el usuario por mail...
+            if (!user) {
+                return res.render("password-restablecer", { error: "Usuario no encontrado." });
+            }
+
+            const resetToken = user.resetToken; // Saco token y lo verificamos
+            if (!resetToken || resetToken.token !== token) {
+                return res.render("password-restablecer", { error: "El token es inválido." });
+            }
+
+            const ahora = new Date(); // Verificamos si el token expiro
+            if (ahora > resetToken.expire) {
+                return res.render("password-generar", { error: "El token ha expirado." });
+            }
+
+            if (isValidPassword(password, user)) { // Verificamos que la contraseña nueva no sea igual a la anterior
+                return res.render("password-restablecer", { error: "La nueva contraseña no puede ser igual a la anterior." });
+            }
+
+            user.password = createHash(password); // Actualizo la contraseña
+
+            user.resetToken = undefined; // Marcamos como usado el token
+            await user.save(); // Guardamos los cambios
+
+            return res.redirect("/login");
+
+        } catch (error) {
+            console.error(error);
+            res.status(500).render("password-generar", { error: "Error interno del servidor." });
+        }
+    }
+
+    async cambiarRolPremium(req, res) {
+        const {uid} = req.params; 
+
+        try {
+            const user = await UserModel.findById(uid); // Busco el usuario por ID 
+            if(!user) {
+                return res.status(404).send("Usuario no encontrado."); 
+            }
+
+            const nuevoRol = user.role === "usuario" ? "premium" : "usuario"; // Pero si lo encuentro, le cambio el rol 
+            const actualizado = await UserModel.findByIdAndUpdate(uid, {role: nuevoRol}); // Actualizo el rol
+            res.json(actualizado);  
+        } catch (error) {
+            console.error(error);
+            res.status(500).send("Error en el servidor."); 
+        }
     }
 }
 

@@ -33,8 +33,12 @@ const userSchema = mongoose.Schema({
     },
     role: {
         type: String,
-        enum: ['admin', 'usuario'],
+        enum: ['admin', 'usuario', 'premium'], // desafío complementario 3
         default: 'usuario'
+    },
+    resetToken: { // desafío complementario 3
+        token: String,
+        expire: Date
     }
 });
 

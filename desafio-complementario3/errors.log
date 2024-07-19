@@ -16,3 +16,9 @@ fatal: Mensaje FATAL
 error: Mensaje ERROR
 fatal: Mensaje FATAL
 error: Mensaje ERROR
+error: undefined
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"6699de7378b6dd9ff0ddb2f\"","value":"6699de7378b6dd9ff0ddb2f","valueType":"string"}
+error: undefined
+error: undefined
+error: undefined

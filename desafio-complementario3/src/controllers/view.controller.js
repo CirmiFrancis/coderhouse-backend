@@ -95,7 +95,7 @@ class ViewsController {
         try {
             res.render("realtimeproducts");
         } catch (error) {
-            console.error(error); // console.error("error en la vista real time", error);
+            console.error("Error en la vista realtimeproducts", error);
             res.status(500).json({ error: "Error interno del servidor al renderizar los productos en tiempo real." });
         }
     }
@@ -117,6 +117,19 @@ class ViewsController {
         req.logger.debug("Mensaje DEBUG"); 
 
         res.send("Logs Generados");
+    }
+
+    // Desafío Complementario 3: 
+    async renderResetPassword(req, res){
+        res.render("password-generar"); 
+    }
+
+    async renderConfirmacion(req, res){
+        res.render("password-confirmacion"); 
+    }
+
+    async renderCambioPassword(req, res){
+        res.render("password-restablecer"); 
     }
 }
 

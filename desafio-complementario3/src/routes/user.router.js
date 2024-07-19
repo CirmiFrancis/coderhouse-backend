@@ -11,4 +11,9 @@ router.get("/profile", passport.authenticate("jwt", { session: false }), userCon
 router.post("/logout", userController.logout.bind(userController));
 router.get("/admin", passport.authenticate("jwt", { session: false }), userController.admin);
 
+// Desafío Complementario 3:
+router.post("/reset-password", userController.resetPassword);
+router.post("/requestPasswordReset", userController.requestPasswordReset);
+router.put("/premium/:uid", userController.cambiarRolPremium);
+
 export default router;

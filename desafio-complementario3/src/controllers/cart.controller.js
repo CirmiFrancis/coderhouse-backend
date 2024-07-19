@@ -3,6 +3,7 @@ import UserModel from "../models/user.model.js";
 import CartRepository from "../repositories/cart.repository.js";
 import ProductRepository from "../repositories/product.repository.js";
 import { generateUniqueCode, calcularTotal } from "../utils/cartutils.js";
+import { enviarCorreoCompra } from "../services/email.js"; // desafío complementario 3
 
 const cartRepository = new CartRepository();
 const productRepository = new ProductRepository();
@@ -155,7 +156,17 @@ class CartController {
             // Guardar el carrito actualizado en la base de datos
             await cart.save();
 
-            res.status(200).json({ productosNoDisponibles });
+            // Enviar correo de compra (desafío complementario 3)
+            await enviarCorreoCompra(userWithCart.email, userWithCart.first_name, ticket._id);
+
+            // Renderizar la vista de compra (desafío complementario 3)
+            res.render("checkout", {
+                cliente: userWithCart.first_name,
+                email: userWithCart.email,
+                numTicket: ticket._id 
+            });
+
+            //res.status(200).json({ productosNoDisponibles });
         } catch (error) {
             console.error(error); // console.error('Error al finalizar la compra:', error);
             res.status(500).json({ error: 'Error al finalizar la compra.' });

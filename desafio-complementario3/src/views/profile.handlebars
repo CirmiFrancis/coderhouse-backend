@@ -1,7 +1,7 @@
 <h1>Mi Perfil</h1>
 
 <div class="profile-card">
-  <p>Bienvenido, <span class="fs-5 fw-bold"> {{user.nombre}} {{user.apellido}} </span> !</p>
+  <p>Bienvenido, <span class="fs-5 fw-bold"> {{user.nombre}} {{user.apellido}} </span> </p>
   <p>Rol: <span class="fs-5 fw-bold text-danger"> {{user.role}} </span> </p>
 
   <form action="/api/users/logout" method="POST">
@@ -11,8 +11,14 @@
   {{#if this.isAdmin}}
     <a class="btnMios" href="/realtimeproducts">Modificar Productos</a>
   {{else}}
-    <a class="btnMios" href="/chat">Chat en vivo</a>
-    <a class="btnMios" href="/products">Tienda</a>
+    {{#if this.isPremium}}
+      <a class="btnMios" href="/chat">Chat en vivo</a>
+      <a class="btnMios" href="/realtimeproducts">Modificar Productos</a>
+      <a class="btnMios" href="/products">Tienda</a>
+    {{else}}
+      <a class="btnMios" href="/chat">Chat en vivo</a>
+      <a class="btnMios" href="/products">Tienda</a>
+    {{/if}}
   {{/if}}
 </div>
 
