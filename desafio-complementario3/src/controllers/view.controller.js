@@ -29,6 +29,10 @@ class ViewsController {
 
             const cartId = req.user.cart.toString();
             //console.info(cartId);
+            const userID = req.user._id.toString(); // Desafío Complementario 3
+            //console.log( typeof(userID) ); 
+            //console.log( typeof(productos[productos.length-1]["owner"]) ); 
+            //console.log( userID === productos[productos.length-1]["owner"] ); 
 
             res.render("products", {
                 productos: nuevoArray,
@@ -38,7 +42,8 @@ class ViewsController {
                 nextPage: page < totalPages ? parseInt(page) + 1 : null,
                 currentPage: parseInt(page),
                 totalPages,
-                cartId
+                cartId,
+                userID // Desafío Complementario 3
             });
 
         } catch (error) {
@@ -92,10 +97,11 @@ class ViewsController {
     }
 
     async renderRealTimeProducts(req, res) {
+        const user = req.user;
         try {
-            res.render("realtimeproducts");
+            res.render("realtimeproducts", { userRole: user.role, userID: user._id });
         } catch (error) {
-            console.error("Error en la vista realtimeproducts", error);
+            console.error("Error en la vista realtimeproducts:", error);
             res.status(500).json({ error: "Error interno del servidor al renderizar los productos en tiempo real." });
         }
     }

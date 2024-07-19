@@ -74,17 +74,22 @@ class UserController {
 
             res.redirect("/api/users/profile");
         } catch (error) {
-            console.error(error); // console.error(error);
+            console.error(error);
             res.status(500).send("Error interno del servidor al loguear un usuario.");
         }
     }
 
     async profile(req, res) {
-        //Con DTO: 
-        const userDto = new UserDTO(req.user.first_name, req.user.last_name, req.user.role);
-        const isAdmin = req.user.role === 'admin';
-        const isPremium = req.user.role === 'premium';
-        res.render("profile", { user: userDto, isAdmin, isPremium });
+        try {
+            //Con DTO: 
+            const userDto = new UserDTO(req.user.first_name, req.user.last_name, req.user.role);
+            const isAdmin = req.user.role === 'admin';
+            const isPremium = req.user.role === 'premium'; // desafío complementario 3
+            res.render("profile", { user: userDto, isAdmin, isPremium }); // desafío complementario 3
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error interno del servidor.');
+        }
     }
 
     async logout(req, res) {

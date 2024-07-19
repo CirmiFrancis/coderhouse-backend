@@ -6,12 +6,12 @@ import generarInfoError from "../services/errors/info.js";
 import { EErrors } from "../services/errors/enum.js";
 
 class ProductRepository {
-    async agregarProducto({ title, description, price, img, code, stock, category, thumbnails }) {
+    async agregarProducto({ title, description, price, img, code, stock, category, thumbnails, owner }) {
         try {
             if (!title || !description || !price || !code || !stock || !category) {
                 throw CustomError.crearError({
                     nombre: "Agregar producto", 
-                    causa: generarInfoError({title, description, price, code, stock, category}),
+                    causa: generarInfoError({title, description, price, code, stock, category, owner}),
                     mensaje: "Error al intentar crear un producto.", 
                     codigo: EErrors.TIPO_INVALIDO
                 });
@@ -36,7 +36,8 @@ class ProductRepository {
                 stock,
                 category,
                 status: true,
-                thumbnails: thumbnails || []
+                thumbnails: thumbnails || [],
+                owner
             });
 
             await newProduct.save();

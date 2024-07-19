@@ -11,6 +11,7 @@ import path from "path";
 import { fileURLToPath } from "url"; // ES6
 import addLogger from "./utils/logger.js";
 import dotenv from 'dotenv'; // .env
+import Handlebars from 'handlebars';
 
 dotenv.config(); // .env
 
@@ -62,6 +63,11 @@ app.use(compression({
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
 app.set("views", "./src/views");
+
+// Helpers
+Handlebars.registerHelper('ifNotEqual', function(arg1, arg2, options) {
+    return (arg1 != arg2) ? options.fn(this) : options.inverse(this);
+});
 
 // Rutas
 app.use("/api/products", productsRouter);

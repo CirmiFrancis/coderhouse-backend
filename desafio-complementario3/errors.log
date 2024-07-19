@@ -22,3 +22,11 @@ error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"66
 error: undefined
 error: undefined
 error: undefined
+error: Handlebars: Access has been denied to resolve the property "role" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: Handlebars: Access has been denied to resolve the property "_id" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: undefined
+error: undefined

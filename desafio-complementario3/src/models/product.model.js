@@ -37,6 +37,10 @@ const productSchema = new mongoose.Schema({
     thumbnails: {
         type: [String], 
     },
+    owner: { // desafío complementario 3
+        type: String,
+        default: 'admin'
+    }
 })
 
 productSchema.plugin(mongoosePaginate);
