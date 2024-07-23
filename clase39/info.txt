@@ -1,0 +1,57 @@
+Clase 39 - Documentación de API
+
+========================================================================================================================
+
+- Documentar
+- Swagger
+
+github.com/CoderContenidos/RecursosBackend-Adoptme
+
+========================================================================================================================
+
+Documentar significa brindar suficiente información sobre algún proceso, con el fin de que éste sea lo suficientemente entendible para quien lo lea.
+
+La documentación puede darse a nivel simple (comentarios sobre el código) o bien a nivel más complejo (herramienta de documentación para un aplicativo en general).
+
+========================================================================================================================
+
+swagger.io
+
+Swagger es una herramienta de documentación de código, la cual nos permitirá mantener cada módulo de nuestra API dentro de un espectro de entendimiento sólido, es decir, todo se mantendrá en un contexto suficientemente alimentado de información, para poder ser entendido por futuros desarrolladores (O para una versión tuya del futuro), cuando tenga que revisar el código más adelante.
+
+Con esta herramienta podremos hacer nuestra propia Open API specification.
+
+========================================================================================================================
+
+Instalar dependencias:
+    npm install swagger-jsdoc swagger-ui-express
+    swagger-jsdoc (nos deja escribir la configuracion en un archivo. yaml y a partir de ahí se genera el apidoc)
+    swagger-ui-express (nos permite linkear una interfaz gráfica para poder visualizar la documentación)
+
+Importar:
+    import swaggerJSDoc from 'swagger-jsdoc';
+    import swaggerUiExpress from 'swagger-ui-express';
+
+Crear objeto de configuración:
+    const swaggerOptions = {
+        definition: {
+            openapi: "3.0.1",
+            info: {
+                title: "Documentación de Test",
+                description: "Descripción de la documentación de test"
+            }
+        },
+        apis: ["./src/docs/**/*.yaml"]
+    }
+
+Crear carpeta dentro de "src" llamada "docs". Dentro de esta, crear varias carpetas según el contexto/entidad. "Users", "Products", "Carts", etc. Dentro de cada carpeta se crea un archivo .yaml con el mismo nombre.
+
+Conectar Swagger con servidor Express.
+    const specs = swaggerJSDoc(swaggerOptions)
+    app.use("./apidocs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs));
+
+Ir a localhost:8080/apidocs
+
+En el archivo .yaml hay que completar varios campos tabulando.
+
+========================================================================================================================
