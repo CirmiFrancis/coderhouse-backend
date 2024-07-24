@@ -64,7 +64,7 @@ paths:
           description: Error al actualizar el carrito
     # DELETE
     delete:
-      summary: Vaciar un carrito por ID
+      summary: Vaciar un carrito
       description: Elimina todos los productos de un carrito específico usando su ID.
       tags:
         - Carts
