@@ -1,0 +1,291 @@
+paths:
+
+  # Crear carrito
+  /api/carts:
+    # POST
+    post:
+      summary: Crear carrito
+      description: Crea un nuevo carrito.
+      tags:
+        - Carts
+      responses:
+        '200':
+          description: Carrito creado exitosamente
+        '500':
+          description: Error al crear el carrito
+
+  # Listar productos, Actualizar productos de un carrito, Vaciar un carrito
+  /api/carts/{cid}:
+    # GET
+    get:
+      summary: Listar productos
+      description: Lista los productos del carrito especificado.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+          description: ID del carrito
+      responses:
+        '200':
+          description: Lista obtenida exitosamente
+        '404':
+          description: Carrito no encontrado
+        '500':
+          description: Error al obtener los productos
+    # PUT
+    put:
+      summary: Actualizar productos de un carrito
+      description: Actualiza la información de los productos de un carrito.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+          description: ID del carrito
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/updateProductFromCart'
+      responses:
+        '200':
+          description: Carrito actualizado exitosamente
+        '404':
+          description: Carrito no encontrado
+        '500':
+          description: Error al actualizar el carrito
+    # DELETE
+    delete:
+      summary: Vaciar un carrito por ID
+      description: Elimina todos los productos de un carrito específico usando su ID.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+          description: ID del carrito
+      responses:
+        '200':
+          description: Carrito vaciado exitosamente
+        '404':
+          description: Carrito no encontrado
+        '500':
+          description: Error al vaciar el carrito
+
+  # Agregar producto, Actualizar cantidad de un producto, Eliminar un producto
+  /api/carts/{cid}/product/{pid}:
+  # POST (funciona pero tira error)
+    post:
+      summary: Agregar producto (funciona pero tira error porque no detecta a un usuario)
+      description: Agrega un producto al carrito especificando la cantidad.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+          description: ID del carrito
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+          description: ID del producto
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/addProductToCart'
+      responses:
+        '200':
+          description: Producto agregado al carrito exitosamente
+        '404':
+          description: Carrito o producto no encontrado
+        '500':
+          description: Error al agregar un producto al carrito
+  # PUT
+    put:
+      summary: Actualizar cantidad de un producto del carrito
+      description: Actualiza la cantidad de un producto del carrito.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+          description: ID del carrito
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+          description: ID del producto
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/updateQuantityFromCart'
+      responses:
+        '200':
+          description: Cantidad de un producto del carrito actualizada exitosamente
+        '404':
+          description: Carrito no encontrado
+        '500':
+          description: Error al actualizar la cantidad de un producto del carrito
+  # DELETE
+    delete:
+      summary: Elimina un producto del carrito
+      description: Elimina un producto del carrito específico usando su ID.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+          description: ID del carrito
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+          description: ID del producto
+      responses:
+        '200':
+          description: Producto eliminado exitosamente
+        '404':
+          description: Carrito o producto no encontrado
+        '500':
+          description: Error al eliminar un producto del carrito
+
+  # Finalizar compra (tira error)
+  /api/carts/{cid}/purchase:
+  # POST
+    post:
+      summary: Finalizar compra (tira error porque no detecta a un usuario)
+      description: Finaliza una compra con todos los productos del carrito especificado.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+          description: ID del carrito
+      responses:
+        '200':
+          description: Compra finalizada exitosamente
+        '404':
+          description: Carrito no encontrado
+        '500':
+          description: Error al intentar finalizar la compra
+
+# ==================================================================================================================
+
+components:
+
+  # SCHEMAS
+  schemas:
+    Cart:
+      type: object 
+      properties:
+        _id:
+          type: ObjectId
+          description: ID autogenerado por MongoDB
+        products:
+          type: array
+          description: Lista de productos del carrito
+          items:
+            type: object
+            properties:
+              product:
+                $ref: '#/components/schemas/Product'
+              quantity:
+                type: number
+                description: Cantidad del producto en el carrito
+                required: true
+      required:
+        - products
+      example:
+        products:
+          - product:
+              title: "Producto Swagger"
+              price: 100
+            quantity: 5
+
+  # REQUEST BODIES
+  requestBodies:
+    # ADD
+    addProductToCart:
+      type: object 
+      properties:
+        quantity:
+          type: number
+          description: Cantidad del producto en el carrito
+          required: true
+      required:
+        - quantity
+      example:
+        quantity: 5
+    # UPDATE PRODUCTS
+    updateProductFromCart:
+      type: object 
+      properties:
+        products:
+          type: array
+          description: Lista de productos del carrito
+          items:
+            type: object
+            properties:
+              product:
+                _id:
+                  type: string
+                  description: ID del producto
+                title:
+                  type: string
+                  description: Título del producto
+                price:
+                  type: number
+                  description: Precio del producto 
+              quantity:
+                type: number
+                description: Cantidad del producto en el carrito
+      required:
+        - products
+      example:
+        - product:
+            _id: "6626f6c948c0130b313bee86"
+            title: "Queso"
+            price: 300
+          quantity: 2
+    # UPDATE QUANTITY
+    updateQuantityFromCart:
+      type: object 
+      properties:
+        quantity:
+          type: number
+          description: Nueva cantidad del producto en el carrito
+          required: true
+      required:
+        - quantity
+      example:
+        quantity: 5

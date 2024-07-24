@@ -1,0 +1,69 @@
+<h1>Mi Perfil</h1>
+
+<div class="profile-card">
+  <p>Bienvenido, <span class="fs-5 fw-bold"> {{user.nombre}} {{user.apellido}} </span> </p>
+  <p>Rol: <span class="fs-5 fw-bold text-danger"> {{user.role}} </span> </p>
+
+  <form action="/api/users/logout" method="POST">
+    <button class="btnMios" type="submit">Logout</button>
+  </form>
+
+  {{#if this.isAdmin}}
+    <a class="btnMios" href="/realtimeproducts">Modificar Productos</a>
+  {{else}}
+    {{#if this.isPremium}}
+      <a class="btnMios" href="/chat">Chat en vivo</a>
+      <a class="btnMios" href="/realtimeproducts">Modificar Productos</a>
+      <a class="btnMios" href="/products">Tienda</a>
+    {{else}}
+      <a class="btnMios" href="/chat">Chat en vivo</a>
+      <a class="btnMios" href="/products">Tienda</a>
+    {{/if}}
+  {{/if}}
+</div>
+
+{{!-- CSS --}}
+<style>
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .profile-card {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 2px solid black;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .profile-card p {
+    margin-bottom: 10px;
+  }
+
+  .profile-card .btnMios {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .profile-card .btnMios:hover {
+    background-color: #474747;
+  }
+
+  .profile-card a {
+    display: block;
+    margin-bottom: 10px;
+    color: #c1101a;
+    text-decoration: none;
+    font-weight: bold;
+  }
+</style>
