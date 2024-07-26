@@ -1,0 +1,539 @@
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"66733d42cfb12efbc93a3fa\"","value":"66733d42cfb12efbc93a3fa","valueType":"string"}
+error: undefined
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+error: undefined
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"6699de7378b6dd9ff0ddb2f\"","value":"6699de7378b6dd9ff0ddb2f","valueType":"string"}
+error: undefined
+error: undefined
+error: undefined
+error: Handlebars: Access has been denied to resolve the property "role" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: Handlebars: Access has been denied to resolve the property "_id" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: undefined
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{pid}\"","value":"{pid}","valueType":"string"}
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{cid}\"","value":"{cid}","valueType":"string"}
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{cid}\"","value":"{cid}","valueType":"string"}
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{cid}\"","value":"{cid}","valueType":"string"}
+error: undefined
+error: undefined
+error: Here's the report: 
+
+
+ Error in ./src/docs/Carts/Carts.yaml :
+YAMLSyntaxError: All collection items must start at the same column at line 307, column 9:
+
+        products: array
+        ^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 309, column 20:
+
+              _id: 6626f6c948c0130b313bee86
+                   ^^^^^^^^^^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 309, column 20:
+
+              _id: 6626f6c948c0130b313bee86
+                   ^^^^^^^^^^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+error: Here's the report: 
+
+
+ Error in ./src/docs/Carts/Carts.yaml :
+YAMLSyntaxError: All collection items must start at the same column at line 307, column 9:
+
+        products: array
+        ^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 309, column 20:
+
+              _id: 6626f6c948c0130b313bee86
+                   ^^^^^^^^^^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 309, column 20:
+
+              _id: 6626f6c948c0130b313bee86
+                   ^^^^^^^^^^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+error: Here's the report: 
+
+
+ Error in ./src/docs/Carts/Carts.yaml :
+YAMLSyntaxError: All collection items must start at the same column at line 307, column 9:
+
+        products: array
+        ^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 309, column 20:
+
+              _id: 6626f6c948c0130b313bee86
+                   ^^^^^^^^^^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 309, column 20:
+
+              _id: 6626f6c948c0130b313bee86
+                   ^^^^^^^^^^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+error: Here's the report: 
+
+
+ Error in ./src/docs/Carts/Carts.yaml :
+YAMLSyntaxError: All collection items must start at the same column at line 307, column 9:
+
+        products: array
+        ^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: El código mock777 ya existe.
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: undefined
+    - Price: se esperaba un Number. Se recibió: undefined
+    - Code: se esperaba un String. Se recibió: undefined
+    - Stock: se esperaba un Number. Se recibió: undefined
+    - Category: se esperaba un String. Se recibió: undefined
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test description
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test description
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
