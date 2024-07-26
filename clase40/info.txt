@@ -1,0 +1,59 @@
+Clase 40 - Testing Unitario
+
+========================================================================================================================
+
+Criterios a tener en cuenta: Testing Unitario y Testing de Integración
+
+Un test unitario está pensado para funcionalidades aisladas, es decir, aquellas funcionalidades en las que no se consideran el contexto u otros componentes.
+
+-Módulos de Testing
+-Testing con Mocha
+-Testing con Chai
+
+========================================================================================================================
+
+Crear carpeta "test" a la misma altura de "src". Agregarlo a .gitignore.
+Crear archivo "users.test.js".
+
+Ver archivos "users.test.js" y "usersChai.test.js"
+
+En el package.json tenemos: "test": "mocha test/usersChai.test.js"
+
+========================================================================================================================
+
+npm run test
+
+========================================================================================================================
+
+Testing con Mocha (nativo)
+
+Terminología:
+
+-assert
+-archivo.test.js
+-describe
+-it
+
+-before
+-beforeEach
+-after
+-afterEach
+
+========================================================================================================================
+
+Testing con Chai (librería qué cambia la sintaxis para un menor nivel de abstracción)
+npm install -D chai
+
+Terminología:
+
+-to
+-be
+-have
+-and
+
+-not
+-deep
+-equal
+-property
+
+-an

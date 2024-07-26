@@ -1,0 +1,24 @@
+Clase 41 - Testing Avanzado
+
+========================================================================================================================
+
+Criterios a tener en cuenta: Testing Unitario y Testing de Integración
+
+Las pruebas de integración verifican la interacción entre diferentes unidades o módulos del sistema.
+
+-Tests de integración
+-Tests con supertest
+-Testing de elementos avanzados
+
+========================================================================================================================
+
+Librería Supertest:
+    Es una librería que nos permitirá ejecutar peticiones HTTP a nuestro servidor, para poder probar funcionalidades como estatus de peticiones, envío de bodies en petición o revisión de respuestas recibidas por el servidor.
+
+npm i supertest -D
+
+========================================================================================================================
+
+npm run test
+
+========================================================================================================================
