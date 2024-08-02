@@ -1,0 +1,37 @@
+Clase 42 - TypeScript y Nestjs
+
+========================================================================================================================
+
+Primera Parte: TypeScript
+
+
+npm i typescript -g
+
+Iniciar el proyecto: tsc --init (se crea el tsconfig.json)
+Configurar el tsconfig.json (el directorio de las carpetas/archivos)
+Compilar con tsc (todos los .ts se compilan y se crean un .js)
+Escribir node archivo.js (para ejecutarlo)
+
+Esto ahorra el tener que escribir 1x1 "tsc archivo.js" para ir compilando cada archivo
+
+========================================================================================================================
+
+Segunda Parte: Nestjs
+
+
+npm i @nestjs/cli -g
+nest new nombreDelProyecto
+
+cd nombreDelProyecto
+npm run start / nest start / start --watch
+
+localhost:3000
+
+En NESTJS existen elementos que tienen un @, llamados decoradores. El decorador es un elemento instaurado en Javascript y Typescript, cuya funcionalidad sigue la lógica del patrón de diseño decorador. Básicamente es una herencia, pero esta vez no es aplicada sólo a clases habituales, sino que también se aplican a funciones.
+
+Crear un módulo propio (esto crea la carpeta "users" con todos los archivos):
+    nest g resource Users
+    REST API
+    Yes
+
+========================================================================================================================

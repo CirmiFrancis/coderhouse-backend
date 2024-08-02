@@ -1,0 +1,41 @@
+Clase 43 - Nestjs + MongoDB
+
+========================================================================================================================
+
+Nestjs:
+
+
+npm i @nestjs/cli -g
+nest new nombreDelProyecto
+
+cd nombreDelProyecto
+npm run start / nest start / start --watch
+
+localhost:3000
+
+En NESTJS existen elementos que tienen un @, llamados decoradores. El decorador es un elemento instaurado en Javascript y Typescript, cuya funcionalidad sigue la lógica del patrón de diseño decorador. Básicamente es una herencia, pero esta vez no es aplicada sólo a clases habituales, sino que también se aplican a funciones.
+
+Crear un módulo propio (esto crea la carpeta "users" con todos los archivos):
+    nest g resource Users
+    REST API
+    Yes
+
+========================================================================================================================
+
+MongoDB:
+
+
+npm i @nestjs/mongoose mongoose
+
+app.module.ts
+users.schema.ts
+users.module.ts
+users.service.ts
+users.controller.ts
+
+npm i @nestjs/config
+
+
+***Quizás faltan otros comandos para instalar más cosas, pero no aparecían en el .pdf
+
+========================================================================================================================
