@@ -1,0 +1,64 @@
+<div data-aos="fade-up" data-aos-duration="1000">
+    <h1 class="text-center mb-5">Carrito de Compras</h1>
+
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <button onclick="vaciarCarrito('{{cartId}}')" class="btn colorBtn">Vaciar Carrito</button>
+    </div>
+
+    <div class="container my-3">
+        {{#each productos}}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Producto: {{this.product.title}}</h5>
+                <p class="card-text">Cantidad: {{this.quantity}}</p>
+                <p class="card-text">Precio: ${{this.product.totalPrice}}</p>
+                <button onclick="eliminarProducto('{{this.cartId}}', '{{this.product._id}}')"
+                    class="btn colorBtn">Eliminar</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <h3 class="text-white text-center m-0">Total de la compra: <span class="fs-1 fw-bold">$ {{totalCompra}}</span> </h3>
+
+        <form method="post" action="/api/carts/{{cartId}}/purchase">
+            <button type="submit" class="btn colorBtn mt-3 mb-4">Finalizar Compra</button>
+        </form>
+
+        <a href="/products" class="text-white text-center mb-4 fs-5"> Volver </a>
+    </div>
+</div>
+
+{{!-- SCRIPT (Organizar en un módulo en PUBLIC/JS) --}}
+<script>
+    function eliminarProducto(cartId, productId) {
+        fetch(`/api/carts/${cartId}/product/${productId}`, {
+            method: 'DELETE'
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al eliminar el producto del carrito.');
+                }
+                location.reload();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    function vaciarCarrito(cartId) {
+        fetch(`/api/carts/${cartId}`, {
+            method: 'DELETE'
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al vaciar el carrito.');
+                }
+                location.reload();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+</script>

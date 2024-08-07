@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap');
+
+.container-body {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --color1: #02475c;
+    --color2: #fbfafc;
+    --color3: #d7a030;
+    --color4: #124717;
+
+    --font1: 'Anton', sans-serif;
+    --font2: 'Roboto', sans-serif;
+    --font3: 'Signika', sans-serif;
+}
+
+.color1 {
+    background-color: var(--color1);
+}
+.color2 {
+    color: var(--color2);
+}
+.color3 {
+    color: var(--color3);
+}
+.color4 {
+    color: var(--color4);
+}
+.bg-color3 {
+    background-color: var(--color3);
+}
+
+.font1 {
+    font-family: var(--font1);
+}
+.font2 {
+    font-family: var(--font2);
+}
+.font3 {
+    font-family: var(--font3) !important;
+}
+
+/* ================ HEADER ================ */
+/* .logo {
+    width: 150px;
+    text-align: center;
+} */
+
+.fuentesNav {
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.encabezado {
+    /* background-color: bisque; */
+    border-top: solid 20px #c1101a;
+    /* border-bottom: solid 1px #c1101a; */
+    margin-bottom: 30px;
+}
+
+/* ================ LOGO ================ */
+header h2 {
+    color: white;
+    transition: all 0.25s;
+}
+
+header h2:hover {
+    transform: scale(1.1);
+}
+
+/* ================ NAVBAR ================ */
+nav li a {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 15px;
+    color: white;
+    /* border-left: 1px solid black;
+    border-right: 1px solid black; */
+    padding: 0 15px;
+}
+
+a:hover {
+    text-shadow: 0 0px 10px #fff;
+    color: #fafafa;
+}
+
+/* ================ HOME ================ */
+.title {
+    font-family: 'Anton', sans-serif;
+    font-size: 96px;
+}
+
+.text-home {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    text-align: right;
+}
+
+.bg-banner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    background-image: linear-gradient(to bottom, rgba(2, 71, 92, 0.2), rgba(215, 160, 48, 0.2)), url(../img/vegetables-bg.jpg);
+}
+
+.card-home {
+    width: 14rem;
+    padding: 0;
+}
+
+/* ================ PRODUCTOS ================ */
+.tituloProductos {
+    background-color: #000000;
+    color: #fafafa;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.tituloProductos h2 {
+    font-size: 35px;
+}
+
+/* ================ BUTTONS ================ */
+.colorBtn {
+    background-color: #000000;
+    color: #fafafa;
+    font-size: 18px;
+}
+
+.colorBtn:hover {
+    background-color: #474747;
+    color: #fafafa;
+}
+
+/* ================ CARDS ================ */
+.card-img-top {
+    height: 200px;
+    /* Ajusta la altura deseada */
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* ================ Estilos del formulario de inicio de sesión ================ */
+h1 {
+    color: white;
+    text-align: center;
+}
+
+.formulario {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 2px solid black;
+    border-radius: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.inputMessi {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btnMios {
+    width: 100%;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btnMios:hover {
+    background-color: #474747;
+}
+
+i {
+    font-size: 35px;
+}
+
+/* ================ CHAT ================ */
+#chatBox {
+    width: 320px;
+    margin-inline: 32px;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding-inline: 8px;
+    padding-block: 4px;
+}
+
+/* ================ FORM ADD PRODUCT ================ */
+form input {
+    width: 320px;
+    margin-bottom: 8px;
+}
+
+/* ================ FOOTER ================ */
+.footer-svg {
+    width: 24px;
+    margin-inline: 8px;
+    transition: all 0.25s;
+}
+
+.footer-svg:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+
+
+.restablecerPass:hover {
+    background-color: #000000;
+}
+
+.img-toWhite {
+    filter: invert(1);
+}
+
+.navbar-toggler {
+    border-color: transparent;
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 1)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+.navbar-toggler:focus {
+    outline: none; /* Elimina el contorno por defecto */
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 1); /* Cambia el color y estilo del borde en foco */
+}
