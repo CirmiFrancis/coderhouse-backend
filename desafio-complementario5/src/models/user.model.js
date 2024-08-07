@@ -36,6 +36,14 @@ const userSchema = mongoose.Schema({
         enum: ['admin', 'usuario', 'premium'],
         default: 'usuario'
     },
+    documents: [{ // desafio complementario 4
+        name: String, 
+        reference: String 
+    }],
+    last_connection: { // desafio complementario 4
+        type: Date,
+        default: Date.now
+    },
     resetToken: {
         token: String,
         expire: Date

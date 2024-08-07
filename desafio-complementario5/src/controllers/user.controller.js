@@ -72,6 +72,9 @@ class UserController {
                 httpOnly: true
             });
 
+            usuarioEncontrado.last_connection = new Date(); // desafio complementario 4
+            await usuarioEncontrado.save();
+
             res.redirect("/api/users/profile");
         } catch (error) {
             console.error(error);
@@ -93,8 +96,18 @@ class UserController {
     }
 
     async logout(req, res) {
-        res.clearCookie("coderCookieToken");
-        res.redirect("/login");
+        try {
+            const { email } = req.user; // desafio complementario 4
+            const usuarioEncontrado = await UserModel.findOne({ email });
+            usuarioEncontrado.last_connection = new Date();
+            await usuarioEncontrado.save();
+    
+            res.clearCookie("coderCookieToken");
+            res.redirect("/login");
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error interno del servidor.');
+        }
     }
 
     async admin(req, res) {
