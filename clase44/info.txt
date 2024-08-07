@@ -1,0 +1,21 @@
+Clase 44 - Despliegue de nuestra app
+
+Pasamos de largo el contenido de la clase 44 por ser de repaso y continuamos con el contenido de la clase 45.
+
+MongoDB --> Network Access --> Agregar "0.0.0.0" como dirección IP
+
+RAILWAY
+
+https://railway.app/
+
+Hacer cuenta en railway con github. Agregar el repositorio a desplegar y variables de entorno. 
+
+El profesor, subió la parte backend (API) por railway y luego por localhost la parte frontend, conectando a través de una URL el frontend con el backend. Trabajó con el proyecto de "adoptme" que tenía él.
+
+Crea 3 ramas para los 3 stages: Desarrollo - Test de Calidad - Producción.
+
+RENDER
+
+https://render.com/
+
+Hace lo mismo que hizo con el proyecto "adoptme" en railway, pero en render.
