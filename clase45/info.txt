@@ -1,0 +1,33 @@
+Clase 45 - Integrar Pasarela de Pago
+
+En el .pdf aparece Stripe, pero en la clase lo hicimos con Mercado Pago.
+
+Checkout Pro
+https://www.mercadopago.com.ar/developers/es/docs/checkout-pro/landing
+
+SDK - Lado del Cliente y del Servidor
+https://www.mercadopago.com.ar/developers/es/docs/sdks-library/landing
+
+Lado FRONTEND
+
+En HTML hay un producto con un botón para comprar que te lleva a Mercado Pago y un par de scripts linkeados.
+En JS se guarda la clave de MP (usar .env). Se hace un try-catch y dentro un fetch a create-preference con el producto del HTML. También se escribe la lógica de que cuando se hace clic en comprar te aparezca la opción de Mercado Pago.
+En CSS no hay nada.
+
+Lado BACKEND
+
+Se instalan las dependencias cors, express y mercadopago.
+En JS importamos propiedades de mercadopago y guardamos el token de acceso (.env). Además, creamos un servidor con una ruta del tipo POST a create-preference, que obtiene los datos del producto. En caso de éxito, fallo o pendiente, se asigna una URL para cada caso a la cual va a ser enviado el cliente. También se asigna un auto retorno que, después de la página del checkout, te redirecciona automáticamente. Entre otras cosas.
+
+Proceso para testear:
+
+-Página de desarrollador de MP
+-Tus integraciones
+-Crear aplicación
+-Escanear QR
+-Nombre de app
+-Completar campos
+-Probar el sistema con credenciales, cuentas y tarjetas de Prueba. Luego probar con credenciales de Producción
+-Crear 2 cuenta de prueba, una para comprar y otra para vender
+-Con la cuenta para VENDER se crea la aplicación nuevamente y se ponen los datos sensibles en el backend
+-Con la cuenta para COMPRAR se va a la URL, se interactúa con el botón de compra y se sigue el proceso
