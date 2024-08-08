@@ -16,4 +16,7 @@ router.post("/reset-password", userController.resetPassword);
 router.post("/requestPasswordReset", userController.requestPasswordReset);
 router.put("/premium/:uid", userController.cambiarRolPremium);
 
+// desafio complementario 4
+//router.post("/:uid/documents", userController.uploadDocuments);
+
 export default router;
