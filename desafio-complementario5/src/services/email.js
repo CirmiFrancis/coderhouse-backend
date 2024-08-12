@@ -1,4 +1,3 @@
-//const nodemailer = require('nodemailer');
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv'; // .env
 
@@ -6,7 +5,7 @@ dotenv.config(); // .env
 
 const APP_PASS = process.env.APP_PASS;
 
-class EmailManager {
+class EmailManager { // administrador de email
     constructor() {
         this.transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -18,10 +17,10 @@ class EmailManager {
         });
     }
 
-    async enviarCorreoCompra(email, first_name, ticket) {
+    async enviarCorreoCompra(email, first_name, ticket) { // envía un mail al usuario que haya realizado una compra
         try {
             const mailOptions = {
-                from: "Coder Test <franciscirmi@gmail.com>",
+                from: "Saborear <franciscirmi@gmail.com>",
                 to: email,
                 subject: 'Confirmación de compra',
                 html: 
@@ -37,10 +36,10 @@ class EmailManager {
         }
     }
 
-    async enviarCorreoRestablecimiento(email, first_name, token) {
+    async enviarCorreoRestablecimiento(email, first_name, token) { // envía un mail al usuario que solicite restablecer su contraseña
         try {
             const mailOptions = {
-                from: "Coder Test <franciscirmi@gmail.com>",
+                from: "Saborear <franciscirmi@gmail.com>",
                 to: email,
                 subject: 'Restablecimiento de contraseña',
                 html: // modificar direccion luego del deploy
@@ -62,7 +61,7 @@ class EmailManager {
 
 // Exportar la función enviarCorreoCompra
 const emailManagerInstance = new EmailManager();
-const enviarCorreoCompra = emailManagerInstance.enviarCorreoCompra.bind(emailManagerInstance);
+const enviarCorreoCompra = emailManagerInstance.enviarCorreoCompra.bind(emailManagerInstance); // El .bind() asegura que el contexto de this dentro de una función se mantenga fijo y específico, sin importar desde dónde o cómo se llame la función. Esto es crucial para evitar problemas de contexto que pueden surgir cuando se pasan funciones como callbacks o se usan en otros contextos.
 
 export { enviarCorreoCompra };
 export default EmailManager;

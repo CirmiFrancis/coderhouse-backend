@@ -8,8 +8,8 @@ import { enviarCorreoCompra } from "../services/email.js"; // desafío complemen
 const cartRepository = new CartRepository();
 const productRepository = new ProductRepository();
 
-class CartController {
-    async nuevoCarrito(req, res) {
+class CartController { // controlador de carritos
+    async nuevoCarrito(req, res) { // crea un nuevo carrito
         try {
             const nuevoCarrito = await cartRepository.crearCarrito();
             res.json(nuevoCarrito);
@@ -19,7 +19,7 @@ class CartController {
         }
     }
 
-    async obtenerProductosDeCarrito(req, res) {
+    async obtenerProductosDeCarrito(req, res) { // obtiene todos los productos de un carrito
         const carritoId = req.params.cid;
         try {
             const productos = await cartRepository.obtenerProductosDeCarrito(carritoId);
@@ -33,11 +33,10 @@ class CartController {
         }
     }
 
-    async agregarProductoEnCarrito(req, res) {
+    async agregarProductoEnCarrito(req, res) { // agrega un producto al carrito
         const cartId = req.params.cid;
         const productId = req.params.pid;
         const quantity = req.body.quantity || 1;
-
         try {
             await cartRepository.agregarProducto(cartId, productId, quantity);
             const carritoID = (req.user.cart).toString();
@@ -49,7 +48,7 @@ class CartController {
         }
     }
 
-    async eliminarProductoDeCarrito(req, res) {
+    async eliminarProductoDeCarrito(req, res) { // elimina un producto del carrito
         const cartId = req.params.cid;
         const productId = req.params.pid;
         try {
@@ -65,10 +64,9 @@ class CartController {
         }
     }
 
-    async actualizarProductosEnCarrito(req, res) {
+    async actualizarProductosEnCarrito(req, res) { // actualiza los productos de un carrito
         const cartId = req.params.cid;
         const updatedProducts = req.body;
-        // Debes enviar un arreglo de productos en el cuerpo de la solicitud
         try {
             const updatedCart = await cartRepository.actualizarProductosEnCarrito(cartId, updatedProducts);
             res.json(updatedCart);
@@ -78,7 +76,7 @@ class CartController {
         }
     }
 
-    async actualizarCantidad(req, res) {
+    async actualizarCantidad(req, res) { // actualiza la cantidad de un producto en el carrito
         const cartId = req.params.cid;
         const productId = req.params.pid;
         const newQuantity = req.body.quantity;
@@ -90,59 +88,47 @@ class CartController {
                 message: 'Cantidad del producto actualizada correctamente.',
                 updatedCart,
             });
-
         } catch (error) {
             console.error(error);
             res.status(500).send("Error al actualizar la cantidad de productos del carrito.");
         }
     }
 
-    async vaciarCarrito(req, res) {
+    async vaciarCarrito(req, res) { // vacia un carrito
         const cartId = req.params.cid;
         try {
             const updatedCart = await cartRepository.vaciarCarrito(cartId);
-
             res.json({
                 status: 'success',
                 message: 'Todos los productos del carrito fueron eliminados correctamente.',
                 updatedCart,
             });
-
         } catch (error) {
             console.error(error);
             res.status(500).send("Error al vaciar el carrito.");
         }
     }
 
-    //Ultima Pre Entrega: 
-    async finalizarCompra(req, res) {
+    async finalizarCompra(req, res) { // finaliza una compra
         const cartId = req.params.cid;
         try {
-            // Obtener el carrito y sus productos
-            const cart = await cartRepository.obtenerProductosDeCarrito(cartId);
-            const products = cart.products;
+            const cart = await cartRepository.obtenerProductosDeCarrito(cartId); // obtener el carrito
+            const products = cart.products; // obtener los productos
+            const productosNoDisponibles = []; // array para almacenar los productos no disponibles
 
-            // Inicializar un arreglo para almacenar los productos no disponibles
-            const productosNoDisponibles = [];
-
-            // Verificar el stock y actualizar los productos disponibles
-            for (const item of products) {
+            for (const item of products) { // verificar el stock y actualizar los productos disponibles
                 const productId = item.product;
                 const product = await productRepository.obtenerProductoPorId(productId);
-                if (product.stock >= item.quantity) {
-                    // Si hay suficiente stock, restar la cantidad del producto
+                if (product.stock >= item.quantity) { // si hay suficiente stock, restar la cantidad del producto
                     product.stock -= item.quantity;
                     await product.save();
                 } else {
-                    // Si no hay suficiente stock, agregar el ID del producto al arreglo de no disponibles
-                    productosNoDisponibles.push(productId);
+                    productosNoDisponibles.push(productId); // si no hay suficiente stock, agregar el ID del producto al arreglo de no disponibles
                 }
             }
 
             const userWithCart = await UserModel.findOne({ cart: cartId });
-
-            // Crear un ticket con los datos de la compra
-            const ticket = new TicketModel({
+            const ticket = new TicketModel({  // crear un ticket con los datos de la compra
                 code: generateUniqueCode(),
                 purchase_datetime: new Date(),
                 amount: calcularTotal(cart.products),
@@ -150,25 +136,19 @@ class CartController {
             });
             await ticket.save();
 
-            // Eliminar del carrito los productos que sí se compraron
-            cart.products = cart.products.filter(item => productosNoDisponibles.some(productId => productId.equals(item.product)));
+            cart.products = cart.products.filter(item => productosNoDisponibles.some(productId => productId.equals(item.product))); // eliminar del carrito los productos que sí se compraron
 
-            // Guardar el carrito actualizado en la base de datos
-            await cart.save();
+            await cart.save(); // guardar el carrito actualizado en la base de datos
+            await enviarCorreoCompra(userWithCart.email, userWithCart.first_name, ticket._id); // enviar correo de compra (desafío complementario 3)
 
-            // Enviar correo de compra (desafío complementario 3)
-            await enviarCorreoCompra(userWithCart.email, userWithCart.first_name, ticket._id);
-
-            // Renderizar la vista de compra (desafío complementario 3)
-            res.render("checkout", {
+            res.render("checkout", { // renderizar la vista de compra (desafío complementario 3)
                 cliente: userWithCart.first_name,
                 email: userWithCart.email,
                 numTicket: ticket._id 
             });
-
             //res.status(200).json({ productosNoDisponibles });
         } catch (error) {
-            console.error(error); // console.error('Error al finalizar la compra:', error);
+            console.error(error);
             res.status(500).json({ error: 'Error al finalizar la compra.' });
         }
     }

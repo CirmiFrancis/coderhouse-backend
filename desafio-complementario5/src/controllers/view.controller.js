@@ -3,10 +3,10 @@ import CartRepository from "../repositories/cart.repository.js";
 
 const cartRepository = new CartRepository();
 
-class ViewsController {
+class ViewsController { // controlador de las vistas
     async renderProducts(req, res) {
         try {
-            const { page = 1, limit = 4 } = req.query;
+            const { page = 1, limit = 4 } = req.query; // limito a 4 los productos por página e ingreso a la página 1 por defecto
 
             const skip = (page - 1) * limit;
 
@@ -34,7 +34,7 @@ class ViewsController {
             //console.log( typeof(productos[productos.length-1]["owner"]) ); 
             //console.log( userID === productos[productos.length-1]["owner"] ); 
 
-            res.render("products", {
+            res.render("products", { // renderiza products.handlebars y le pasa los datos
                 productos: nuevoArray,
                 hasPrevPage,
                 hasNextPage,
@@ -47,7 +47,7 @@ class ViewsController {
             });
 
         } catch (error) {
-            console.error(error); // console.error("Error al obtener productos", error);
+            console.error(error);
             res.status(500).json({
                 status: 'error',
                 error: "Error interno del servidor al renderizar los productos."
@@ -55,7 +55,7 @@ class ViewsController {
         }
     }
 
-    async renderCart(req, res) {
+    async renderCart(req, res) { // renderiza cart.handlebars y le pasa los datos
         const cartId = req.params.cid;
         try {
             const carrito = await cartRepository.obtenerProductosDeCarrito(cartId);
@@ -83,58 +83,56 @@ class ViewsController {
 
             res.render("carts", { productos: productosEnCarrito, totalCompra, cartId });
         } catch (error) {
-            console.error(error); // console.error("Error al obtener el carrito", error);
+            console.error(error);
             res.status(500).json({ error: "Error interno del servidor al renderizar el carrito." });
         }
     }
 
-    async renderLogin(req, res) {
+    async renderLogin(req, res) { // renderiza login.handlebars
         res.render("login");
     }
 
-    async renderRegister(req, res) {
+    async renderRegister(req, res) { // renderiza register.handlebars
         res.render("register");
     }
 
-    async renderRealTimeProducts(req, res) {
+    async renderRealTimeProducts(req, res) { // renderiza realtimeproducts.handlebars y le pasa los datos
         const user = req.user;
         try {
             res.render("realtimeproducts", { userRole: user.role, userID: user._id });
         } catch (error) {
-            console.error("Error en la vista realtimeproducts:", error);
+            console.error(error);
             res.status(500).json({ error: "Error interno del servidor al renderizar los productos en tiempo real." });
         }
     }
 
-    async renderChat(req, res) {
+    async renderChat(req, res) { // renderiza chat.handlebars
         res.render("chat");
     }
 
-    async renderHome(req, res) {
+    async renderHome(req, res) { // renderiza home.handlebars
         res.render("home");
     }
 
-    async showLoggerTest(req, res) {
+    async showLoggerTest(req, res) { // loggers
         req.logger.fatal("Mensaje FATAL"); 
         req.logger.error("Mensaje ERROR");
         req.logger.warning("Mensaje WARNING"); 
         req.logger.info("Mensaje INFO"); 
         req.logger.http("Mensaje HTTP"); 
         req.logger.debug("Mensaje DEBUG"); 
-
         res.send("Logs Generados");
     }
 
-    // Desafío Complementario 3: 
-    async renderResetPassword(req, res){
+    async renderResetPassword(req, res){ // renderiza password-generar.handlebars
         res.render("password-generar"); 
     }
 
-    async renderConfirmacion(req, res){
-        res.render("password-confirmacion"); 
+    async renderConfirmacion(req, res){ // renderiza password-confirmacion.handlebars
+        res.render("password-confirmacion");
     }
 
-    async renderCambioPassword(req, res){
+    async renderCambioPassword(req, res){ // renderiza password-restablecer.handlebars
         res.render("password-restablecer"); 
     }
 }

@@ -1,9 +1,8 @@
 import ProductRepository from "../repositories/product.repository.js";
 const productRepository = new ProductRepository();
 
-class ProductController {
-
-    async addProduct(req, res, next) {
+class ProductController { // controlador de los productos
+    async addProduct(req, res, next) { // agregar un nuevo producto
         const nuevoProducto = req.body;
         try {
             const resultado = await productRepository.agregarProducto(nuevoProducto);
@@ -13,7 +12,7 @@ class ProductController {
         }
     }
 
-    async getProducts(req, res) {
+    async getProducts(req, res) { // obtener todos los productos
         try {
             let { limit = 10, page = 1, sort, query } = req.query;
             const productos = await productRepository.obtenerProductos(limit, page, sort, query);
@@ -24,7 +23,7 @@ class ProductController {
         }
     }
 
-    async getProductById(req, res) {
+    async getProductById(req, res) { // obtener un producto por su ID
         const id = req.params.pid;
         try {
             const buscado = await productRepository.obtenerProductoPorId(id);
@@ -40,7 +39,7 @@ class ProductController {
         }
     }
 
-    async updateProduct(req, res) {
+    async updateProduct(req, res) { // actualizar un producto por ID
         try {
             const id = req.params.pid;
             const productoActualizado = req.body;
@@ -52,7 +51,7 @@ class ProductController {
         }
     }
 
-    async deleteProduct(req, res) {
+    async deleteProduct(req, res) { // eliminar un producto por ID
         const id = req.params.pid;
         try {
             let respuesta = await productRepository.eliminarProducto(id);

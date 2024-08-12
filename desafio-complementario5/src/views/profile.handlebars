@@ -1,67 +1,25 @@
-<div data-aos="fade-up" data-aos-duration="1000">
-  <h1 class="mb-5">Mi Perfil</h1>
+<div data-aos="fade-down" data-aos-duration="1000"> {{!-- Mi perfil (cambian las opciones según el rol) --}}
+  <h1 class="my-5">Mi Perfil</h1>
 
   <div class="profile-card">
     <p>Bienvenido, <span class="fs-5 fw-bold"> {{user.nombre}} {{user.apellido}} </span> </p>
-    <p>Rol: <span class="fs-5 fw-bold text-danger"> {{user.role}} </span> </p>
+    <p>Rol: <span class="text-danger fs-5 fw-bold"> {{user.role}} </span> </p>
 
     <form action="/api/users/logout" method="POST">
-      <button class="btnMios" type="submit">Logout</button>
+      <button class="form-btn" type="submit">Salir</button>
     </form>
 
     {{#if this.isAdmin}}
-      <a class="btnMios" href="/realtimeproducts">Modificar Productos</a>
+      <a class="form-btn" href="/realtimeproducts">Modificar Productos</a>
     {{else}}
       {{#if this.isPremium}}
-        <a class="btnMios" href="/chat">Chat en vivo</a>
-        <a class="btnMios" href="/realtimeproducts">Modificar Productos</a>
-        <a class="btnMios" href="/products">Tienda</a>
+        <a class="form-btn" href="/chat">Chat Comunitario</a>
+        <a class="form-btn" href="/realtimeproducts">Modificar Productos</a>
+        <a class="form-btn" href="/products">Tienda</a>
       {{else}}
-        <a class="btnMios" href="/chat">Chat en vivo</a>
-        <a class="btnMios" href="/products">Tienda</a>
+        <a class="form-btn" href="/chat">Chat Comunitario</a>
+        <a class="form-btn" href="/products">Tienda</a>
       {{/if}}
     {{/if}}
   </div>
 </div>
-
-{{!-- CSS --}}
-<style>
-
-  .profile-card {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border: 2px solid black;
-    border-radius: 8px;
-    text-align: center;
-  }
-
-  .profile-card p {
-    margin-bottom: 10px;
-  }
-
-  .profile-card .btnMios {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #000000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
-  .profile-card .btnMios:hover {
-    background-color: #474747;
-  }
-
-  .profile-card a {
-    display: block;
-    margin-bottom: 10px;
-    color: #c1101a;
-    text-decoration: none;
-    font-weight: bold;
-  }
-</style>

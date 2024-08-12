@@ -1,4 +1,4 @@
-const generarInfoError = (producto) => {
+const generarInfoError = (producto) => { // mensaje personalizado para indicar un error al crear un producto
     return `\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
     - Title: se esperaba un String. Se recibió: ${producto.title}
     - Description: se esperaba un String. Se recibió: ${producto.description}

@@ -1,6 +1,6 @@
 import multer from "multer";
 
-const storage = multer.diskStorage({
+const storage = multer.diskStorage({ // middleware en proceso
     destination: (req, file, cb) => {
         let destinationFolder;
         switch(file.fieldname) {

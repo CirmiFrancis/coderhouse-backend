@@ -1,7 +1,6 @@
 import { faker } from "@faker-js/faker"; 
 
-// Función para generar 100 productos falsos
-export const generar100Productos = () => {
+export const generar100Productos = () => { // se especifica la estructura del producto falso para luego generar 100 de estos
     return {
         id: faker.database.mongodbObjectId(),
         title: faker.commerce.productName(),

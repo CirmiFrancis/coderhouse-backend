@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-const checkUserRole = (allowedRoles) => (req, res, next) => {
+const checkUserRole = (allowedRoles) => (req, res, next) => { // middleware usada en views.router.js para determinar si el usuario tiene el rol requerido
     const token = req.cookies.coderCookieToken;
 
     if (token) {

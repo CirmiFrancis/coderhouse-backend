@@ -1,27 +1,27 @@
-<div data-aos="fade-up" data-aos-duration="1000">
+<div data-aos="fade-down" data-aos-duration="1000"> {{!-- Tienda / Lista de productos --}}
     <div class="d-flex justify-content-center align-items-center">
-        <h1 class="text-center">Productos</h1>
+        <h1 class="my-5">Tienda</h1>
 
         {{!-- Desafío Complementario 3, esto no debería mostrarse --}}
         <p class="d-none" id="userID">{{userID}}</p>
     </div>
 
-    <div class="container-fluid px-5">
+    <div class="container-fluid px-5 mb-4"> {{!-- Card de cada producto --}}
         <div class="row g-3">
             {{#each productos}}
             <div class="col-xl-3 col-md-6 col-sm-12" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-                <div class="card p-0 my-2">
+                <div class="card card-products my-2 p-0">
                     <img src="{{img}}" alt="Imagen de {{title}}" class="card-img-top border border-secondary">
                     <div class="card-body border border-top-0 border-secondary rounded-bottom">
                         <h2 class="card-title">{{title}}</h2>
                         <p class="card-text">{{description}}</p>
                         <p class="card-text">Precio: ${{price}}</p>
-                        <p class="card-text">Dueño: {{owner}}</p>
+                        {{!-- <p class="card-text">Dueño: {{owner}}</p> --}}
                         
                         {{!-- Desafío Complementario 3, esto no debería mostrarse --}}
                         {{#ifNotEqual ../userID owner }} 
                             <form action="/api/carts/{{../cartId}}/product/{{id}}" method="POST">
-                                <button class="btnMios" type="submit">Agregar al Carrito</button>
+                                <button class="form-btn" type="submit">Agregar al Carrito</button>
                             </form>                
                         {{else}}
                             <p class="card-text text-danger">No puedes comprarlo. Este es tu producto.</p>
@@ -33,23 +33,29 @@
         </div>
     </div>
 
-    <div class="container mt-3 d-flex justify-content-center align-items-center">
-        <div class="text-center"> <!-- Centra los enlaces horizontalmente -->
-            <a href="/carts/{{cartId}}" class="row text-white w-auto">
-                <i class="bi bi-cart cart-icon"></i>
-            </a>  
-
+    <div class="container d-flex justify-content-center align-items-center mt-3"> {{!-- Botones --}}
+        <div class="text-center">
             <div class="d-flex justify-content-center align-items-center gap-5">
                 {{#if hasPrevPage}}
-                    <a href="/products?page={{prevPage}}" class="row text-white fs-4 w-auto"> <-- Anterior </a>
+                    <a href="/products?page={{prevPage}}" class="row w-auto fs-4 text-white mb-3"> 
+                        <img src="/img/svg/arrow-fill.svg" class="left-arrow-icon" alt="Ícono de una flecha que apunta a la izquierda.">
+                    </a>
                 {{/if}}
                 {{#if hasNextPage}}
-                    <a href="/products?page={{nextPage}}" class="row text-white fs-4 w-auto"> Siguiente --> </a>
+                    <a href="/products?page={{nextPage}}" class="row w-auto fs-4 text-white mb-3"> 
+                        <img src="/img/svg/arrow-fill.svg" class="right-arrow-icon" alt="Ícono de una flecha que apunta a la derecha.">
+                    </a>
                 {{/if}}
             </div>
 
+            <p class="text-white m-0">{{currentPage}} / {{totalPages}} </p>
 
-            <p class="text-white">Pagina {{currentPage}} de {{totalPages}} </p>
+            <a href="/carts/{{cartId}}" class="row w-auto text-white text-decoration-none m-0 mt-3 mb-5 p-0">
+                <div class="cart">
+                    <img src="/img/svg/cart-fill.svg" class="cart-icon" alt="Ícono de un carrito de compra.">
+                    <p class="cart-text">Ir al Carrito</p>
+                </div>
+            </a>  
         </div>
     </div>
 </div>

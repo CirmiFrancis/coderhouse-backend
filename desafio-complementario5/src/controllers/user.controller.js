@@ -9,20 +9,17 @@ import { generarResetToken } from "../utils/tokenreset.js";
 import EmailManager from "../services/email.js"
 const emailManager = new EmailManager();
 
-class UserController {
-    async register(req, res) {
+class UserController { // controlador de usuarios
+    async register(req, res) { // registra un nuevo usuario y redirecciona
         const { first_name, last_name, email, password, age } = req.body;
         try {
             const existeUsuario = await UserModel.findOne({ email });
             if (existeUsuario) {
                 return res.status(400).send("El usuario ya existe.");
             }
-
-            //Creo un nuevo carrito: 
-            const nuevoCarrito = new CartModel();
+            const nuevoCarrito = new CartModel(); // creo un nuevo carrito
             await nuevoCarrito.save();
-
-            const nuevoUsuario = new UserModel({
+            const nuevoUsuario = new UserModel({ // creo un nuevo usuario
                 first_name,
                 last_name,
                 email,
@@ -30,51 +27,41 @@ class UserController {
                 password: createHash(password),
                 age
             });
-
             await nuevoUsuario.save();
-
             const token = jwt.sign({ user: nuevoUsuario }, "coderhouse", {
                 expiresIn: "1h"
             });
-
             res.cookie("coderCookieToken", token, {
                 maxAge: 3600000,
                 httpOnly: true
             });
-
             res.redirect("/api/users/profile");
         } catch (error) {
-            console.error(error); // console.error(error);
+            console.error(error);
             res.status(500).send("Error interno del servidor al registrar un usuario.");
         }
     }
 
-    async login(req, res) {
+    async login(req, res) { // verifica el ingreso de un usuario y redirecciona
         const { email, password } = req.body;
         try {
             const usuarioEncontrado = await UserModel.findOne({ email });
-
             if (!usuarioEncontrado) {
                 return res.status(401).send("Usuario no válido.");
             }
-
             const esValido = isValidPassword(password, usuarioEncontrado);
             if (!esValido) {
                 return res.status(401).send("Contraseña incorrecta.");
             }
-
             const token = jwt.sign({ user: usuarioEncontrado }, "coderhouse", {
-                expiresIn: "1h" // el logeo dura 1 hora
+                expiresIn: "1h" // el logueo dura 1 hora
             });
-
             res.cookie("coderCookieToken", token, {
                 maxAge: 3600000,
                 httpOnly: true
             });
-
             usuarioEncontrado.last_connection = new Date(); // desafio complementario 4
             await usuarioEncontrado.save();
-
             res.redirect("/api/users/profile");
         } catch (error) {
             console.error(error);
@@ -82,10 +69,9 @@ class UserController {
         }
     }
 
-    async profile(req, res) {
+    async profile(req, res) { // renderizo profile.handlebars y paso datos del usuario
         try {
-            //Con DTO: 
-            const userDto = new UserDTO(req.user.first_name, req.user.last_name, req.user.role);
+            const userDto = new UserDTO(req.user.first_name, req.user.last_name, req.user.role); // con DTO
             const isAdmin = req.user.role === 'admin';
             const isPremium = req.user.role === 'premium'; // desafío complementario 3
             res.render("profile", { user: userDto, isAdmin, isPremium }); // desafío complementario 3
@@ -95,13 +81,12 @@ class UserController {
         }
     }
 
-    async logout(req, res) {
+    async logout(req, res) { // elimina la cookie para desconectar al usuario y redirecciona
         try {
             const { email } = req.user; // desafio complementario 4
             const usuarioEncontrado = await UserModel.findOne({ email });
             usuarioEncontrado.last_connection = new Date();
             await usuarioEncontrado.save();
-    
             res.clearCookie("coderCookieToken");
             res.redirect("/login");
         } catch (error) {
@@ -110,7 +95,7 @@ class UserController {
         }
     }
 
-    async admin(req, res) {
+    async admin(req, res) { // verifica que el rol del usuario sea admin y renderiza admin.handlebars
         if (req.user.role !== "admin") {
             return res.status(403).send("Acceso denegado. Solo los administradores pueden acceder a esta ruta.");
         }
@@ -118,24 +103,20 @@ class UserController {
     }
 
     // Desafio Complementario 3
-    async requestPasswordReset(req, res) {
+    async requestPasswordReset(req, res) { // manda un mail al email ingresado y redirecciona
         const { email } = req.body;
         try {
-            const user = await UserModel.findOne({ email }); // Busco el usuario por email
+            const user = await UserModel.findOne({ email }); // busco el usuario por email
             if (!user) {
-                return res.status(404).send("Usuario no encontrado."); // Si no hay usuario, tiro error y el método termina acá
+                return res.status(404).send("Usuario no encontrado."); // si no hay usuario, tiro error y el método termina acá
             }
-
-            const token = generarResetToken(); // Pero si hay usuario, le genero un token
-
-            user.resetToken = { // Una vez que tenemos el token se lo podemos agregar al usuario
+            const token = generarResetToken(); // pero si hay usuario, le genero un token
+            user.resetToken = { // una vez que tenemos el token se lo podemos agregar al usuario
                 token: token,
-                expire: new Date(Date.now() + 3600000) // 1 Hora de duración
+                expire: new Date(Date.now() + 3600000) // 1 hora de duración
             }
-
-            await user.save(); // Guardamos los cambios
-            await emailManager.enviarCorreoRestablecimiento(email, user.first_name, token); // Mandamos el mail
-
+            await user.save(); // guardamos los cambios
+            await emailManager.enviarCorreoRestablecimiento(email, user.first_name, token); // mandamos el mail
             res.redirect("/confirmacion-envio");
         } catch (error) {
             console.error(error);
@@ -143,53 +124,43 @@ class UserController {
         }
     }
 
-    async resetPassword(req, res) {
+    async resetPassword(req, res) { // obtengo los datos del formulario, verifico que sean correctos y redirecciono
         const { email, password, token } = req.body;
-
         try {
-            const user = await UserModel.findOne({ email }); // Busco el usuario por mail...
+            const user = await UserModel.findOne({ email }); // busco el usuario por mail...
             if (!user) {
                 return res.render("password-restablecer", { error: "Usuario no encontrado." });
             }
-
-            const resetToken = user.resetToken; // Saco token y lo verificamos
+            const resetToken = user.resetToken; // saco token y lo verificamos
             if (!resetToken || resetToken.token !== token) {
                 return res.render("password-restablecer", { error: "El token es inválido." });
             }
-
-            const ahora = new Date(); // Verificamos si el token expiro
+            const ahora = new Date(); // verificamos si el token expiro
             if (ahora > resetToken.expire) {
                 return res.render("password-generar", { error: "El token ha expirado." });
             }
-
-            if (isValidPassword(password, user)) { // Verificamos que la contraseña nueva no sea igual a la anterior
+            if (isValidPassword(password, user)) { // verificamos que la contraseña nueva no sea igual a la anterior
                 return res.render("password-restablecer", { error: "La nueva contraseña no puede ser igual a la anterior." });
             }
-
-            user.password = createHash(password); // Actualizo la contraseña
-
-            user.resetToken = undefined; // Marcamos como usado el token
-            await user.save(); // Guardamos los cambios
-
+            user.password = createHash(password); // actualizo la contraseña
+            user.resetToken = undefined; // marcamos como usado el token
+            await user.save(); // guardamos los cambios
             return res.redirect("/login");
-
         } catch (error) {
             console.error(error);
             res.status(500).render("password-generar", { error: "Error interno del servidor." });
         }
     }
 
-    async cambiarRolPremium(req, res) {
-        const {uid} = req.params; 
-
+    async cambiarRolPremium(req, res) { // cambia el rol de usuario a premium o viceversa
+        const { uid } = req.params; 
         try {
-            const user = await UserModel.findById(uid); // Busco el usuario por ID 
+            const user = await UserModel.findById(uid); // busco el usuario por ID 
             if(!user) {
                 return res.status(404).send("Usuario no encontrado."); 
             }
-
-            const nuevoRol = user.role === "usuario" ? "premium" : "usuario"; // Pero si lo encuentro, le cambio el rol 
-            const actualizado = await UserModel.findByIdAndUpdate(uid, {role: nuevoRol}); // Actualizo el rol
+            const nuevoRol = user.role === "usuario" ? "premium" : "usuario"; // pero si lo encuentro, le cambio el rol 
+            const actualizado = await UserModel.findByIdAndUpdate(uid, {role: nuevoRol}); // actualizo el rol
             res.json(actualizado);  
         } catch (error) {
             console.error(error);

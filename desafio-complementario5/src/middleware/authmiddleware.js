@@ -1,6 +1,6 @@
 import passport from 'passport';
 
-function authMiddleware(req, res, next) {
+function authMiddleware(req, res, next) { // middleware que autentica al usuario
     passport.authenticate('jwt', { session: false }, (err, user, info) => {
         if (err) {
             return next(err);

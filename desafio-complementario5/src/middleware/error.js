@@ -1,6 +1,6 @@
 import { EErrors } from "../services/errors/enum.js";
 
-const manejadorError = (error, req, res, next) => {
+const manejadorError = (error, req, res, next) => { // middleware usada para manejar errores
     console.error(error.causa); 
     switch(error.code) {
         case EErrors.TIPO_INVALIDO: 

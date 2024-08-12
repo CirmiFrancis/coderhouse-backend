@@ -14,7 +14,7 @@ const niveles = {
         info: 3, 
         http: 4, 
         debug: 5
-        // silly: 6, pero no lo pide el desafío
+        // silly: 6 (podría agregarse)
     }, 
     colores: {
         fatal: "red", 
@@ -26,11 +26,12 @@ const niveles = {
     }
 }
 
-const loggerDesarrollo = winston.createLogger({
+// Loggers
+const loggerDesarrollo = winston.createLogger({ // logger para desarrollo
     levels: niveles.nivel,
     transports: [
         new winston.transports.Console({
-            level: "debug",
+            level: "debug", // muestra todos los mensajes a partir del nivel "debug" y superior
             format: winston.format.combine(
                 winston.format.colorize({colors: niveles.colores}),
                 winston.format.simple()
@@ -38,17 +39,17 @@ const loggerDesarrollo = winston.createLogger({
         }),
         new winston.transports.File({
             filename: "./errors.log", 
-            level: "error",
+            level: "error", // registra solo los mensajes de nivel "error" en el archivo errors.log
             format: winston.format.simple()
         })
     ]
 })
 
-const loggerProduccion = winston.createLogger({
+const loggerProduccion = winston.createLogger({ // logger para produccion
     levels: niveles.nivel,
     transports: [
         new winston.transports.Console({
-            level: "info",
+            level: "info", // muestra todos los mensajes a partir del nivel "info" y superior
             format: winston.format.combine(
                 winston.format.colorize({colors: niveles.colores}),
                 winston.format.simple()
@@ -56,13 +57,13 @@ const loggerProduccion = winston.createLogger({
         }),
         new winston.transports.File({
             filename: "./errors.log", 
-            level: "error",
+            level: "error", // registra solo los mensajes de nivel "error" en el archivo errors.log
             format: winston.format.simple()
         })
     ]
 })
 
-// Sobreescribir console.log y demás para usar el logger
+// Funciones sobreescritas para que funcionen los logger
 console.fatal = function(){
     return logger.fatal.apply(logger, arguments)
 }
