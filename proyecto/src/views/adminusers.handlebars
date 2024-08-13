@@ -1,0 +1,47 @@
+<div data-aos="fade-down" data-aos-duration="1000"> {{!-- Menú de modificar usuarios --}}
+    <h1 class="m-0 my-5">Modificar Usuarios</h1>
+
+    <div class="container-fluid px-5 mb-4">
+        <div class="table-responsive modify-users">
+            <table class="table border border-dark m-0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-white bg-dark">ID</th>
+                        <th scope="col" class="text-white bg-dark">EMAIL</th>
+                        <th scope="col" class="text-white bg-dark">ROL</th>
+                        <th scope="col" class="text-white bg-dark">NOMBRE</th>
+                        <th scope="col" class="text-white bg-dark">APELLIDO</th>
+                        <th scope="col" class="text-white bg-dark">EDAD</th>
+                        <th scope="col" class="text-center text-white bg-dark">ACCIONES</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{#each usuarios}}
+                    <tr>
+                        <th scope="row">{{this.id}}</th>
+                        <td>{{this.email}}</td>
+                        <td class="text-danger">{{this.role}}</td>
+                        <td>{{this.first_name}}</td>
+                        <td>{{this.last_name}}</td>
+                        <td>{{this.age}}</td>
+                        <td class="text-center bg-body-secondary border-start border-dark">
+                            {{#ifNotEqual this.role "admin"}} 
+                            <a href="#" onclick="sendPutRequest('/api/users/premium/{{this.id}}'); return false;" class="text-decoration-none m-0 p-0" title="Cambiar rol del usuario">
+                                <img src="/img/svg/user-role.svg" class="img-fluid actions-role" alt="Ícono para cambiar el rol del usuario.">
+                            </a>
+                            
+                            <a href="#" onclick="sendDeleteRequest('/api/users/{{this.id}}'); return false;" class="text-decoration-none m-0 p-0" title="Eliminar usuario">
+                                <img src="/img/svg/user-delete.svg" class="img-fluid actions-delete" alt="Ícono para eliminar el usuario.">
+                            </a>
+                            {{/ifNotEqual}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="js/adminUsers.js"></script>

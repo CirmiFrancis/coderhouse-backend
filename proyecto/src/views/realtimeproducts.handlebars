@@ -1,0 +1,29 @@
+<div data-aos="fade-down" data-aos-duration="1000"> {{!-- Menú de agregar/eliminar productos --}}
+    <h1 class="m-0 my-5">Modificar Productos</h1>
+
+    {{!-- Esta forma de llevar datos del usuario a realtime.js es insegura, ya que se muestra en el DOM y automáticamente se elimina, lo ideal sería que directamente no se muestre y manipularlo desde el código, pero funciona --}}
+    <p class="d-none" id="userRole">{{userRole}}</p>
+    <p class="d-none" id="userID">{{userID}}</p>
+
+    <h2 class="text-white mx-5">Todos los productos</h2>
+    <div class="d-flex flex-wrap text-center gap-2 mx-5" id="contenedorProductos"></div> {{!-- Lista de productos / Eliminar un producto --}}
+
+    <h2 class="text-white mx-5 mt-5">Agregar un producto</h2>
+    <form class="d-flex flex-column justify-content-center align-items-start mx-5 mb-5"> {{!-- Crear un producto --}}
+        <input type="text" id="title" placeholder="Titulo">
+        <input type="text" id="description" placeholder="Descripcion">
+        <input type="number" id="price" placeholder="Precio">
+        <input type="text" id="img" placeholder="Imagen (opcional)">
+        <input type="text" id="code" placeholder="Código (debe ser único)">
+        <input type="number" id="stock" placeholder="Stock">
+        <input type="text" id="category" placeholder="Categoria">
+        <select id="status">
+            <option value="true">Activo</option>
+            <option value="false">Inactivo</option>
+        </select> <br>
+        <button type="button" class="btn-modify" id="btnEnviar">Enviar</button>
+    </form>
+</div>
+
+<script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+<script src="js/realtime.js"></script>

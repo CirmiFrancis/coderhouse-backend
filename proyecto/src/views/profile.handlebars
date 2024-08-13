@@ -1,0 +1,26 @@
+<div data-aos="fade-down" data-aos-duration="1000"> {{!-- Mi perfil (cambian las opciones según el rol) --}}
+  <h1 class="my-5">Mi Perfil</h1>
+
+  <div class="profile-card">
+    <p><span class="fs-5 fw-bold"> {{user.nombre}} {{user.apellido}} </span> </p>
+    <p><span class="text-danger fs-5 fw-bold"> {{user.role}} </span> </p>
+
+    <form action="/api/users/logout" method="POST">
+      <button class="form-btn" type="submit">Salir</button>
+    </form>
+
+    {{#if this.isAdmin}}
+      <a class="form-btn" href="/adminusers">Modificar Usuarios</a>
+      <a class="form-btn" href="/realtimeproducts">Modificar Productos</a>
+    {{else}}
+      {{#if this.isPremium}}
+        <a class="form-btn" href="/chat">Chat Comunitario</a>
+        <a class="form-btn" href="/realtimeproducts">Modificar Productos</a>
+        <a class="form-btn" href="/products">Tienda</a>
+      {{else}}
+        <a class="form-btn" href="/chat">Chat Comunitario</a>
+        <a class="form-btn" href="/products">Tienda</a>
+      {{/if}}
+    {{/if}}
+  </div>
+</div>

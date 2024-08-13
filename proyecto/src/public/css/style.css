@@ -1,0 +1,428 @@
+/*
+    ORDEN DE LOS ESTILOS:
+        - IMPORTS
+        - VARIABLES
+        - COLORS & FONTS
+        - GLOBAL
+        = BODY
+        - HEADER & NAVBAR
+        - HOME
+        - FOOTER
+        - LOGIN, REGISTER & OTHERS SIMILAR MENU
+        - PROFILE
+        - CHAT
+        - MODIFY USERS (adminusers)
+        - MODIFY PRODUCTS (realtimeproducts)
+        - PRODUCTS
+        - CART
+        - CHECKOUT
+*/
+
+/* ================================ IMPORTS ================================ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap');
+
+/* ================================ VARIABLES ================================ */
+:root {
+    --color1: #02475c;
+    --color2: #fbfafc;
+    --color3: #d7a030;
+    --color4: #124717;
+
+    --font1: 'Anton', sans-serif;
+    --font2: 'Roboto', sans-serif;
+    --font3: 'Signika', sans-serif;
+}
+
+/* ================================ COLORS & FONTS ================================ */
+.color1 {
+    color: var(--color1);
+}
+.color2 {
+    color: var(--color2);
+}
+.color3 {
+    color: var(--color3);
+}
+.color4 {
+    color: var(--color4);
+}
+
+.bg-color1 {
+    background-color: var(--color1);
+}
+.bg-color2 {
+    background-color: var(--color2);
+}
+.bg-color3 {
+    background-color: var(--color3);
+}
+.bg-color4 {
+    background-color: var(--color4);
+}
+
+.font1 {
+    font-family: var(--font1);
+}
+.font2 {
+    font-family: var(--font2);
+}
+.font3 {
+    font-family: var(--font3) !important;
+}
+
+/* ================================ GLOBAL ================================ */
+h1 { /* título de cada página */
+    color: white;
+    text-align: center;
+}
+
+a:hover { /* propiedades de los links (enlaces) */
+    color: var(--color3);
+    text-decoration: underline;
+    text-shadow: 0 0 10px #dfdfdf;
+}
+
+/* ================================ BODY ================================ */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container-body { /* no overflow en X y scroll en Y */
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+/* ================================ HEADER & NAVBAR ================================ */
+header figure { /* para el logo de SABOREAR */
+    color: white;
+    transition: all 0.25s;
+}
+
+header figure:hover { /* para el logo de SABOREAR */
+    transform: scale(1.1);
+}
+
+nav li a { /* propiedades de la lista de navegación */
+    margin: 15px;
+    padding: 0 15px;
+    color: var(--color2);
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+.size-logo { /* tamaño del logo SABOREAR */
+    width: 160px;
+}
+
+.navbar-toggler { /* quito el borde del icono del menú hamburguesa */
+    border-color: transparent;
+}
+
+.navbar-toggler:focus { /* borde del icono del menú hamburguesa en blanco */
+    outline: none;
+    box-shadow: 0 0 0 0.1rem rgba(255, 255, 255, 1);
+}
+
+.navbar-toggler-icon { /* ícono del menú hamburguesa en blanco */
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 1)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+/* ================================ HOME ================================ */
+.title-home { /* para el h1 */
+    margin: 32px 0; /* block - inline */
+    color: var(--color2);
+    font-size: 96px;
+    font-family: 'Anton', sans-serif;
+    text-align: left;
+}
+
+.text-home { /* para el p */
+    padding-inline: 5px;
+    color: white;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    text-align: right;
+}
+
+.card-home { /* para las imágenes */
+    width: 14rem;
+    padding: 0;
+}
+
+.icon-item-home { /* para los íconos de los ítems */
+    width: 32px;
+    margin: 0;
+    padding: 0;
+    filter: invert(1);
+}
+
+.bg-banner { /* para el fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(to bottom, rgba(2, 71, 92, 0.2), rgba(215, 160, 48, 0.2)), url(../img/vegetables-bg.jpg);
+}
+
+/* ================================ FOOTER ================================ */
+.footer-svg { /* íconos de las rrss en el footer */
+    width: 24px;
+    margin-inline: 8px;
+    transition: all 0.25s;
+}
+
+.footer-svg:hover { /* íconos de las rrss en el hover del footer */
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* ================================ LOGIN, REGISTER & OTHERS SIMILAR MENU ================================ */
+label { /* label (etiqueta) de cada formulario */
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.formulario { /* formularios */
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 2px solid black;
+    border-radius: 16px;
+}
+
+.form-input { /* inputs de los formularios */
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-btn { /* botones de los formularios */
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    background-color: #000000;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-btn:hover { /* hover en los botones de los formularios */
+    background-color: #474747;
+}
+
+.restablecer-pass:hover { /* hover del botón de login que permite restablecer la contraseña */
+    color: purple;
+    text-shadow: none;
+}
+
+/* ================================ PROFILE ================================ */
+
+.profile-card { /* card del profile */
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 2px solid black;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.profile-card p { /* p del profile */
+    margin-bottom: 10px;
+}
+
+.profile-card a { /* hover de los enlaces del profile */
+    display: block;
+    margin-bottom: 10px;
+    color: #c1101a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.profile-card .form-btn { /* botones del profile */
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #000000;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-card .form-btn:hover { /* hover de los botones del profile */
+    background-color: #474747;
+}
+
+/* ================================ CHAT ================================ */
+#chatBox { /* input para escribir en el chat */
+    width: 320px;
+    margin-inline: 32px;
+    padding: 4px 8px; /* 4px block y 8px inline */
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+/* ================================ MODIFY USERS ================================ */
+.modify-users { /* estilos para el div de la página adminusers */
+    margin: 0;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 2px solid black;
+    border-radius: 16px;
+}
+
+.actions-role, .actions-delete { /* íconos de la página adminusers */
+    width: 24px;
+    height: 24px;
+    margin-inline: 4px;
+    transition: all 0.25s;
+}
+
+.actions-role:hover, .actions-delete:hover { /* hovers de los íconos de la página adminusers */
+    transform: scale(1.2);
+}
+
+.actions-role { /* ícono color naranja/amarillo */
+    filter: invert(70%) sepia(100%) saturate(300%) hue-rotate(0deg) brightness(100%) contrast(70%);
+}
+
+.actions-delete { /* ícono color rojo/bordo */
+    filter: invert(10%) sepia(100%) saturate(3000%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+/* ================================ MODIFY PRODUCTS ================================ */
+form input { /* botones de los formularios */
+    width: 320px;
+    margin-bottom: 8px;
+}
+
+.card-modify { /* card de la página moidfy */
+    width: 190px;
+    transition: all 0.25s;
+}
+
+.card-modify:hover { /* hover del card de la página modify */
+    transform: scale(1.03);
+}
+
+.btn-modify { /* botones para modificar productos */
+    max-width: 96px;
+    padding: 10px;
+    color: #fff;
+    background-color: #000000;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.25s;
+}
+
+.btn-modify:hover { /* hover de los botones para modificar productos */
+    background-color: var(--color3);
+    transform: scale(1.1);
+}
+
+/* ================================ PRODUCTS ================================ */
+
+/* MODIFICAR CARD PARA OTROS TAMAÑOS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.card-products { /* card de la página products */
+    height: 420px;
+    transition: all 0.25s;
+}
+
+.card-products:hover { /* hover del card de la página products */
+    transform: scale(1.03);
+}
+
+.card-img-top { /* imagen de las cards de la página products */
+    height: 200px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.cart { /* botón para ir al carrito de compra */
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color3);
+    border-radius: 8px;
+    gap: 8px;
+    padding-block: 8px;
+    transition: all 0.25s;
+}
+
+.cart:hover { /* hover del botón para ir al carrito de compra */
+    transform: scale(1.05);
+}
+
+.cart-text { /* texto del carrito de compra en la página products */
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+
+.cart-icon { /* ícono del carrito de compra en la página products */
+    width: 35px;
+    margin: 0;
+    padding: 0;
+    filter: invert(1);
+}
+
+.left-arrow-icon { /* ícono de flecha izquierda */
+    width: 36px;
+    padding: 0;
+    filter: invert(1);  
+    transform: rotate(180deg);
+    transition: all 0.25s;
+}
+
+.left-arrow-icon:hover { /* hover en el ícono de la flecha izquierda */
+    transform: rotate(180deg) scale(1.05);
+}
+
+.right-arrow-icon { /* ícono de flecha derecha */
+    width: 36px;
+    padding: 0;
+    filter: invert(1);  
+    transition: all 0.25s;
+}
+
+.right-arrow-icon:hover { /* hover en el ícono de la flecha derecha */
+    transform: scale(1.05);
+}
+
+/* ================================ CART ================================ */
+.cart-max-width { /* tamaño máximo del ancho de la página cart */
+    max-width: 720px;
+}
+
+.cart-btn { /* botones de la página cart */
+    color: #fafafa;
+    background-color: #000000;
+    font-size: 18px;
+}
+
+.cart-btn:hover { /* hover de los botones de la página cart */
+    color: #fafafa;
+    background-color: var(--color3);
+}
+
+/* ================================ CHECKOUT ================================ */
+.text-underline { /* datos subrayados (nombre, id pedido, email) */
+    text-decoration: underline;
+}

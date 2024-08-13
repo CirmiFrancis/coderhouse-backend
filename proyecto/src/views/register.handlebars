@@ -1,0 +1,22 @@
+<div data-aos="fade-down" data-aos-duration="1000"> {{!-- Registrar usuario --}}
+    <h1 class="my-5">Registrarse</h1>
+
+    <form class="formulario mb-5" action="/api/users/register" method="post">
+        <label for="first_name">Nombre:</label>
+        <input type="text" class="form-input" id="first_name" name="first_name" placeholder="Ej: Juan" required>
+        
+        <label for="last_name">Apellido:</label>
+        <input type="text" class="form-input" id="last_name" name="last_name" placeholder="Ej: Perez" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" class="form-input" id="email" name="email" placeholder="Ej: juanperez@gmail.com" required>
+        
+        <label for="password">Contraseña:</label>
+        <input type="password" class="form-input" id="password" name="password" placeholder="Ej: Holasoyjuanperez.123" required>
+        
+        <label for="age">Edad:</label>
+        <input type="number" class="form-input" id="age" name="age" placeholder="Ej: 25" required>
+        
+        <button class="form-btn" type="submit">Registrar</button>
+    </form>    
+</div>
