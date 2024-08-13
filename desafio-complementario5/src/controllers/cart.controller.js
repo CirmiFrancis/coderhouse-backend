@@ -3,7 +3,7 @@ import UserModel from "../models/user.model.js";
 import CartRepository from "../repositories/cart.repository.js";
 import ProductRepository from "../repositories/product.repository.js";
 import { generateUniqueCode, calcularTotal } from "../utils/cartutils.js";
-import { enviarCorreoCompra } from "../services/email.js"; // desafío complementario 3
+import { enviarCorreoCompra } from "../services/email.js";
 
 const cartRepository = new CartRepository();
 const productRepository = new ProductRepository();
@@ -82,7 +82,6 @@ class CartController { // controlador de carritos
         const newQuantity = req.body.quantity;
         try {
             const updatedCart = await cartRepository.actualizarCantidadesEnCarrito(cartId, productId, newQuantity);
-
             res.json({
                 status: 'success',
                 message: 'Cantidad del producto actualizada correctamente.',
@@ -116,6 +115,10 @@ class CartController { // controlador de carritos
             const products = cart.products; // obtener los productos
             const productosNoDisponibles = []; // array para almacenar los productos no disponibles
 
+            if (products.length === 0) { // tira error al estar el carrito vacío
+                return res.status(400).json({ error: "Carrito vacío. Agrega al menos un producto." });
+            }
+
             for (const item of products) { // verificar el stock y actualizar los productos disponibles
                 const productId = item.product;
                 const product = await productRepository.obtenerProductoPorId(productId);
@@ -139,9 +142,9 @@ class CartController { // controlador de carritos
             cart.products = cart.products.filter(item => productosNoDisponibles.some(productId => productId.equals(item.product))); // eliminar del carrito los productos que sí se compraron
 
             await cart.save(); // guardar el carrito actualizado en la base de datos
-            await enviarCorreoCompra(userWithCart.email, userWithCart.first_name, ticket._id); // enviar correo de compra (desafío complementario 3)
+            await enviarCorreoCompra(userWithCart.email, userWithCart.first_name, ticket._id); // enviar correo de compra
 
-            res.render("checkout", { // renderizar la vista de compra (desafío complementario 3)
+            res.render("checkout", { // renderizar la vista de compra con los datos
                 cliente: userWithCart.first_name,
                 email: userWithCart.email,
                 numTicket: ticket._id 

@@ -9,6 +9,7 @@ const viewsController = new ViewsController();
 router.get("/", viewsController.renderHome); // renderiza la interfaz principal
 router.get("/register", viewsController.renderRegister); // renderiza el registro
 router.get("/login", viewsController.renderLogin); // renderiza el login
+router.get("/profile", passport.authenticate("jwt", { session: false }), viewsController.renderProfile); // renderiza profile, pasando datos del usuario
 router.get("/reset-password", viewsController.renderResetPassword); // renderiza la interfaz de ingreso de mail para cambiar la contraseña
 router.get("/confirmacion-envio", viewsController.renderConfirmacion); // renderiza la interfaz de confirmacion de envío del mail para cambiar la contraseña
 router.get("/password", viewsController.renderCambioPassword); // renderiza la interfaz de cambio de contraseña

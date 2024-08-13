@@ -1,7 +1,10 @@
 const socket = io(); 
 
-const role = document.getElementById("userRole").textContent; // Desafío Complementario 3
-const id = document.getElementById("userID").textContent; // Desafío Complementario 3
+// esta forma de obtener datos del usuario de realtimeproducts.handlebars es insegura, ya que se muestra en el DOM y automáticamente se elimina, lo ideal sería que directamente no se muestre y manipularlo desde el código, pero funciona
+const role = document.getElementById("userRole").textContent;
+const id = document.getElementById("userID").textContent;
+document.getElementById("userRole").remove();
+document.getElementById("userID").remove();
 //console.log(role,id)
 
 socket.on("productos", (data) => {
@@ -17,14 +20,14 @@ const renderProductos = (productos) => { // función para renderizar los product
         const card = document.createElement("div");
         card.classList.add("card", "card-modify", "mb-2", "p-5");
 
-        if (item.owner === id) { // Desafío Complementario 3, para diferenciar de alguna forma tus productos de los demás
+        if (item.owner === id) { // para ver en rojo tus productos
             card.innerHTML = ` 
                             <p class="fs-5 text-danger"> ${item.title} </p>
                             <p class="text-danger"> $ ${item.price} </p>
                             <button class="btn-modify"> Eliminar </button>
                             `;
         } 
-        else {
+        else { // para ver en negro los productos de los demás
             card.innerHTML = ` 
                             <p class="fs-5"> ${item.title} </p>
                             <p> $ ${item.price} </p>
@@ -65,14 +68,9 @@ document.getElementById("btnEnviar").addEventListener("click", () => { // al hac
 })
 
 const agregarProducto = () => { // obtiene los datos del formulario y emite el evento junto con el producto
-    //const role = document.getElementById("userRole").textContent;
-    //const id = document.getElementById("userID").textContent;
-
     const owner = role === "premium" ? id : "admin"; // identifica el rol del dueño del producto
-
     let imageURL = document.getElementById("img").value; // imagen por defecto
     imageURL == "" ? imageURL = "img/no-image.jpg" : imageURL;
-
     const producto = {
         title: document.getElementById("title").value,
         description: document.getElementById("description").value,

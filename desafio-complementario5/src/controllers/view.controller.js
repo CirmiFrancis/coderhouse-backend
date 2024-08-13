@@ -1,5 +1,6 @@
 import ProductModel from "../models/product.model.js";
 import CartRepository from "../repositories/cart.repository.js";
+import UserDTO from "../dto/user.dto.js";
 
 const cartRepository = new CartRepository();
 
@@ -29,7 +30,7 @@ class ViewsController { // controlador de las vistas
 
             const cartId = req.user.cart.toString();
             //console.info(cartId);
-            const userID = req.user._id.toString(); // Desafío Complementario 3
+            const userID = req.user._id.toString();
             //console.log( typeof(userID) ); 
             //console.log( typeof(productos[productos.length-1]["owner"]) ); 
             //console.log( userID === productos[productos.length-1]["owner"] ); 
@@ -43,7 +44,7 @@ class ViewsController { // controlador de las vistas
                 currentPage: parseInt(page),
                 totalPages,
                 cartId,
-                userID // Desafío Complementario 3
+                userID
             });
 
         } catch (error) {
@@ -94,6 +95,18 @@ class ViewsController { // controlador de las vistas
 
     async renderRegister(req, res) { // renderiza register.handlebars
         res.render("register");
+    }
+
+    async renderProfile(req, res) { // renderizo profile.handlebars y paso datos del usuario
+        try {
+            const userDto = new UserDTO(req.user.first_name, req.user.last_name, req.user.role); // con DTO
+            const isAdmin = req.user.role === 'admin';
+            const isPremium = req.user.role === 'premium';
+            res.render("profile", { user: userDto, isAdmin, isPremium });
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error interno del servidor.');
+        }
     }
 
     async renderRealTimeProducts(req, res) { // renderiza realtimeproducts.handlebars y le pasa los datos

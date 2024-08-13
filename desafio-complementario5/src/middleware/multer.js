@@ -1,7 +1,7 @@
 import multer from "multer";
 
-const storage = multer.diskStorage({ // middleware en proceso
-    destination: (req, file, cb) => {
+const storage = multer.diskStorage({ // middleware para almacenar los archivos, les asigna una carpeta destino y mantiene el nombre original del archivo
+    destination: (req, file, cb) => { //
         let destinationFolder;
         switch(file.fieldname) {
             case "profile": 
@@ -13,12 +13,17 @@ const storage = multer.diskStorage({ // middleware en proceso
             case "document":
                 destinationFolder = "./src/uploads/documents"
         }
-        cb(null, destinationFolder);
+        cb(null, destinationFolder); // carpeta del archivo
     },
 
     filename: (req, file, cb) => {
-        cb(null, file.originalname);
+        cb(null, file.originalname); // nombre del archivo
     }
 })
 
-export const upload = multer ({storage: storage});
+const upload = multer({storage: storage});
+export const fields = upload.fields([
+    { name: "document" }, 
+    { name: "products" }, 
+    { name: "profile" }
+]);

@@ -554,3 +554,24 @@ error: undefined {"causa":"El código code10 ya existe.","code":2,"name":"Agrega
 error: undefined {"causa":"El código code10 ya existe.","code":2,"name":"Agregar producto"}
 error: undefined
 error: undefined {"causa":"El código asdasdasc213213 ya existe.","code":2,"name":"Agregar producto"}
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:703:11)
+    at ServerResponse.header (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/response.js:795:10)
+    at ServerResponse.send (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/response.js:175:12)
+    at ServerResponse.json (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/response.js:279:15)
+    at ServerResponse.send (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/response.js:163:21)
+    at manejadorError (file:///Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis%20Proyectos/coderhouse-backend/desafio-complementario5/src/middleware/error.js:10:29)
+    at Layer.handle_error (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/router/index.js:326:13)
+    at /Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/router/index.js:346:12)
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined

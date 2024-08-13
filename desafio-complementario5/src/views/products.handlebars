@@ -1,9 +1,6 @@
 <div data-aos="fade-down" data-aos-duration="1000"> {{!-- Tienda / Lista de productos --}}
     <div class="d-flex justify-content-center align-items-center">
         <h1 class="my-5">Tienda</h1>
-
-        {{!-- Desafío Complementario 3, esto no debería mostrarse --}}
-        <p class="d-none" id="userID">{{userID}}</p>
     </div>
 
     <div class="container-fluid px-5 mb-4"> {{!-- Card de cada producto --}}
@@ -18,7 +15,6 @@
                         <p class="card-text">Precio: ${{price}}</p>
                         {{!-- <p class="card-text">Dueño: {{owner}}</p> --}}
                         
-                        {{!-- Desafío Complementario 3, esto no debería mostrarse --}}
                         {{#ifNotEqual ../userID owner }} 
                             <form action="/api/carts/{{../cartId}}/product/{{id}}" method="POST">
                                 <button class="form-btn" type="submit">Agregar al Carrito</button>

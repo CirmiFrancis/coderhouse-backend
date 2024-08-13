@@ -1,7 +1,7 @@
 <div data-aos="fade-down" data-aos-duration="1000"> {{!-- Menú de agregar/eliminar productos --}}
     <h1 class="m-0 my-5">Modificar Productos</h1>
 
-    {{!-- Desafío Complementario 3, esto no debería mostrarse --}}
+    {{!-- Esta forma de llevar datos del usuario a realtime.js es insegura, ya que se muestra en el DOM y automáticamente se elimina, lo ideal sería que directamente no se muestre y manipularlo desde el código, pero funciona --}}
     <p class="d-none" id="userRole">{{userRole}}</p>
     <p class="d-none" id="userID">{{userID}}</p>
 
