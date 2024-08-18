@@ -1,0 +1,669 @@
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"66733d42cfb12efbc93a3fa\"","value":"66733d42cfb12efbc93a3fa","valueType":"string"}
+error: undefined
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+fatal: Mensaje FATAL
+error: Mensaje ERROR
+error: undefined
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"6699de7378b6dd9ff0ddb2f\"","value":"6699de7378b6dd9ff0ddb2f","valueType":"string"}
+error: undefined
+error: undefined
+error: undefined
+error: Handlebars: Access has been denied to resolve the property "role" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: Handlebars: Access has been denied to resolve the property "_id" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: undefined
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{pid}\"","value":"{pid}","valueType":"string"}
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{cid}\"","value":"{cid}","valueType":"string"}
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{cid}\"","value":"{cid}","valueType":"string"}
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{cid}\"","value":"{cid}","valueType":"string"}
+error: undefined
+error: undefined
+error: Here's the report: 
+
+
+ Error in ./src/docs/Carts/Carts.yaml :
+YAMLSyntaxError: All collection items must start at the same column at line 307, column 9:
+
+        products: array
+        ^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 309, column 20:
+
+              _id: 6626f6c948c0130b313bee86
+                   ^^^^^^^^^^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 309, column 20:
+
+              _id: 6626f6c948c0130b313bee86
+                   ^^^^^^^^^^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+error: Here's the report: 
+
+
+ Error in ./src/docs/Carts/Carts.yaml :
+YAMLSyntaxError: All collection items must start at the same column at line 307, column 9:
+
+        products: array
+        ^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 309, column 20:
+
+              _id: 6626f6c948c0130b313bee86
+                   ^^^^^^^^^^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 309, column 20:
+
+              _id: 6626f6c948c0130b313bee86
+                   ^^^^^^^^^^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+error: Here's the report: 
+
+
+ Error in ./src/docs/Carts/Carts.yaml :
+YAMLSyntaxError: All collection items must start at the same column at line 307, column 9:
+
+        products: array
+        ^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 309, column 20:
+
+              _id: 6626f6c948c0130b313bee86
+                   ^^^^^^^^^^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 309, column 20:
+
+              _id: 6626f6c948c0130b313bee86
+                   ^^^^^^^^^^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+error: Here's the report: 
+
+
+ Error in ./src/docs/Carts/Carts.yaml :
+YAMLSyntaxError: All collection items must start at the same column at line 307, column 9:
+
+        products: array
+        ^^^^^^^^^^^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 307, column 19:
+
+        products: array
+                  ^^^^^…
+
+YAMLSemanticError: Nested mappings are not allowed in compact mappings at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+YAMLSemanticError: Implicit map keys need to be on a single line at line 311, column 22:
+
+              price: 300
+                     ^^^…
+
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: El código mock777 ya existe.
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: undefined
+    - Price: se esperaba un Number. Se recibió: undefined
+    - Code: se esperaba un String. Se recibió: undefined
+    - Stock: se esperaba un Number. Se recibió: undefined
+    - Category: se esperaba un String. Se recibió: undefined
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test description
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: 
+Los datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:
+    - Title: se esperaba un String. Se recibió: undefined
+    - Description: se esperaba un String. Se recibió: Test description
+    - Price: se esperaba un Number. Se recibió: 1234
+    - Code: se esperaba un String. Se recibió: test123
+    - Stock: se esperaba un Number. Se recibió: 50
+    - Category: se esperaba un String. Se recibió: Test
+    
+error: Hay un error en la conexión. The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string. {"stack":"MongooseError: The `uri` parameter to `openUri()` must be a string, got \"undefined\". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.\n    at NativeConnection.createClient (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario4/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:206:11)\n    at NativeConnection.openUri (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario4/node_modules/mongoose/lib/connection.js:779:34)\n    at Mongoose.connect (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario4/node_modules/mongoose/lib/mongoose.js:404:15)\n    at file:///Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis%20Proyectos/coderhouse-backend/desafio-complementario4/src/database.js:8:10\n    at ModuleJob.run (node:internal/modules/esm/module_job:262:25)\n    at async ModuleLoader.import (node:internal/modules/esm/loader:474:24)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:109:5)"}
+error: Hay un error en la conexión. Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/ {"reason":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":null,"maxElectionId":null,"maxSetVersion":null,"servers":{},"setName":"atlas-ji1rhf-shard-0","stale":false,"type":"ReplicaSetNoPrimary"},"stack":"MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\n    at _handleConnectionErrors (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario4/node_modules/mongoose/lib/connection.js:829:11)\n    at NativeConnection.openUri (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario4/node_modules/mongoose/lib/connection.js:804:11)"}
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined {"causa":"El código code10 ya existe.","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"El código code10 ya existe.","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"El código code10 ya existe.","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"El código code10 ya existe.","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"El código code10 ya existe.","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"El código code10 ya existe.","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"El código code10 ya existe.","code":2,"name":"Agregar producto"}
+error: undefined
+error: undefined {"causa":"El código asdasdasc213213 ya existe.","code":2,"name":"Agregar producto"}
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:703:11)
+    at ServerResponse.header (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/response.js:795:10)
+    at ServerResponse.send (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/response.js:175:12)
+    at ServerResponse.json (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/response.js:279:15)
+    at ServerResponse.send (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/response.js:163:21)
+    at manejadorError (file:///Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis%20Proyectos/coderhouse-backend/desafio-complementario5/src/middleware/error.js:10:29)
+    at Layer.handle_error (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/router/index.js:326:13)
+    at /Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/desafio-complementario5/node_modules/express/lib/router/index.js:346:12)
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: Error: Failed to parse URL from /api/users {"stack":"TypeError: Failed to parse URL from /api/users\n    at node:internal/deps/undici/undici:13193:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+error: Error: Failed to parse URL from /api/users {"stack":"TypeError: Failed to parse URL from /api/users\n    at node:internal/deps/undici/undici:13193:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+error: Error: Failed to parse URL from /api/users {"stack":"TypeError: Failed to parse URL from /api/users\n    at node:internal/deps/undici/undici:13193:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: Handlebars: Access has been denied to resolve the property "first_name" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: Handlebars: Access has been denied to resolve the property "last_name" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: Handlebars: Access has been denied to resolve the property "email" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: Handlebars: Access has been denied to resolve the property "role" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: Handlebars: Access has been denied to resolve the property "first_name" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: Handlebars: Access has been denied to resolve the property "last_name" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: Handlebars: Access has been denied to resolve the property "email" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: Handlebars: Access has been denied to resolve the property "role" because it is not an "own property" of its parent.
+You can add a runtime option to disable the check or this warning:
+See https://handlebarsjs.com/api-reference/runtime-options.html#options-to-control-prototype-access for details
+error: undefined
+error: undefined {"code":"ERR_HTTP_INVALID_STATUS_CODE"}
+error: undefined
+error: undefined {"code":"ERR_HTTP_INVALID_STATUS_CODE"}
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined {"causa":"El código asdsa12321 ya existe.","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"El código asdasd123123 ya existe.","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"El código asdasd123123 ya existe.","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined
+error: Hay un error en la conexión. querySrv ECONNREFUSED _mongodb._tcp.codercluster.u7pr2vc.mongodb.net {"code":"ECONNREFUSED","hostname":"_mongodb._tcp.codercluster.u7pr2vc.mongodb.net","stack":"Error: querySrv ECONNREFUSED _mongodb._tcp.codercluster.u7pr2vc.mongodb.net\n    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:293:17)","syscall":"querySrv"}
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: \n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: undefined {"causa":"\nLos datos están incompletos o no son válidos. Se necesita recibir los siguientes datos:\n    - Title: se esperaba un String. Se recibió: asd\n    - Description: se esperaba un String. Se recibió: \n    - Price: se esperaba un Number. Se recibió: \n    - Code: se esperaba un String. Se recibió: \n    - Stock: se esperaba un Number. Se recibió: \n    - Category: se esperaba un String. Se recibió: \n    ","code":2,"name":"Agregar producto"}
+error: Hay un error en la conexión. connection 1 to 54.207.127.10:27017 timed out {"connectionGeneration":0,"stack":"MongoNetworkTimeoutError: connection 1 to 54.207.127.10:27017 timed out\n    at Timeout._onTimeout (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/node_modules/mongodb/lib/cmap/connection.js:130:32)\n    at listOnTimeout (node:internal/timers:573:17)\n    at process.processTimers (node:internal/timers:514:7)"}
+error: Hay un error en la conexión. connection timed out {"connectionGeneration":0,"stack":"MongoNetworkTimeoutError: connection timed out\n    at connectionFailureError (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/node_modules/mongodb/lib/cmap/connect.js:381:20)\n    at TLSSocket.<anonymous> (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/node_modules/mongodb/lib/cmap/connect.js:285:22)\n    at Object.onceWrapper (node:events:634:28)\n    at TLSSocket.emit (node:events:520:28)\n    at Socket._onTimeout (node:net:591:8)\n    at listOnTimeout (node:internal/timers:573:17)\n    at process.processTimers (node:internal/timers:514:7)"}
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: Error detallado: Login sessions require session support. Did you forget to use `express-session` middleware? {"stack":"Error: Login sessions require session support. Did you forget to use `express-session` middleware?\n    at SessionManager.logIn (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/node_modules/passport/lib/sessionmanager.js:21:33)\n    at req.login.req.logIn (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/node_modules/passport/lib/http/request.js:39:26)\n    at strategy.success (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/node_modules/passport/lib/middleware/authenticate.js:265:13)\n    at verified (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/node_modules/passport-oauth2/lib/strategy.js:189:20)\n    at Strategy._verify (file:///Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis%20Proyectos/coderhouse-backend/src/config/passport.config.js:55:24)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+error: undefined
+error: Error detallado: users validation failed: last_name: Path `last_name` is required. {"_message":"users validation failed","errors":{"last_name":{"kind":"required","message":"Path `last_name` is required.","name":"ValidatorError","path":"last_name","properties":{"message":"Path `last_name` is required.","path":"last_name","type":"required","value":""},"value":""}},"stack":"ValidationError: users validation failed: last_name: Path `last_name` is required.\n    at Document.invalidate (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/node_modules/mongoose/lib/document.js:3201:32)\n    at /Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/node_modules/mongoose/lib/document.js:2994:17\n    at /Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/node_modules/mongoose/lib/schemaType.js:1370:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)"}
+error: undefined
+error: Error detallado: users validation failed: last_name: Path `last_name` is required. {"_message":"users validation failed","errors":{"last_name":{"kind":"required","message":"Path `last_name` is required.","name":"ValidatorError","path":"last_name","properties":{"message":"Path `last_name` is required.","path":"last_name","type":"required","value":""},"value":""}},"stack":"ValidationError: users validation failed: last_name: Path `last_name` is required.\n    at Document.invalidate (/Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/node_modules/mongoose/lib/document.js:3201:32)\n    at /Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/node_modules/mongoose/lib/document.js:2994:17\n    at /Users/franciscirmi/Desktop/CURSOS/CoderHouse/ProgramacionBackend/Mis Proyectos/coderhouse-backend/node_modules/mongoose/lib/schemaType.js:1370:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)"}

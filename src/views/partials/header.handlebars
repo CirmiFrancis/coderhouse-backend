@@ -1,0 +1,28 @@
+<header class="navbar navbar-expand-lg bg-color1 p-0">
+    <div class="container-fluid m-0 my-3 p-0">
+        <figure class="mb-0 ms-5 p-0"> {{!-- Logo --}}
+            <a href="/"> 
+                <img src="/img/logo-saborear.png" class="size-logo" alt="Logo de Saborear."> 
+            </a>
+        </figure>
+        
+        <button class="navbar-toggler me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> {{!-- Ícono menú hamburguesa (responsive) --}}
+
+        <nav class="nav-header collapse navbar-collapse" id="navbarNav"> {{!-- Lista de navegación --}}
+            <ul class="navbar-nav ms-auto">
+                {{#if user}}
+                    <li class="nav-item text-end">
+                        <a href="/profile">Mi Perfil</a>
+                    </li>
+                {{else}}
+                    <li class="nav-item text-end">
+                        <a href="/login">Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item text-end">
+                        <a href="/register">Registrarse</a>
+                    </li>
+                {{/if}}
+            </ul>
+        </nav>
+    </div>
+</header>

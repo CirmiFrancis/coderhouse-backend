@@ -1,0 +1,15 @@
+<div data-aos="fade-down" data-aos-duration="1000">
+    <h1 class="my-5">Chat Comunitario</h1>
+
+    <div class="container-fluid text-center mb-5"> {{!-- Escribir tu mensaje --}}
+        <input type="text" id="chatBox" placeholder="Escriba su mensaje...">
+    </div>
+
+    <div class="text-white mx-5"> {{!-- Ver todos los mensajes --}}
+        <p id="messagesLogs"></p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+<script src="js/chat.js"></script>

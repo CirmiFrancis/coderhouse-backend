@@ -1,0 +1,71 @@
+<div data-aos="fade-down" data-aos-duration="1000"> {{!-- Menú de agregar/eliminar productos --}}
+    <h1 class="m-0 my-5">Modificar Productos</h1>
+
+    <h2 class="text-white mx-5 mt-5 mb-3">Todos los productos</h2>
+    <hr class="color2 mx-5">
+    <div class="container my-5">
+        <div class="table-responsive">
+            <table class="table border border-dark m-0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="d-none d-md-table-cell text-white bg-dark">CÓDIGO</th>
+                        <th scope="col" class="text-white bg-dark">TÍTULO</th>
+                        <th scope="col" class="text-white bg-dark">DESCRIPCIÓN</th>
+                        <th scope="col" class="d-none d-md-table-cell text-white bg-dark">DUEÑO</th>
+                        <th scope="col" class="d-none d-md-table-cell text-white bg-dark">CATEGORÍA</th>
+                        <th scope="col" class="d-none d-md-table-cell text-white bg-dark">PRECIO</th>
+                        <th scope="col" class="d-none d-md-table-cell text-white bg-dark">STOCK</th>
+                        <th scope="col" class="text-center text-white bg-dark">ACCIONES</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{#each adminproducts}}
+                    <tr>
+                        <th scope ="row" class="d-none d-md-table-cell">{{this.code}}</th>
+                        <td>{{this.title}}</td>
+                        <td>{{this.description}}</td>
+                        <td class="d-none d-md-table-cell text-danger">{{this.owner}}</td>
+                        <td class="d-none d-md-table-cell">{{this.category}}</td>
+                        <td class="d-none d-md-table-cell">{{this.price}}</td>
+                        <td class="d-none d-md-table-cell">{{this.stock}}</td>
+                        <td class="text-center bg-body-secondary border-start border-dark">
+                            {{#ifEqual ../userRole "admin"}}
+                                <a href="#" onclick="eliminarProducto('{{this.id}}'); return false;" class="clickeable text-decoration-none m-0 p-0" title="Eliminar producto">
+                                    <img src="/img/svg/trash-fill.svg" class="img-fluid actions-delete" alt="Ícono para eliminar el producto.">
+                                </a>
+                            {{else}}
+                                {{#ifEqual this.owner ../userID}} 
+                                    <a href="#" onclick="eliminarProducto('{{this.id}}'); return false;" class="clickeable text-decoration-none m-0 p-0" title="Eliminar producto">
+                                        <img src="/img/svg/trash-fill.svg" class="img-fluid actions-delete" alt="Ícono para eliminar el producto.">
+                                    </a>
+                                {{/ifEqual}}
+                            {{/ifEqual}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h2 class="text-white mx-5 mt-5 mb-3">Agregar un producto</h2>
+    <hr class="color2 mx-5">
+    <form class="d-flex flex-column justify-content-center align-items-center mx-5 my-5"> {{!-- Crear un producto --}}
+        <input type="text" id="title" placeholder="Titulo">
+        <input type="text" id="description" placeholder="Descripcion">
+        <input type="number" id="price" placeholder="Precio">
+        <input type="text" id="img" placeholder="Imagen (opcional)">
+        <input type="text" id="code" placeholder="Código (debe ser único)">
+        <input type="number" id="stock" placeholder="Stock">
+        <input type="text" id="category" placeholder="Categoria">
+        <select id="status">
+            <option value="true">Activo</option>
+            <option value="false">Inactivo</option>
+        </select> <br>
+        <button type="button" class="clickeable btn-modify" onclick="agregarProducto('{{userRole}}', '{{userID}}')">Enviar</button>
+    </form>
+</div>
+
+<script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+<script src="js/realtime.js"></script>
