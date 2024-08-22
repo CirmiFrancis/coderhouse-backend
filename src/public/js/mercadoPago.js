@@ -9,7 +9,7 @@ document.getElementById("checkout-btn").addEventListener("click",  async (event)
     try {
         const cartID = window.location.pathname.replace('/carts/', '');
         //console.log(cartID);
-        const cartResponse = await fetch(`http://localhost:8080/api/carts/${cartID}`);
+        const cartResponse = await fetch(`https://coderhouse-backend-final-it9a.onrender.com/api/carts/${cartID}`);
         const cart = await cartResponse.json();
         const orderData = cart.products.map(item => ({ // productos en el carrito
             title: item.product.title,
@@ -17,7 +17,7 @@ document.getElementById("checkout-btn").addEventListener("click",  async (event)
             price: item.product.price,
         }));
         //console.log(orderData);
-        const response = await fetch("http://localhost:8080/create-preference", {
+        const response = await fetch("https://coderhouse-backend-final-it9a.onrender.com/create-preference", {
             method: "POST", 
             headers: {
                 "Content-Type": "application/json"
