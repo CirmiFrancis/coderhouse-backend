@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/app.js",
     "dev": "nodemon src/app.js",
     "testCarts": "mocha test/carts.test.js",
     "testProducts": "mocha test/products.test.js"
