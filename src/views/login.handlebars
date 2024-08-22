@@ -2,7 +2,7 @@
     <h1 class="my-5">Iniciar Sesión</h1>
 
     <form class="formulario mb-5" action="/api/users/login" method="POST">
-        <label for="email">Email:</label>
+        <label for="email">Email:</label> {{!-- Iniciar sesión con correo --}}
         <input type="email" class="form-input" id="email" name="email" placeholder="Ej: juanperez@gmail.com" required>
         
         <label for="password">Contraseña:</label>
@@ -17,7 +17,7 @@
 
         <hr>
 
-        <div class="login-with">
+        <div class="login-with"> {{!-- Iniciar sesión con Github y Google --}}
             <div class="login-with-github">
                 <img src="/img/svg/github.svg" alt="Ícono de Github">
                 <a href="/api/users/github" class="github"> Iniciar con GITHUB </a> 

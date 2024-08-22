@@ -8,17 +8,12 @@ const cartRepository = new CartRepository();
 class ViewsController { // controlador de las vistas
     async renderProducts(req, res) {
         try {
-            const { page = 1, limit = 4 } = req.query; // limito a 4 los productos por página e ingreso a la página 1 por defecto
-
+            const { page = 1, limit = 12 } = req.query; // limito a 12 los productos por página e ingreso a la página 1 por defecto
+            
             const skip = (page - 1) * limit;
-
-            const productos = await ProductModel
-                .find()
-                .skip(skip)
-                .limit(limit);
+            const productos = await ProductModel.find().skip(skip).limit(limit);
 
             const totalProducts = await ProductModel.countDocuments();
-
             const totalPages = Math.ceil(totalProducts / limit);
 
             const hasPrevPage = page > 1;
@@ -26,7 +21,7 @@ class ViewsController { // controlador de las vistas
 
             const nuevoArray = productos.map(producto => {
                 const { _id, ...rest } = producto.toObject();
-                return { id: _id, ...rest }; // Agregar el ID al objeto
+                return { id: _id, ...rest }; // agregar el ID al objeto
             });
 
             const cartId = req.user.cart.toString();
@@ -166,6 +161,18 @@ class ViewsController { // controlador de las vistas
             console.error(error);
             res.status(500).send("Error interno del servidor.");
         }
+    }
+
+    async preCheckout(req, res){ // renderiza checkout-pre.handlebars
+        res.render("checkout-pre"); 
+    }
+
+    async checkout(req, res){ // renderiza checkout.handlebars
+        res.render("checkout"); 
+    }
+
+    async error(req, res){ // renderiza error.handlebars
+        res.render("error"); 
     }
 }
 

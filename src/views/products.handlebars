@@ -4,15 +4,23 @@
     </div>
 
     <div class="container-fluid px-5 mb-4"> {{!-- Card de cada producto --}}
-        <div class="row g-3">
+        <div class="div-productos row g-3">
             {{#each productos}}
-            <div class="col-xl-3 col-md-6 col-sm-12" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+            <div class="col-xl-3 col-md-6 col-sm-12 d-flex justify-content-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
                 <div class="card card-products my-2 p-0">
-                    <img src="{{img}}" alt="Imagen de {{title}}" class="card-img-top border border-secondary">
-                    <div class="card-body border border-top-0 border-secondary rounded-bottom">
-                        <h2 class="card-title">{{title}}</h2>
-                        <p class="card-text">${{price}}</p>
-                        <p class="card-text">{{description}}</p>
+                    <img src="{{img}}" alt="Imagen de {{title}}" class="card-img-top border border-black">
+
+                    <div class="info-container"> {{!-- Ícono de información --}}
+                        <img class="info-icon" src="/img/svg/info.svg" alt="Ícono de información.">
+                        <div class="info-text">{{description}}</div>
+                    </div>
+
+                    <div class="card-body border border-top-0 border-black rounded-bottom"> {{!-- Datos del producto --}}
+                        <div class="row">
+                            <h2 class="card-title mb-0">{{title}}</h2>
+                        </div>
+                        <p class="fs-5">${{price}}</p>
+                        {{!-- <p class="card-text">{{description}}</p> --}}
                         {{!-- <p class="card-text">Dueño: {{owner}}</p> --}}
                         
                         {{#ifNotEqual ../userID owner }} 

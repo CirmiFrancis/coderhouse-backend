@@ -3,6 +3,7 @@ const chatBox = document.getElementById("chatBox");
 let user;
 
 Swal.fire({ // sweet alert 2
+    width: '320px',
     title: "Identificate", 
     input: "text",
     text: "Ingresa un usuario para identificarte en el chat", 

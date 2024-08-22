@@ -2,24 +2,32 @@
   <h1 class="my-5">Mi Perfil</h1>
 
   <div class="profile-card mb-5">
-    <p><span class="fs-5 fw-bold"> {{user.nombre}} {{user.apellido}} </span> </p>
-    <p><span class="text-danger fs-5 fw-bold"> {{user.role}} </span> </p>
-
+    {{!-- Datos de usuario --}}
+    <div class="row border border-dark rounded bg-secondary-subtle mx-4"> 
+      <div class="col-4 d-flex justify-content-center align-items-center">
+        <img src="/img/svg/user.svg" class="img-fluid" width="48" alt="Imagen de usuario.">
+      </div>
+      <div class="col-8 text-start"> 
+        <p class="fs-5 fw-bold mt-2">{{user.nombre}} {{user.apellido}} </p>
+        <p class="text-danger fs-5 fw-bold mb-2"> {{user.role}} </p>
+      </div>
+    </div>
+    {{!-- Botones --}}
     <form action="/api/users/logout" method="POST">
       <button class="form-btn" type="submit">Salir</button>
     </form>
 
     {{#if this.isAdmin}}
       <a class="form-btn" href="/adminusers">Modificar Usuarios</a>
-      <a class="form-btn" href="/realtimeproducts">Modificar Productos</a>
+      <a class="form-btn mb-0" href="/realtimeproducts">Modificar Productos</a>
     {{else}}
       {{#if this.isPremium}}
         <a class="form-btn" href="/chat">Chat Comunitario</a>
         <a class="form-btn" href="/realtimeproducts">Modificar Productos</a>
-        <a class="form-btn" href="/products">Tienda</a>
+        <a class="form-btn mb-0" href="/products">Tienda</a>
       {{else}}
         <a class="form-btn" href="/chat">Chat Comunitario</a>
-        <a class="form-btn" href="/products">Tienda</a>
+        <a class="form-btn mb-0" href="/products">Tienda</a>
       {{/if}}
     {{/if}}
   </div>

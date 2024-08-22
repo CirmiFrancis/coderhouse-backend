@@ -262,7 +262,7 @@ class UserController { // controlador de usuarios
         }
     }
 
-    async loginWithGoogle(req, res) {
+    async loginWithGoogle(req, res) { // login con google
         if (req.user) {
             const token = jwt.sign({ user: req.user }, "coderhouse", {
                 expiresIn: "1h"
@@ -278,7 +278,7 @@ class UserController { // controlador de usuarios
         }
     }
 
-    async loginWithGithub(req, res) {
+    async loginWithGithub(req, res) { // login con github
         if (req.user) {
             const token = jwt.sign({ user: req.user }, "coderhouse", {
                 expiresIn: "1h"

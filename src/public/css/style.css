@@ -146,7 +146,7 @@ nav li a { /* propiedades de la lista de navegación */
     text-align: left;
 }
 
-.div-home {
+.div-home { /* para el div que contiene el texto */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -238,10 +238,11 @@ label { /* label (etiqueta) de cada formulario */
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.25s;
 }
 
 .form-btn:hover { /* hover en los botones de los formularios */
-    background-color: #474747;
+    background-color: var(--color3);
 }
 
 .restablecer-pass:hover { /* hover del botón de login que permite restablecer la contraseña */
@@ -249,20 +250,16 @@ label { /* label (etiqueta) de cada formulario */
     text-shadow: none;
 }
 
-
-
-.login-with { /* BUTTONS */
+.login-with { /* div de los botones de login de github y google */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid black; */
     border-radius: 8px;
     gap: 12px;
 }
-.login-with-github, .login-with-google {
+.login-with-github, .login-with-google { /* botones de login de github y google */
     width: 240px;
-    /* display: block; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -270,46 +267,44 @@ label { /* label (etiqueta) de cada formulario */
     border-radius: 8px;
     padding: 9px;
     gap: 8px;
-    /* cursor: pointer; */
     transition: all 0.25s;
 }
-.login-with-github {
+.login-with-github { /* botón de login de github */
     border: 1px solid black;
     background-color: black;
 }
-.login-with-google {
+.login-with-google { /* botón de login de google */
     border: 1px solid black;
     background-color: rgb(255, 255, 255);
 }
 
-.login-with-github img, .login-with-google img{ /* IMG */
+.login-with-github img, .login-with-google img{ /* image de los botones */
     width: 20px;
 }
 
-.login-with-github a, .login-with-google a{ /* TEXT */
+.login-with-github a, .login-with-google a{ /* texto de los botones */
     font-size: 18px;
     text-align: center;
     text-decoration: none;
 }
-.login-with-github a {
+.login-with-github a { /* texto del botón de login de github */
     color: white;
 }
-.login-with-google a {
+.login-with-google a { /* texto del botón de login de google */
     color: black;
 }
 
-.login-with-github:hover, .login-with-google:hover { /* HOVER */
+.login-with-github:hover, .login-with-google:hover { /* hover de los botones */
     transform: scale(1.05);
 }
-.login-with-github:hover {
+.login-with-github:hover { /* hover del botón de login de github */
     background-color: rgb(40, 40, 40);
 }
-.login-with-google:hover {
+.login-with-google:hover { /* hover del botón de login de google */
     background-color: rgb(215, 215, 215);
 }
 
 /* ================================ PROFILE ================================ */
-
 .profile-card { /* card del profile */
     max-width: 400px;
     margin: 0 auto;
@@ -350,8 +345,7 @@ label { /* label (etiqueta) de cada formulario */
 
 /* ================================ CHAT ================================ */
 #chatBox { /* input para escribir en el chat */
-    width: 320px;
-    margin-inline: 32px;
+    width: 640px;
     padding: 4px 8px; /* 4px block y 8px inline */
     border: 1px solid black;
     border-radius: 8px;
@@ -416,11 +410,16 @@ form input { /* botones de los formularios */
     transform: scale(1.1);
 }
 
-/* ================================ PRODUCTS ================================ */
+.clickeable { /* botón de eliminar productos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/* MODIFICAR CARD PARA OTROS TAMAÑOS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* ================================ PRODUCTS ================================ */
 .card-products { /* card de la página products */
-    height: 420px;
+    width: 20rem;
+    height: 360px;
     transition: all 0.25s;
 }
 
@@ -432,6 +431,43 @@ form input { /* botones de los formularios */
     height: 200px;
     object-fit: cover;
     object-position: center top;
+}
+
+.info-container { /* contenedor del ícono y texto de información en la card */
+    position: absolute;
+    top: 6px;
+    right: 8px;
+}
+
+.info-icon { /* ícono de información en la card */
+    width: 24px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.info-icon:hover { /* hover del ícono de información en la card */
+    box-shadow: white 0 0 8px;
+}
+
+.info-text { /* texto de información en la card */
+    visibility: hidden;
+    position: absolute;
+    bottom: -20%;
+    right: 140%;
+    width: 230px;
+    padding: 5px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+.info-container:hover .info-text { /* hover del contenedor, afecta al texto de información en la card */
+    visibility: visible;
+    opacity: 1;
 }
 
 .cart { /* botón para ir al carrito de compra */
@@ -507,29 +543,47 @@ form input { /* botones de los formularios */
 
 /* ================================ MEDIA QUERIES ================================ */
 @media (min-width: 1441px) {
-    .div-home { /* para el p */
+    .div-home { /* para el div de home que contiene el texto */
         padding-left: 4rem;
         justify-content: start;
     }
 
-    .text-home { /* para el p */
+    .text-home { /* para el p de home */
         padding-left: 12rem;
     }
 }
 
 @media (max-width: 1199px) {
-    .text-home {
+    .text-home { /* para el p de home */
         margin-bottom: 48px;
         text-align: center;
     }
 }
 
 @media (max-width: 991px) {
-    .nav-header {
+    .nav-header { /* para el menú hamburguesa del header */
         margin-top: 16px;
     }
 
-    .div-icon-item-home {
+    .div-icon-item-home { /* para los íconos de los ítems de home */
         border: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .td-clickeable { /* elemento td que contiene un botón para eliminar un producto */
+        padding: 1px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .div-productos { /* para el div de los productos */
+        margin-inline: 32px;
+    }
+}
+
+@media (max-width: 767px) {
+    #chatBox { /* input para escribir en el chat */
+        width: 280px;
     }
 }

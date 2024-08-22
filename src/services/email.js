@@ -101,7 +101,7 @@ class EmailManager { // administrador de email
         }
     }
 
-    async productoEliminado(email, first_name, last_name, title) {
+    async productoEliminado(email, first_name, last_name, title) { // envia un mail al usuario dueño del producto eliminado
         try {
             const mailOptions = {
                 from: "Saborear <franciscirmi@gmail.com>",

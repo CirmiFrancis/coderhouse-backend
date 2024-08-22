@@ -3,33 +3,60 @@
 
     <div class="container cart-max my-3">
 
-        <div class="d-flex flex-column justify-content-center align-items-end mb-3"> {{!-- Botón vaciar carrito --}}
+        {{#if productos}}
+        <div class="d-flex flex-column justify-content-center align-items-end"> {{!-- Botón vaciar carrito --}}
             <button onclick="vaciarCarrito('{{cartId}}')" class="btn cart-btn">Vaciar Carrito</button>
         </div>
 
-        {{#each productos}} {{!-- Se listan los productos del carrito --}}
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">Producto: {{this.product.title}}</h5>
-                <p class="card-text">Cantidad: {{this.quantity}}</p>
-                <p class="card-text">Precio: ${{this.product.totalPrice}}</p>
-                <button onclick="eliminarProducto('{{this.cartId}}', '{{this.product._id}}')" class="btn cart-btn">Eliminar</button>
+        
+        <div class="container my-2 p-0">
+            <div class="table-responsive"> {{!-- Tabla de productos --}}
+                <table class="table border border-dark m-0">
+                    <thead> {{!-- Cabecera --}}
+                        <tr>
+                            <th scope="col" class="text-white bg-dark">PRODUCTO</th>
+                            <th scope="col" class="text-white bg-dark">CANTIDAD</th>
+                            <th scope="col" class="text-white bg-dark">PRECIO</th>
+                            <th scope="col" class="text-center text-white bg-dark">-</th>
+                        </tr>
+                    </thead>
+
+                    <tbody> {{!-- Cuerpo con los distintos productos --}}
+                        {{#each productos}}
+                        <tr>
+                            <th scope="row">{{this.product.title}}</th>
+                            <td>{{this.quantity}}</td>
+                            <td>{{this.product.totalPrice}}</td>
+                            <td class="text-center bg-body-secondary border-start border-dark">
+                                <a href="#" onclick="eliminarProducto('{{this.cartId}}', '{{this.product._id}}')" class="text-decoration-none m-0 p-0" title="Eliminar usuario">
+                                    <img src="/img/svg/trash-fill.svg" class="img-fluid actions-delete" alt="Ícono para eliminar un producto.">
+                                </a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
             </div>
         </div>
-        {{/each}}
 
         <div class="d-flex flex-row justify-content-end align-items-center gap-4 m-0 p-0"> 
             <h3 class="text-center text-white m-0">Total: <span class="fs-1 fw-bold">$ {{totalCompra}}</span> </h3> {{!-- Precio total --}}
 
-            <form method="post" action="/api/carts/{{cartId}}/purchase"> {{!-- Botón finalizar compra --}}
-                <button type="submit" class="btn cart-btn">Finalizar Compra</button>
+            <form> 
+                <button class="btn cart-btn" id="checkout-btn">Finalizar Compra</button> {{!-- Botón finalizar compra --}}
             </form>
         </div>
 
-        <div class="text-center my-5"> {{!-- Botón volver --}}
-            <a href="/products" class="text-white fs-5">Volver</a>
+        <div class="d-flex justify-content-center justify-content-md-end align-items-center">
+            <div class="rounded bg-white mt-3 px-2" id="wallet_container"></div> <!-- Botón de MercadoPago -->
+        </div>
+        {{/if}}
+
+        <div class="text-center my-5"> 
+            <a href="/products" class="text-white fs-5">Volver</a> {{!-- Botón volver --}}
         </div>
     </div>
 </div>
 
 <script src="/js/carts.js"></script>
+<script src="/js/mercadoPago.js"></script>

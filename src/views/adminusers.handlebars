@@ -2,9 +2,9 @@
     <h1 class="m-0 my-5">Modificar Usuarios</h1>
 
     <div class="container mb-5">
-        <div class="table-responsive">
-            <table class="table border border-dark m-0">
-                <thead>
+        <div class="table-responsive"> {{!-- Tabla de usuarios --}}
+            <table class="table border border-dark m-0"> 
+                <thead> {{!-- Cabecera --}}
                     <tr>
                         <th scope="col" class="d-none d-md-table-cell text-white bg-dark">ID</th>
                         <th scope="col" class="text-white bg-dark">EMAIL</th>
@@ -12,11 +12,11 @@
                         <th scope="col" class="d-none d-md-table-cell text-white bg-dark">NOMBRE</th>
                         <th scope="col" class="d-none d-md-table-cell text-white bg-dark">APELLIDO</th>
                         <th scope="col" class="d-none d-md-table-cell text-white bg-dark">EDAD</th>
-                        <th scope="col" class="text-center text-white bg-dark">ACCIONES</th>
+                        <th scope="col" class="text-center text-white bg-dark">-</th>
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody> {{!-- Cuerpo con los distintos usuarios --}}
                     {{#each usuarios}}
                     <tr>
                         <th scope="row" class="d-none d-md-table-cell">{{this.id}}</th>

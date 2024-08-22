@@ -18,11 +18,12 @@ import addLogger from "./utils/logger.js";
 import authMiddleware from "./middleware/authmiddleware.js";
 import initializePassport from "./config/passport.config.js";
 import manejadorError from "./middleware/error.js";
-import mockingProductsRouter from "./routes/mockingproducts.router.js";
 import socketManager from "./sockets/socketmanager.js";
 import userMiddleware from "./middleware/usermiddleware.js";
 
 import cartsRouter from "./routes/carts.router.js";
+import mercadoPago from "./routes/mercadopago.router.js";
+import mockingProductsRouter from "./routes/mockingproducts.router.js";
 import productsRouter from "./routes/products.router.js";
 import userRouter from "./routes/user.router.js";
 import viewsRouter from "./routes/views.router.js";
@@ -113,3 +114,6 @@ const httpServer = app.listen(PUERTO, () => {
 
 // Websockets
 new socketManager(httpServer);
+
+// Mercado Pago
+app.use("/", mercadoPago);
