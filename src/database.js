@@ -1,7 +1,9 @@
 import dotenv from 'dotenv';
 import mongoose from "mongoose";
 
-dotenv.config();
+if (process.env.NODE_ENV !== 'production') {
+    dotenv.config();
+}
 
 const MONGODB_URL = process.env.MONGODB_URL;
 

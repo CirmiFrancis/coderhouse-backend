@@ -1170,3 +1170,5 @@ error: (node:53654) [DEP0040] DeprecationWarning: The `punycode` module is depre
 (Use `node --trace-deprecation ...` to show where the warning was created)
 error: (node:53688) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)
+error: (node:54368) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
