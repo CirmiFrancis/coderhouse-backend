@@ -44,7 +44,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 //app.use(express.static("./src/public")); // esta forma asigna una ruta específica, por lo que es relativo a la carpeta actual
 app.use(express.static(path.join(__dirname, 'public'))); // esta forma permite detectar la ruta desde cualquier carpeta
-//app.use(cors()); // aparentemente, al tener el back y el front en un mismo proyecto, no es necesario usar CORS
+app.use(cors()); // aparentemente, al tener el back y el front en un mismo proyecto, no es necesario usar CORS
 app.use(addLogger); // logger
 
 // Passport 
