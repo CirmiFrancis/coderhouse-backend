@@ -25,7 +25,7 @@
                         <td class="d-none d-md-table-cell">{{this.first_name}}</td>
                         <td class="d-none d-md-table-cell">{{this.last_name}}</td>
                         <td class="d-none d-md-table-cell">{{this.age}}</td>
-                        <td class="text-center bg-body-secondary border-start border-dark">
+                        <td class="text-center bg-body-secondary border-start border-dark padding-icons">
                             {{#ifNotEqual this.role "admin"}} 
                             <a href="#" onclick="sendPutRequest('/api/users/premium/{{this.id}}'); return false;" class="text-decoration-none m-0 p-0" title="Cambiar rol del usuario">
                                 <img src="/img/svg/user-role.svg" class="img-fluid actions-role" alt="Ícono para cambiar el rol del usuario.">

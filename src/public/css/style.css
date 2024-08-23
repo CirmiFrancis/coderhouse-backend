@@ -389,6 +389,10 @@ label { /* label (etiqueta) de cada formulario */
     filter: invert(10%) sepia(100%) saturate(3000%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
+.padding-icons { /* padding para los íconos de la página adminusers */
+    padding: 2px !important;
+}
+
 /* ================================ MODIFY PRODUCTS ================================ */
 form input { /* botones de los formularios */
     width: 320px;
