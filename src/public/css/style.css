@@ -591,6 +591,9 @@ form input { /* botones de los formularios */
 }
 
 @media (max-width: 767px) {
+    .bg-banner { /* para el fondo */
+        background-attachment: scroll;
+    }
     #chatBox { /* input para escribir en el chat */
         width: 280px;
     }
