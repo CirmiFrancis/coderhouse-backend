@@ -95,7 +95,7 @@ body {
     grid-template-rows: auto 1fr auto;
     min-height: 100dvh;
     overflow-x: hidden;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 /* ================================ HEADER & NAVBAR ================================ */
@@ -239,7 +239,7 @@ label { /* label (etiqueta) de cada formulario */
     box-sizing: border-box;
 }
 
-.form-btn { /* botones de los formularios */
+.form-btn { /* resto de botones de los formularios */
     width: 100%;
     padding: 10px;
     color: #fff;
@@ -427,6 +427,10 @@ form input { /* botones de los formularios */
 }
 
 /* ================================ PRODUCTS ================================ */
+.padding-custom { /* padding de la página products */
+    padding-inline: 48px;
+}
+
 .card-products { /* card de la página products */
     width: 20rem;
     height: 360px;
@@ -613,7 +617,16 @@ form input { /* botones de los formularios */
     .text-home { /* para el p de home */
         text-align: left !important;
     }
-    .margin-form { /* margin para los formularios */
+    .margin-form, .profile-card { /* margin para los formularios */
         margin-inline: 8px;
+    }
+    .padding-custom { /* padding de la página products */
+        padding-inline: 16px;
+    }
+    .card-products { /* card de la página products */
+        width: 16rem;
+    }
+    .info-text { /* texto de información en la card */
+        width: 200px;
     }
 }

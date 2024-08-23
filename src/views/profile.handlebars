@@ -13,22 +13,22 @@
       </div>
     </div>
     {{!-- Botones --}}
-    <form action="/api/users/logout" method="POST">
-      <button class="form-btn" type="submit">Salir</button>
-    </form>
-
     {{#if this.isAdmin}}
-      <a class="form-btn" href="/adminusers">Modificar Usuarios</a>
-      <a class="form-btn mb-0" href="/realtimeproducts">Modificar Productos</a>
+      <a class="form-btn" href="/realtimeproducts">MODIFICAR PRODUCTOS</a>
+      <a class="form-btn" href="/adminusers">MODIFICAR USUARIOS</a>
     {{else}}
       {{#if this.isPremium}}
-        <a class="form-btn" href="/chat">Chat Comunitario</a>
-        <a class="form-btn" href="/realtimeproducts">Modificar Productos</a>
-        <a class="form-btn mb-0" href="/products">Tienda</a>
+        <a class="form-btn" href="/products">TIENDA</a>
+        <a class="form-btn" href="/chat">CHAT COMUNITARIO</a>
+        <a class="form-btn" href="/realtimeproducts">MODIFICAR PRODUCTOS</a>
       {{else}}
-        <a class="form-btn" href="/chat">Chat Comunitario</a>
-        <a class="form-btn mb-0" href="/products">Tienda</a>
+        <a class="form-btn" href="/products">TIENDA</a>
+        <a class="form-btn" href="/chat">CHAT COMUNITARIO</a>
       {{/if}}
     {{/if}}
+
+    <form action="/api/users/logout" method="POST">
+      <button class="form-btn bg-danger border border-dark mb-0" type="submit">Salir</button>
+    </form>
   </div>
 </div>

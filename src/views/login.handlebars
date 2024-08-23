@@ -1,4 +1,4 @@
-<div class="overflow-y-scroll" data-aos="fade-down" data-aos-duration="1000"> {{!-- Iniciar sesión --}}
+<div data-aos="fade-down" data-aos-duration="1000"> {{!-- Iniciar sesión --}}
     <h1 class="my-5">Iniciar Sesión</h1>
 
     <form class="formulario margin-form mb-5" action="/api/users/login" method="POST">
@@ -18,14 +18,14 @@
         <hr>
 
         <div class="login-with"> {{!-- Iniciar sesión con Github y Google --}}
-            <div class="login-with-github">
-                <img src="/img/svg/github.svg" alt="Ícono de Github">
-                <a href="/api/users/github" class="github"> Iniciar con GITHUB </a> 
-            </div>
-            
             <div class="login-with-google">
                 <img src="/img/svg/google.svg" alt="Ícono de Google">
                 <a href="/api/users/google" class="google"> Iniciar con GOOGLE </a> 
+            </div>
+
+            <div class="login-with-github">
+                <img src="/img/svg/github.svg" alt="Ícono de Github">
+                <a href="/api/users/github" class="github"> Iniciar con GITHUB </a> 
             </div>
         </div>
     </form>
