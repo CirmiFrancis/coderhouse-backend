@@ -198,6 +198,7 @@ nav li a { /* propiedades de la lista de navegación */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-image: linear-gradient(to bottom, rgba(2, 71, 92, 0.2), rgba(215, 160, 48, 0.2)), url(../img/vegetables-bg.jpg);
+    transition: all 0.25s;
 }
 
 /* ================================ FOOTER ================================ */
