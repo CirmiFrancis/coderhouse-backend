@@ -146,6 +146,14 @@ nav li a { /* propiedades de la lista de navegación */
     text-align: left;
 }
 
+.title-home { /* para el h1 */
+    margin: 32px 0; /* block - inline */
+    color: var(--color2);
+    font-size: 96px;
+    font-family: 'Anton', sans-serif;
+    text-align: left;
+}
+
 .div-home { /* para el div que contiene el texto */
     display: flex;
     justify-content: center;
@@ -585,5 +593,14 @@ form input { /* botones de los formularios */
 @media (max-width: 767px) {
     #chatBox { /* input para escribir en el chat */
         width: 280px;
+    }
+}
+
+@media (max-width: 425px) {
+    .title-home {
+        font-size: 4.5rem !important;
+    }
+    .text-home {
+        text-align: left !important;
     }
 }
