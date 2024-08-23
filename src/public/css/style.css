@@ -399,29 +399,20 @@ form input { /* botones de los formularios */
     margin-bottom: 8px;
 }
 
-.card-modify { /* card de la página moidfy */
-    width: 190px;
-    transition: all 0.25s;
+.form-crear { /* formulario para crear */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.card-modify:hover { /* hover del card de la página modify */
-    transform: scale(1.03);
+.form-crear input, .form-crear select { /* inputs y select del formulario */
+    width: 80vw;
+    max-width: 800px;
 }
 
-.btn-modify { /* botones para modificar productos */
-    max-width: 96px;
-    padding: 10px;
-    color: #fff;
-    background-color: #000000;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    transition: all 0.25s;
-}
-
-.btn-modify:hover { /* hover de los botones para modificar productos */
-    background-color: var(--color3);
-    transform: scale(1.1);
+.form-crear select { /* select del formulario */
+    padding-block: 3px;
 }
 
 .clickeable { /* botón de eliminar productos */
@@ -437,7 +428,7 @@ form input { /* botones de los formularios */
 
 .card-products { /* card de la página products */
     width: 20rem;
-    height: 360px;
+    height: 365px;
     transition: all 0.25s;
 }
 
@@ -466,7 +457,7 @@ form input { /* botones de los formularios */
 }
 
 .info-icon:hover { /* hover del ícono de información en la card */
-    box-shadow: white 0 0 8px;
+    box-shadow: black 0 0 8px;
 }
 
 .info-text { /* texto de información en la card */
@@ -479,6 +470,7 @@ form input { /* botones de los formularios */
     color: white;
     background-color: black;
     text-align: center;
+    border: 1px solid gray;
     border-radius: 6px;
     z-index: 1;
 }
@@ -575,6 +567,12 @@ form input { /* botones de los formularios */
         margin-bottom: 48px;
         padding: 0;
         text-align: start;
+    }
+    .description-column { /* columna de descripción de la tabla */
+        max-width: 120px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 }
 

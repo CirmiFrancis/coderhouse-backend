@@ -12,7 +12,7 @@
                     <tr>
                         <th scope="col" class="d-none d-md-table-cell text-white bg-dark">CÓDIGO</th>
                         <th scope="col" class="text-white bg-dark">TÍTULO</th>
-                        <th scope="col" class="text-white bg-dark">DESCRIPCIÓN</th>
+                        <th scope="col" class="description-column text-white bg-dark">DESCRIPCIÓN</th>
                         <th scope="col" class="d-none d-md-table-cell text-white bg-dark">DUEÑO</th>
                         <th scope="col" class="d-none d-md-table-cell text-white bg-dark">CATEGORÍA</th>
                         <th scope="col" class="d-none d-md-table-cell text-white bg-dark">PRECIO</th>
@@ -26,7 +26,7 @@
                     <tr>
                         <th scope ="row" class="d-none d-md-table-cell">{{this.code}}</th>
                         <td>{{this.title}}</td>
-                        <td>{{this.description}}</td>
+                        <td class="description-column">{{this.description}}</td>
                         <td class="d-none d-md-table-cell text-danger">{{this.owner}}</td>
                         <td class="d-none d-md-table-cell">{{this.category}}</td>
                         <td class="d-none d-md-table-cell">{{this.price}}</td>
@@ -55,7 +55,7 @@
     
     <hr class="color2 mx-5">
    
-    <form class="d-flex flex-column justify-content-center align-items-center mx-5 my-5"> {{!-- Crear un producto --}}
+    <form class="form-crear mx-5 my-5"> {{!-- Crear un producto --}}
         <input type="text" id="title" maxlength="14" placeholder="Titulo">
         <input type="text" id="description" maxlength="40" placeholder="Descripcion">
         <input type="number" id="price" placeholder="Precio">

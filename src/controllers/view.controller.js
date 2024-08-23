@@ -107,7 +107,13 @@ class ViewsController { // controlador de las vistas
     async renderRealTimeProducts(req, res) { // renderiza realtimeproducts.handlebars y le pasa los datos
         const user = req.user;
         try {
-            const productos = await ProductModel.find().sort({ code: 1 });
+            const productos = await ProductModel.find() // .sort({ code: 1 }); no funciona, ya que ordena alfabeticamente
+            productos.sort((a, b) => {
+                const numA = parseInt(a.code.replace(/\D/g, '')); // expresión regular que busca y elimina todos los caracteres que no sean dígitos (\D significa "no dígitos") y se queda solo con la parte numérica
+                const numB = parseInt(b.code.replace(/\D/g, ''));
+                return numA - numB; // ordena numéricamente
+            });
+
             const nuevoArray = productos.map(producto => {
                 const { _id, ...rest } = producto.toObject();
                 return { id: _id, ...rest };
