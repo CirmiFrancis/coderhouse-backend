@@ -591,20 +591,16 @@ form input { /* botones de los formularios */
 }
 
 @media (max-width: 767px) {
-    .bg-banner { /* para el banner de home */
-        background-attachment: scroll;
-    }
-
     #chatBox { /* input para escribir en el chat */
         width: 280px;
     }
 }
 
 @media (max-width: 425px) {
-    .title-home {
-        font-size: 4.5rem !important;
+    .title-home { /* para el h1 de home */
+        font-size: 4rem !important;
     }
-    .text-home {
+    .text-home { /* para el p de home */
         text-align: left !important;
     }
 }
