@@ -130,7 +130,7 @@ nav li a { /* propiedades de la lista de navegación */
 
 .navbar-toggler:focus { /* borde del icono del menú hamburguesa en blanco */
     outline: none;
-    box-shadow: none;
+    box-shadow: 0 0 0 1px white;
 }
 
 .navbar-toggler-icon { /* ícono del menú hamburguesa en blanco */
@@ -172,7 +172,7 @@ nav li a { /* propiedades de la lista de navegación */
 .card-home { /* para las imágenes */
     width: 14rem;
     padding: 0;
-    border-radius: 0px;
+    border-radius: 0;
 }
 
 .div-icon-item-home { /* para el div de los íconos de los ítems */
@@ -556,7 +556,6 @@ form input { /* botones de los formularios */
         padding-left: 4rem;
         justify-content: start;
     }
-
     .text-home { /* para el p de home */
         padding-left: 12rem;
     }
@@ -565,7 +564,8 @@ form input { /* botones de los formularios */
 @media (max-width: 1199px) {
     .text-home { /* para el p de home */
         margin-bottom: 48px;
-        text-align: center;
+        padding: 0;
+        text-align: start;
     }
 }
 
@@ -573,7 +573,9 @@ form input { /* botones de los formularios */
     .nav-header { /* para el menú hamburguesa del header */
         margin-top: 16px;
     }
-
+    .div-home { /* para el div de home que contiene el texto */
+        padding: 0;
+    }
     .div-icon-item-home { /* para los íconos de los ítems de home */
         border: none;
     }
@@ -611,7 +613,7 @@ form input { /* botones de los formularios */
     .text-home { /* para el p de home */
         text-align: left !important;
     }
-    .margin-form {
+    .margin-form { /* margin para los formularios */
         margin-inline: 8px;
     }
 }
