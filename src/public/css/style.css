@@ -610,4 +610,7 @@ form input { /* botones de los formularios */
     .text-home { /* para el p de home */
         text-align: left !important;
     }
+    .margin-form {
+        margin-inline: 8px;
+    }
 }
