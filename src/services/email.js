@@ -42,14 +42,14 @@ class EmailManager { // administrador de email
                 from: "Saborear <franciscirmi@gmail.com>",
                 to: email,
                 subject: 'Restablecimiento de contraseña',
-                html: // modificar direccion luego del deploy
+                html: // modificar direccion en el deploy
                 `
                     <h1>Restablecimiento de Contraseña</h1>
                     <p>Hola ${first_name}!</p>
                     <p>Pediste restablecer tu contraseña. Te enviamos el código de confirmacion:</p>
                     <strong> ${token} </strong>
                     <p> Este código expira en una hora. </p>
-                    <a href="http://localhost:8080/password"> Restablecer Contraseña </a>
+                    <a href="https://saborear.onrender.com/password"> Restablecer Contraseña </a>
                 `
             };
             await this.transporter.sendMail(mailOptions);

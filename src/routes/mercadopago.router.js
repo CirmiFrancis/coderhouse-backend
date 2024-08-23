@@ -17,10 +17,10 @@ router.post("/create-preference", async (req, res) => {
 
         const body = {
             items: formattedItems,
-            back_urls: { // URLs de retorno
-                success: `http://localhost:8080/pre-checkout/${cartId}`,
-                failure: "http://localhost:8080/error", 
-                pending: "http://localhost:8080/profile"
+            back_urls: { // URLs de retorno, modificar en el deploy
+                success: `https://saborear.onrender.com/pre-checkout/${cartId}`,
+                failure: "https://saborear.onrender.com/error", 
+                pending: "https://saborear.onrender.com/profile"
             }, 
             auto_return: "approved", 
         }; 
