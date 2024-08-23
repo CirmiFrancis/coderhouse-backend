@@ -5,19 +5,19 @@
     
     <hr class="color2 mx-5">
 
-    <div class="container my-5">
+    <div class="container-fluid my-5">
         <div class="table-responsive"> {{!-- Tabla de productos --}}
             <table class="table border border-dark m-0">
                 <thead> {{!-- Cabecera --}}
                     <tr>
                         <th scope="col" class="d-none d-md-table-cell text-white bg-dark">CÓDIGO</th>
-                        <th scope="col" class="text-white bg-dark">TÍTULO</th>
+                        <th scope="col" class="title-column text-white bg-dark">TÍTULO</th>
                         <th scope="col" class="description-column text-white bg-dark">DESCRIPCIÓN</th>
                         <th scope="col" class="d-none d-md-table-cell text-white bg-dark">DUEÑO</th>
                         <th scope="col" class="d-none d-md-table-cell text-white bg-dark">CATEGORÍA</th>
                         <th scope="col" class="d-none d-md-table-cell text-white bg-dark">PRECIO</th>
                         <th scope="col" class="d-none d-md-table-cell text-white bg-dark">STOCK</th>
-                        <th scope="col" class="text-center text-white bg-dark">-</th>
+                        <th scope="col" class="action-column text-center text-white bg-dark">-</th>
                     </tr>
                 </thead>
 
@@ -25,13 +25,13 @@
                     {{#each adminproducts}}
                     <tr>
                         <th scope ="row" class="d-none d-md-table-cell">{{this.code}}</th>
-                        <td>{{this.title}}</td>
+                        <td class="title-column">{{this.title}}</td>
                         <td class="description-column">{{this.description}}</td>
                         <td class="d-none d-md-table-cell text-danger">{{this.owner}}</td>
                         <td class="d-none d-md-table-cell">{{this.category}}</td>
                         <td class="d-none d-md-table-cell">{{this.price}}</td>
                         <td class="d-none d-md-table-cell">{{this.stock}}</td>
-                        <td class="td-clickeable bg-body-secondary border-start border-dark">
+                        <td class="action-column td-clickeable bg-body-secondary border-start border-dark">
                             {{#ifEqual ../userRole "admin"}}
                                 <a href="#" onclick="eliminarProducto('{{this.id}}'); return false;" class="clickeable text-decoration-none m-0 p-0" title="Eliminar producto">
                                     <img src="/img/svg/trash-fill.svg" class="img-fluid actions-delete" alt="Ícono para eliminar el producto.">
