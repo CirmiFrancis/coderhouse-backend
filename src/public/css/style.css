@@ -636,7 +636,7 @@ form input { /* botones de los formularios */
         background-image: linear-gradient(to bottom, rgba(2, 71, 92, 0.2), rgba(215, 160, 48, 0.2)), url(../img/vegetables-bg-mobile3.jpg);
     }
     .title-home { /* para el h1 de home */
-        font-size: 4rem !important;
+        font-size: 48px !important;
     }
     .text-home { /* para el p de home */
         text-align: left !important;
