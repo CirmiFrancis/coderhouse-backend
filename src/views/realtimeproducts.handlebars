@@ -55,7 +55,20 @@
     
     <hr class="color2 mx-5">
    
-
+    <form class="form-crear mx-5 my-5"> {{!-- Crear un producto --}}
+        <input type="text" id="title" maxlength="14" placeholder="Titulo">
+        <input type="text" id="description" maxlength="40" placeholder="Descripcion">
+        <input type="number" id="price" placeholder="Precio">
+        <input type="text" id="img" placeholder="Imagen (opcional)">
+        <input type="text" id="code" placeholder="Código (debe ser único)">
+        <input type="number" id="stock" placeholder="Stock">
+        <input type="text" id="category" placeholder="Categoria">
+        <select id="status">
+            <option value="true">Activo</option>
+            <option value="false">Inactivo</option>
+        </select> <br>
+        <button type="button" class="clickeable btn-modify" onclick="agregarProducto('{{userRole}}', '{{userID}}')">Enviar</button>
+    </form>
 </div>
 
 <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
