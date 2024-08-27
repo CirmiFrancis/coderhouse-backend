@@ -390,7 +390,7 @@ label { /* label (etiqueta) de cada formulario */
 }
 
 .padding-icons { /* padding para los íconos de la página adminusers */
-    padding: 2px !important;
+    padding: 8px !important;
 }
 
 /* ================================ MODIFY PRODUCTS ================================ */
@@ -584,7 +584,7 @@ form input { /* botones de los formularios */
         padding: 0;
         text-align: start;
     }
-    .title-column { /* columna de descripción de la tabla */
+    .title-column { /* columna de título de la tabla */
         max-width: 96px;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -593,8 +593,7 @@ form input { /* botones de los formularios */
     .description-column { /* columna de descripción de la tabla */
         max-width: 160px;
         white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        overflow: scroll;
     }
     .action-column {
         max-width: 40px;
@@ -613,9 +612,9 @@ form input { /* botones de los formularios */
     }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 991px) {
     .td-clickeable { /* elemento td que contiene un botón para eliminar un producto */
-        padding: 1px !important;
+        padding: 8px 0 0 0 !important;
     }
 }
 
@@ -661,5 +660,14 @@ form input { /* botones de los formularios */
     }
     .description-column { /* columna de descripción de la tabla */
         max-width: 120px;
+    }
+    .custom-width-table { /* ancho de la tabla de modificar productos */
+        width: 320px;
+    }
+}
+
+@media (max-width: 395px) {
+    .padding-icons { /* padding para los íconos de la página adminusers */
+        padding: 2px !important;
     }
 }
