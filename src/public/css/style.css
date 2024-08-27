@@ -626,7 +626,6 @@ form input { /* botones de los formularios */
 
 @media (max-width: 767px) {
     .bg-banner { /* para el fondo */
-        background-attachment: scroll;
     }
     #chatBox { /* input para escribir en el chat */
         width: 280px;
@@ -635,6 +634,7 @@ form input { /* botones de los formularios */
 
 @media (max-width: 425px) {
     .bg-banner { /* para el fondo */
+        background-attachment: contain;
         background-image: linear-gradient(to bottom, rgba(2, 71, 92, 0.2), rgba(215, 160, 48, 0.2)), url(../img/vegetables-bg-mobile3.jpg);
     }
     .title-home { /* para el h1 de home */
