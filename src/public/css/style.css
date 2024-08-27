@@ -662,7 +662,7 @@ form input { /* botones de los formularios */
         max-width: 120px;
     }
     .custom-width-table { /* ancho de la tabla de modificar productos */
-        width: 320px;
+        width: 80vw;
     }
 }
 
