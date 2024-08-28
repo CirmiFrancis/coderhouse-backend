@@ -1,11 +1,35 @@
-## Rama 𓆱 main
-Contendrá el PROYECTO FINAL del curso.
+# Saborear: Tienda Online
 
-## Rama 𓆱 clases
-Contiene todas las CLASES del curso.
+Proyecto realizado para el curso de "Programación Backend" de la plataforma Coderhouse.
 
-## Rama 𓆱 desafios
-Contiene todos los DESAFÍOS del curso.
+'Saborear' es una tienda en línea ficticia dedicada a la venta de productos consumibles como: frutas, lácteos, embutidos, entre otros productos.
 
-## Rama 𓆱 preEntregas
-Contiene todas las PRE-ENTREGAS del curso.
+#### En este sitio web puedes:
+- Registrarte
+- Iniciar Sesión
+- Recuperar Contraseña
+- Ver tu Perfil
+- Ingresar al Chat Comunitario
+- Ir a la Tienda
+- Agregar Productos al Carrito
+- Ver el Detalle del Carrito
+- Comprar con Mercado Pago
+- Generar un Ticket con el Detalle de la Compra
+- *Publicar y Eliminar tus Productos (sólo disponible para el rol 'premium')*
+- *Administrar los Usuarios y los Productos (sólo disponible para el rol 'admin')*
+
+#### Detalles a tener en cuenta:
+- Puedes iniciar sesión, además de con tu propia cuenta, con Google y Github
+- Puedes recuperar la contraseña de tu cuenta
+- Existen 3 roles: usuario, premium y admin. Un usuario puede convertirse en premium cumpliendo ciertos requisitos y siendo aprobado por el admin.
+- La integración de Mercado Pago se realizó con Checkout Pro. Además, las compras sólo se pueden realizar con una cuenta de prueba.
+
+---
+
+### Render (deployment):
+https://saborear.onrender.com/
+
+---
+
+### Certificado de aprobación del Curso: 
+(en unas semanas...)
