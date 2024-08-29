@@ -26,8 +26,9 @@ Proyecto realizado para el curso de "Programación Backend" de la plataforma Cod
 
 ---
 
-### Render (deployment):
-https://saborear.onrender.com/
+### Deployment:
+- Railway: https://saborear.up.railway.app/
+- Render: https://saborear.onrender.com/
 
 ---
 
