@@ -18,9 +18,9 @@ router.post("/create-preference", async (req, res) => {
         const body = {
             items: formattedItems,
             back_urls: { // URLs de retorno, modificar en el deploy
-                success: `https://saborear.onrender.com/pre-checkout/${cartId}`,
-                failure: "https://saborear.onrender.com/error", 
-                pending: "https://saborear.onrender.com/profile"
+                success: `https://saborear.up.railway.app/pre-checkout/${cartId}`,
+                failure: "https://saborear.up.railway.app/error", 
+                pending: "https://saborear.up.railway.app/profile"
             }, 
             auto_return: "approved", 
         }; 

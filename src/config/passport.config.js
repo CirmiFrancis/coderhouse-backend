@@ -24,7 +24,7 @@ const initializePassport = () => { // estrategia de autenticación basada en JWT
     passport.use("google", new GoogleStrategy({ // inicio de sesión con GOOGLE
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: "https://saborear.onrender.com/api/users/google/callback", // modificar en el deploy
+        callbackURL: "https://saborear.up.railway.app/api/users/google/callback", // modificar en el deploy
         passReqToCallback: true
     }, async (request, accessToken, refreshToken, profile, done) => {
         try {
@@ -63,7 +63,7 @@ const initializePassport = () => { // estrategia de autenticación basada en JWT
     passport.use("github", new GitHubStrategy({ // inicio de sesión con GITHUB
         clientID: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
-        callbackURL: "https://saborear.onrender.com/api/users/github/callback", // modificar en el deploy
+        callbackURL: "https://saborear.up.railway.app/api/users/github/callback", // modificar en el deploy
     }, async (accessToken, refreshToken, profile, done) => {
         try {
             let usuario = await UserModel.findOne({ email: profile._json.email });

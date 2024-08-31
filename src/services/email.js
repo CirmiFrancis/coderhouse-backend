@@ -49,7 +49,7 @@ class EmailManager { // administrador de email
                     <p>Pediste restablecer tu contraseña. Te enviamos el código de confirmacion:</p>
                     <strong> ${token} </strong>
                     <p> Este código expira en una hora. </p>
-                    <a href="https://saborear.onrender.com/password"> Restablecer Contraseña </a>
+                    <a href="https://saborear.up.railway.app/password"> Restablecer Contraseña </a>
                 `
             };
             await this.transporter.sendMail(mailOptions);
