@@ -4,7 +4,7 @@
 import { fileURLToPath } from "url"; // ES6
 import compression from "express-compression";
 import cookieParser from "cookie-parser";
-import cors from "cors";
+//import cors from "cors";
 import dotenv from 'dotenv';
 import express from "express";
 import exphbs from "express-handlebars";
