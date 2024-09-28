@@ -36,7 +36,7 @@ Proyecto realizado para el curso de "Programación Backend" de la plataforma Cod
 
 ![Imagen del Certificado](https://github.com/CirmiFrancis/coderhouse-backend/blob/main/certificate.png?raw=true)
 
-### Certificado Adicional: 
+### Certificado adicional: 
 
 ![Imagen del Certificado](https://github.com/CirmiFrancis/coderhouse-backend/blob/main/certificate2.png?raw=true)
 
