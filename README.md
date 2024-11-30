@@ -28,7 +28,12 @@ Proyecto realizado para el curso de "Programación Backend" de la plataforma Cod
 
 ### Deployment:
 - Railway: https://saborear.up.railway.app/ (recomendado)
-- Render: https://saborear.onrender.com/
+- Render: https://saborear.onrender.com/ (alternativo)
+
+Debido a que en ambos sitios tengo una cuenta gratuita:
+  
+- En el caso de Railway, debo de reiniciarlo cada cierto tiempo. Se pueden usar todas las funcionalidades.
+- En el caso de Render, si el sitio web estaba inactivo, se tarda aproximadamente 50 segundos en poder ingresar. No puedes iniciar sesión con Github.
 
 ---
 
