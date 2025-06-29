@@ -1,7 +1,7 @@
 import passport from 'passport';
 import { Strategy as JWTStrategy, ExtractJwt } from 'passport-jwt';
-import { Strategy as GoogleStrategy } from "passport-google-oauth2"; // iniciar con google
-import GitHubStrategy from "passport-github2"; // iniciar con github
+import { Strategy as GoogleStrategy } from "passport-google-oauth2"; // iniciar con GOOGLE
+import GitHubStrategy from "passport-github2"; // iniciar con GITHUB
 import UserModel from '../models/user.model.js';
 import CartModel from '../models/cart.model.js';
 
