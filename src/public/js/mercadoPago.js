@@ -37,7 +37,7 @@ document.getElementById("checkout-btn").addEventListener("click",  async (event)
 const createCheckoutButton = (preferenceId) => { // crea el botón de pago
     const bricksBuilder = mp.bricks();
     const renderComponent = async () => {
-        if (!window.checkoutButton) { // evita que se dupliquen los botones
+        if (!window.checkoutButton) { // evita que los botones se dupliquen
             window.checkoutButton = await bricksBuilder.create("wallet", "wallet_container", {
                 initialization: {
                     preferenceId: preferenceId
