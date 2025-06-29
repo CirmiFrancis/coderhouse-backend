@@ -9,7 +9,7 @@ document.getElementById("checkout-btn").addEventListener("click",  async (event)
     try {
         const cartID = window.location.pathname.replace('/carts/', '');
         //console.log(cartID);
-        const cartResponse = await fetch(`https://saborear.up.railway.app/api/carts/${cartID}`); // modificar en el deploy
+        const cartResponse = await fetch(`https://saborear.onrender.com/api/carts/${cartID}`); // modificar en el deploy
         const cart = await cartResponse.json();
         const orderData = cart.products.map(item => ({ // productos en el carrito
             title: item.product.title,
@@ -17,7 +17,7 @@ document.getElementById("checkout-btn").addEventListener("click",  async (event)
             price: item.product.price,
         }));
         //console.log(orderData);
-        const response = await fetch("https://saborear.up.railway.app/create-preference", { // modificar en el deploy
+        const response = await fetch("https://saborear.onrender.com/create-preference", { // modificar en el deploy
             method: "POST", 
             headers: {
                 "Content-Type": "application/json"
